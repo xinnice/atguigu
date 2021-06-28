@@ -30,6 +30,11 @@ app.get('/getData', (req, res) => {
       age: 30,
       info: '考试999分',
     },
+    {
+      name: '骚猪乔治',
+      age: 50,
+      info: '考试99999分',
+    },
   ]
   res.send(data)
 })
