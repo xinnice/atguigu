@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            splice方法:可以删除、添加、替换数组中的元素
+                1、参数1是数组删除开始的下标
+                2、参数2是删除的长度
+                3、后面所有的参数是在删除的位置添加的元素
+        */
+
+        var arr = ["a", "b", "c", "d", "e", "f", "g"];
+
+        //从下标为2开始删除，删除长度是2，并在删除位置添加 1,2两个元素
+        var res = arr.splice(2, 2, 1, 2);
+        console.log(arr);
+        console.log(res);
+
+        //参数1是负数，则倒着数，但是长度一定是向后数的
+        res = arr.splice(-3, 200);
+        console.log(arr);
+        console.log(res);
+
+        //替换数组的倒数第二位的值为100
+        res = arr.splice(-2, 1, 100);
+        console.log(arr);
+        console.log(res);
+    </script>
+</body>
+
+</html>

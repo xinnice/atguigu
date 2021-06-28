@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="./js/react.development.js"></script>
+    <script src='./js/react-dom.development.js'></script>
+    <script src="./js/babel.min.js"></script>
+    <script type="text/babel">
+        const h1=React.createElement('h1',{id:'title',className:'content'},'哦嚯')
+        ReactDOM.render(h1,document.getElementById('root'))
+
+        const h2=<h2>nice啊</h2>
+        ReactDOM.render(h2,document.getElementById('root'))
+    </script>
+</body>
+
+</html>

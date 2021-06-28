@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="con">
+
+    </div>
+    <script>
+        var oCon = document.querySelector("#con");
+        let obj = {
+            title: "深圳天气",
+            date: "today",
+            des: "多云转阴",
+            tem: 39,
+            furture: [{
+                date: "Monday",
+                des: "晴朗",
+                tem: 27
+            }, {
+                date: "Tuesday",
+                des: "多雨",
+                tem: 29
+            }, {
+                date: "Wednesday",
+                MediaDevices: "转阴",
+                tem: 33
+            }]
+        };
+        let {
+            title,
+            des,
+            tem,
+            date,
+            furture
+        } = obj;
+
+        var strHtml = `<h3 id="title">${obj.title||""}</h3>
+                        <div>
+                            <span class="date">${obj.date||""}</span>
+                            <span class="des">${obj.des||""}</span>
+                            <span class="tem">${obj.tem||""}</span>
+                        </div>`;
+        obj.furture.forEach((item) => {
+            strHtml += `<div>
+                            <span class="date">${item.date||""}</span>
+                            <span class="des">${item.des||""}</span>
+                            <span class="tem">${item.tem||""}</span>
+                        </div>`;
+        });
+        oCon.innerHTML = strHtml;
+    </script>
+</body>
+
+</html>

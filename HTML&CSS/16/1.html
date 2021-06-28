@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      #con {
+        display: flex;
+        /* flex-direction: row-reverse; 从右到左*/
+        /* flex-direction: row; 默认值，从左到右*/
+        /* flex-direction: column; */
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content:space-evenly; */
+
+        width: 400px;
+        height: 600px;
+        border: 1px solid blue;
+        /* align-items: center; */
+        /* align-content: flex-start; */
+        align-content: stretch;
+      }
+      #con div {
+        width: 100px;
+        height: 100px;
+      }
+      #con div:first-child {
+        background-color: greenyellow;
+      }
+      #con div:nth-child(2) {
+        background-color: grey;
+      }
+      #con div:nth-child(3) {
+        background-color: purple;
+      }
+      #con div:nth-child(4) {
+        background-color: peru;
+      }
+      #con div:last-child {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="con">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <button id="btn">点哦</button>
+    <img src="" alt="232" name="ig" say="hello world">
+    <script>
+        /* 
+            oImg是当前获取的DOM节点对象
+            这个节点对象的属性分为了两种：
+                - 作为元素节点来说，属性是当前元素上定义的属性
+                - 作为js对象来说，每个对象可以扩展自己的属性和方法，和元素上的属性没有关系
+
+            设置节点对象的属性：
+                - 如果这个属性是标签自有的属性，则执行通过 ELE.XXX设置或获取，但是有的属性和关键字冲突了需要些许改变，比如class，需要写为className
+
+            自定义属性可以设置
+        */
+
+        var oImg=document.querySelector("img");
+        var oBtn=document.getElementById("btn");
+        oBtn.onclick=function(){
+            //自有属性
+            oImg.src="../images/05.jpg";
+            oImg.alt="无敌静哥哥";
+            oImg.className="ig1";
+            oImg.name="imgname"
+
+            //要给元素扩展一个自定义属性,不能像自有属性那样操作
+            oImg.asd="def";//把oImg当成一个对象添加了asd属性,与元素没有任何关系
+
+            //设置自定义属性
+            oImg.setAttribute("qwe","123");
+            console.log(oImg.getAttribute("say"));
+            oImg.removeAttribute("say");//删除元素属性,没有这个属性则返回null
+        };
+    </script>
+</body>
+</html>

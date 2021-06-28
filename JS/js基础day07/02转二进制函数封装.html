@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            封装函数，传入10进制，返回二进制
+        */
+        function to2b(num) {
+            var str = "";
+            var yu = null;
+            var newStr = "";
+            while (num > 0) {
+                yu = num % 2;
+                str += yu;
+                num = parseInt(num / 2);
+            }
+            for (var i = str.length - 1; i >= 0; i--) {
+                newStr += str[i];
+            }
+            return newStr;
+        }
+        var res = to2b(10);
+        console.log(res);
+    </script>
+</body>
+
+</html>

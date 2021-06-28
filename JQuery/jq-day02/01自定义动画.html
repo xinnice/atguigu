@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">动起来</button>
+    <div></div>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        
+        $("#btn").click(function () {
+            $("div").animate({
+                width: 400,
+                height: 400,
+                left: document.documentElement.clientWidth-400,
+                top: document.documentElement.clientHeight-400
+            },3000,"linear");
+        });
+    </script>
+</body>
+
+</html>

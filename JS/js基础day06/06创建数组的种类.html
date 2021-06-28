@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //普通数字
+        var arr = ["w", "e", "r"];
+        console.log(arr[0]); //可以通过下标方式获取数组的值
+        console.log(arr[1 + 1]); //中括号操作符里面可以进行运算
+        console.log(arr[6]); //获取对象没有的属性，返回undefined
+
+
+        //多维数组
+        var arr1 = [1, 2, 3, [4, 5]] //二维数组
+        var arr2 = [1, 2, 3, [4, [6, 7, [9], 8], 5]];
+        console.log(arr1);
+        console.log(arr2);
+        //获取多维数组的值
+        console.log(arr1[3][1]);
+        console.log(arr2[3][1][2][0]);
+
+
+        //空位数组
+        //数组内容如果以逗号为结尾，则忽略，不会当作一个值
+        var arr3=[1,2,3,,,4,,,5,6,7,8,];
+        console.log(arr3);
+        //数组空位的值都是undefined
+        console.log(arr3[4]);
+
+        //伪类数组(伪数组 类数组)
+        //伪类数组不是数组，只是像数组
+        //伪类数组是一个对象，必须满足2个特征:1.key必须是从0开始自然递增 2.拥有length属性表示长度
+        var likeArr={
+            0:"w",
+            1:"e",
+            2:"r",
+            3:"t",
+            length:4
+        }
+        console.log(likeArr);
+        //伪类数组的获取和数组类似
+        console.log(likeArr[2]);
+            
+    </script>
+</body>
+
+</html>

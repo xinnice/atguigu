@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            乘法：
+                乘法的所有运算操作全部转为Number再进行运算操作
+        */
+        console.log(2 * 2) //4
+        console.log(2 * -2) //-4
+        console.log(2 * -2.1) //-4.2
+        console.log("2" * 2) //4
+        console.log("2" * "2") //4
+        console.log("2a" * "2") //NaN
+        console.log("2a" * 2) //NaN
+        console.log(true * "2") //2
+        console.log(true * 1) //1
+        console.log(null * 1) //0
+        console.log(null * undefined) //NaN
+        console.log(2 * undefined) //NaN
+        console.log([] * 2) //0
+        console.log([2] * 2) //4
+        console.log([2, 2] * 2) //NaN
+        console.log({}* 2) //NaN
+
+       
+
+        /* 
+            除法：
+                除法的所有运算操作全部转为Number再进行运算操作
+        */
+        console.log(4 / 2) //2
+        console.log(4 / -2) //-2
+        console.log("4" / 2) //2
+        console.log("4" / "2") //2
+        console.log("4a" / "2") //NaN
+        console.log("4a" / 2) //NaN
+        console.log(true / "4") //0.25
+        console.log(true / 1) //1
+        console.log(null / 1) //0
+        console.log(null / undefined) //NaN
+        console.log(4 / undefined) //NaN
+        console.log([] / 4) //0
+        console.log([4] / 2) //2
+        console.log([4, 4] / 2) //NaN
+
+        /* 
+            求模(取余):
+                求模的所有运算操作全部转为Number再进行运算操作
+        */
+
+        console.log(8 % 3) //2
+        console.log(8 % -3) //2
+        console.log(-8 % 3) //-2
+        console.log(-8 % -3) //-2
+    </script>
+</body>
+</html>

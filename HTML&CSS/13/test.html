@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            div.d1{
+                width: 200px;
+                height: 200px;
+                background-color: green;
+            }
+            div.d1:hover{
+                width: 1000px;
+                transition-property: width;
+                transition-duration: 5s;
+                transition-timing-function: ease-out;
+                /* transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1); */
+            }
+
+            div.d2{
+                margin-top: 10px;
+                width: 300px;
+                height: 300px;
+                background-color: hotpink;
+                transition:all 5s linear 1s;
+            }
+            div.d2:hover{
+                  width: 1200px;
+                  height: 500px;
+            }
+
+            div.d3{
+                margin-top: 10px;
+                width: 200px;
+                height: 200px;
+                background-color: yellow;
+            }
+            div.d3:hover{
+                /* transform: translate(100px,30px); */
+                /* transform: translateX(100px) translateY(200px); */
+                transform: translate(100%,100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="d1">
+
+        </div>
+        <div class="d2">
+
+        </div>
+        <div class="d3">
+
+        </div>
+    </body>
+</html>

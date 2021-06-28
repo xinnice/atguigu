@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        // 1.将数组的0去掉
+        var arr = [1, 2, 3, 0, 0, 4, 3, 8, 0, 3];
+        var res = arr.filter(function (item, index) {
+            return item !== 0;
+        });
+        console.log(res);
+
+        // 2.数组排序去重
+        var arr6 = [1, 2, 2, 33, 1, 200, 300, 200, 100, 100, 200];
+        var newArr = [];
+        arr6.forEach(function (item, index) {
+            if (newArr.indexOf(item) === -1) {
+                newArr.push(item);
+            }
+        });
+        console.log(newArr);
+
+        // 3.返回数组的最大最小值
+        var arr1 = [100, 200, 300, 400, 500, 200, 1, 2];
+        var max = arr1[0];
+        var min = arr1[0];
+        arr1.forEach(function (item, index) {
+            if (item > max) {
+                max = item;
+            }
+            if (item < min) {
+                min = item;
+            }
+        });
+        console.log(max, min);
+
+        // 4.求一组数中的所有数的和和平均值
+        var arr2 = [100, 200, 300, 400, 500, 200, 1, 2];
+        var sum = 0;
+        arr1.forEach(function (item, index) {
+            sum += item;
+        });
+        console.log(sum, sum / arr2.length);
+
+        // 5.求一组数中的最大值和最小值，以及所在位置
+        var arr3 = [100, 200, 300, 400, 500, 200, 1, 2];
+        var max = arr1[0];
+        var min = arr1[0];
+        arr1.forEach(function (item, index) {
+            if (item > max) {
+                max = item;
+            }
+            if (item < min) {
+                min = item;
+            }
+        });
+        console.log(max, arr3.indexOf(max), min, arr3.indexOf(min));
+
+        // 6.翻转数组
+        var arr4 = [100, 200, 300, 400, 500, 200, 1, 2];
+        var arr5 = [];
+        arr4.forEach(function (item, index) {
+            arr5.unshift(item);
+        });
+        console.log(arr5);
+
+        var newArr=[3,1,2,1,2,2,111,4,5,3];
+        newArr.forEach(function(item,index){
+            var i=1;
+            if(newArr.indexOf(item)!==index){
+                i++;
+            }else{
+                console.log(item+":"+i);
+            }
+        });
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            等于判断:
+                相等(==):先进行类型转换，转换后相等返回true
+                不相等(!=):类型转换后不相等返回true
+                全等(===):先进性类型判断，不相等返回false，如果相等再比较值
+                不相等(!==):如果类型不相等返回true
+        */
+
+        console.log(100=="100");//true
+        console.log(100==="100");//false
+
+        console.log(100!="100");//false
+        console.log(100!=="1000");//true
+
+        console.log(null==0);//false
+        console.log(null==1);//false
+        console.log(null==true);//false
+        console.log(null==false);//false
+        console.log(null=="");//false
+        console.log(null=="null");//false
+        console.log(null!=0);//true
+        console.log(null!==0);//true
+
+        //小于、大于等于等判断如果有null则可以类型转换
+        console.log(null>=0);//true
+        console.log(null<0);//false
+        console.log(null==NaN);//false
+        console.log(null==null);//true
+
+        console.log(null==undefined);//true
+        console.log(true==1);//true
+        console.log(false==0);//true
+    </script>
+</body>
+</html>

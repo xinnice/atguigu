@@ -1,0 +1,1 @@
+!function(){"use strict";console.log("太cool了"),console.log("fn"),console.log("箭头函数")}();

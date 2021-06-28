@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        div {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            background-color: aqua;
+            border-radius: 50%;
+            top: 251px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <script>
+        var divBox = document.getElementById("con");
+        var boxLeft = 0;
+        var boxTop = 251;
+        setInterval(function () {
+            boxLeft++;
+            divBox.style.left = boxLeft + "px";
+            var moveTop = Math.sin(boxLeft * 2 * Math.PI / 360) * 100;
+            divBox.style.top = boxTop - moveTop + "px";
+            divBox.style.backgroundColor="rgb("+random(0,256)+","+random(0,256)+","
+            +random(0,256)+")";
+        }, 10);
+
+
+        function random(a, b) {
+            return Math.floor(Math.random() * (b - a) + a);
+        }
+    </script>
+</body>
+
+</html>

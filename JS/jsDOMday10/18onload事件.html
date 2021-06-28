@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <img src="./images/08.jpg" alt="" id="img">
+    <script>
+        /* 
+            load事件：是当资源加载完成以后触发，绑定给img、audio等
+            window.onload:当节点全部加载完成，并且所有的资源也全部加载完成以后触发
+        */
+       
+        var oImg=document.getElementById("img");
+        console.log(oImg.offsetWidth);
+
+        window.onload=function(){
+            console.log(oImg.offsetWidth);
+        }
+
+        oImg.onload=function(){
+            console.log(oImg.offsetWidth);
+        }
+    </script>
+</body>
+</html>

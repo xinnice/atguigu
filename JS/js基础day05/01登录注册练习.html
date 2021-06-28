@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //只要判断用户输入的账号不是laoli,而且密码不是999999,就一直循环
+        function check() {
+            var userName = prompt("请输入账号");
+            var userPwd = prompt("请输入密码");
+            if (userName !== "laoli" || userPwd !== "999999") {
+                //函数内部重新调用自身,此操作叫做递归
+                check();
+            } else {
+                alert("登录成功");
+            }
+        }
+        check();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+.mixin(@a){
+    width: 500px;
+}
+
+.mixin(@a) when(@a>=20){
+    background-color: yellowgreen;
+}
+
+.mixin(@a) when(@a>=10),(@a<=100){
+    background-color: lightblue;
+}
+
+#con{
+    border: 1px solid red;
+    .mixin(15);
+}

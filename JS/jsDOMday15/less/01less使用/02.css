@@ -1,0 +1,11 @@
+#con {
+  width: 500px;
+  height: 300px;
+  background-color: saddlebrown;
+}
+#con #box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  box-sizing: border-box;
+}

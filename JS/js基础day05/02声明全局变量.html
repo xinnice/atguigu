@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+      /* 
+        声明全局变量:
+            1、在全局的作用域中，直接使用var来声明
+            2、直接给一个没有声明的变量赋值，这个变量会默认为全局变量
+            3、在任意位置给window对象扩展属性和方法，即是全局变量和全局函数
+      */
+
+      //全局变量a
+      var a=100;
+
+      function func(){
+          //默认声明为全局变量
+          b=100;
+        
+          //此语句只声明了c,defg未声明
+          var c=d=e=f=g=200;
+
+          //windon对象扩展了属性,即是全局变量
+          window.name="zhangsan";
+      }
+
+      func();
+      console.log(b);
+      console.log(d,e,f,g);
+      console.log(name);
+    </script>
+</body>
+
+</html>

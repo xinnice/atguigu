@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            position: relative;
+            width: 900px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 20px auto;
+        }
+
+        #box {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div id="box"></div>
+    </div>
+    <script>
+        var oCon = document.getElementById("con");
+        var oBox = document.getElementById("box");
+        var l = 50;
+        var t = 100;
+        var a = 5,
+            b = 5;
+
+        setInterval(function () {
+            l += a;
+            t += b;
+            if (l >= oCon.clientWidth - oBox.offsetWidth || l <= 0) {
+                a *= -1;
+            }
+            if (t >= oCon.clientHeight - oBox.offsetHeight || t <= 0) {
+                b *= -1;
+            }
+
+            oBox.style.left = l + "px";
+            oBox.style.top = t + "px";
+        }, 20);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 200px;
+            height: 200px;
+            background-color: khaki;
+            position: fixed;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+
+    </div>
+    <script>
+        var oCon = document.querySelector("#con");
+
+        //绑定鼠标按下事件
+        document.onmousedown = function (e) {
+            //获取元素起始距窗口距离
+            var oConStart = {
+                x: oCon.offsetLeft,
+                y: oCon.offsetTop
+            };
+            console.log(oConStart);
+            //获取鼠标点击时距光标距窗口距离
+            var mouseStart = {
+                x: e.clientX,
+                y: e.clientY
+            }
+            console.log(mouseStart);
+
+            document.onmousemove = function (e) {
+                var oConNow = {
+                    x: e.clientX - mouseStart.x + oConStart.x,
+                    y: e.clientY - mouseStart.y + oConStart.y
+                }
+                console.log(oConNow);
+                if (oConNow.x <= 0) {
+                    oConNow.x = 0;
+                } else if (oConNow.x >= document.documentElement.clientWidth - oCon.offsetWidth) {
+                    oConNow.x = document.documentElement.clientWidth - oCon.offsetWidth;
+                }
+
+                if (oConNow.y <= 0) {
+                    oConNow.y = 0;
+                } else if (oConNow.y >= document.documentElement.clientHeight - oCon.offsetHeight) {
+                    oConNow.y = document.documentElement.clientHeight - oCon.offsetHeight;
+                }
+
+                oCon.style.left = oConNow.x + "px";
+                oCon.style.top = oConNow.y + "px";
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

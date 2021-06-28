@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+        body{
+            height: 1000px;
+        }
+      .adv {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        width: 300px;
+        border: 1px solid #ccc;
+      }
+      .adv h5{
+          margin:5px;
+      }
+      .adv .adv-img ul{
+        margin: 0px;
+        padding: 0px;
+        font-size: 0px;
+        list-style-type: none;
+      }
+      .adv .adv-img ul li{
+          float: left;
+          margin: 0px 4px;
+      }
+      .adv .adv-img ul li img{
+          width: 90px;
+      }
+      .adv .adv-img::after{
+          content: "";
+          display: block;
+          clear: both;
+      }
+      .adv .adv-content {
+          font-size: 12px;
+          text-align: right;
+          height: 30px;
+          line-height: 30px;
+          padding-right: 10px;
+      }
+
+      .adv .adv-close{
+          position: absolute;
+          top:0px;
+          right: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <body>
+      <div class="adv">
+        <h5>
+          战神回家，发现五岁女儿被卖到青楼！一声令下，华夏十万退役将士奔来，把战神也卖到了青楼！
+        </h5>
+        <div class="adv-img">
+          <ul>
+            <li><img src="./20200803161257.png" alt="" /></li>
+            <li><img src="./20200803161311.png" alt="" /></li>
+            <li><img src="./20200803161325.png" alt="" /></li>
+          </ul>
+        </div>
+        <div class="adv-content">
+          <span>由<a href="#">XXX</a>提供的广告</span>
+        </div>
+        <span class="adv-close">×</span>
+      </div>
+    </body>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+//无参数混合
+/* .center() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+} */
+
+//有参数混合
+/* .center(@w, @h, @c) {
+    position: absolute;
+    width: @w;
+    height: @h;
+    color: @c;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+} */
+
+//有默认值参数
+.center(@w:300px, @h:300px, @c:hotpink) {
+    position: absolute;
+    width: @w;
+    height: @h;
+    color: @c;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+#outer {
+    .center(@h:600px);
+
+    #inner {
+        .center(@c:yellow,@w:100px,@h:100px);
+
+        #con {
+            .center(50px,50px,#a6e4c1);
+        }
+    }
+}

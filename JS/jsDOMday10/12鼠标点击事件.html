@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <script>
+        /* 
+            onclick:左键单击
+            oncontextmenu: 右键单击
+            ondblclick: 左键双击
+        */
+
+        var oDiv = document.getElementById("con");
+        oDiv.onclick = function () {
+            console.log("左键单击");
+        }
+        oDiv.ondblclick = function () {
+            console.log("左键双击");
+        };
+        oDiv.oncontextmenu = function () {
+            console.log("右键单击");
+        };
+    </script>
+</body>
+
+</html>

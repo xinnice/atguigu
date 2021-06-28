@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /*
+            问题: var a = xxx, a内存中到底保存的是什么?
+        */
+        var a;
+        a = 'abc' //a内存保存的是一个基本类型值
+        a = function () { //a内存保存的是一个引用地址
+
+        }
+
+        var b = true; ////b内存保存的是一个基本类型值
+        a = b ////a内存保存的是一个基本类型值
+        b = [] ////b内存保存的是一个引用地址
+        a = b ////a内存保存的是一个引用地址
+
+
+
+
+        // 2 个引用变量指向同一个对象, 通过一个引用变量修改对象内部数据, 另一个引用变量也看得见
+        var o1 = {
+            m: 1
+        }
+        //o2和o1的地址值是一样的
+        var o2 = o1;
+        //修改了o2指向的对象  也就是修改了o1指向的对象
+        o2.m = 2;
+        console.log(o1.m, o1 === o2) //2  true
+
+
+
+        // 2个引用变量指向同一个对象,让一个引用变量指向另一个对象, 另一个引用变量还是指向原来的对象
+        var o3 = {
+            m: 3
+        }
+        //o3和o4的地址值是一样的
+        var o4 = o3
+        //直接把o3保存的地址值改变了，不会影响o4
+        o3 = {
+            m: 4
+        }
+        console.log(o4.m, o4 === o3) //3 false
+
+
+
+        /* var o5 = {
+            m: 5
+        };
+        //o5和o6保存同一个地址
+        var o6 = o5;
+
+
+        function fn(obj) {
+            //把o5保存的地址值 赋值给了obj
+            //修改了obj的保存的内容为其他地址值
+            obj = {
+                m: 6
+            };
+        }
+        fn(o5)
+        console.log(o5.m, o6.m, o6 === o5) //5 5 true */
+
+
+        var o5 = {
+            m: 5
+        };
+        //o5和o6保存同一个地址
+        var o6 = o5;
+
+        function fn(obj) {
+            //把o5保存的地址值 赋值给了obj
+            //通过obj修改了 o5 o6 obj三个一起指向的对象
+            obj.m = 6
+        }
+        fn(o5)
+        console.log(o5.m, o6.m, o6 === o5) //6 6 true
+    </script>
+</body>
+
+</html>

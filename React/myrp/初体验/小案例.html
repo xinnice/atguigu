@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="./js/react.development.js"></script>
+    <script src='./js/react-dom.development.js'></script>
+    <script src="./js/babel.min.js"></script>
+    <script type="text/babel">
+        const list = [
+            { id: 1, name: 'jack', content: 'rose, you jump i jump' },
+            { id: 2, name: 'rose', content: 'jack, you see you, one day day' },
+            { id: 3, name: 'tom', content: 'jack,。。。。。' }
+            ]
+        function fn(e){
+            e.preventDefault()
+            if(e.target.nodeName==='A'){
+                return
+            }
+            console.log(e.target.textContent)
+        }
+        let newArr=list.map(
+            (item,index)=><li key={index}><a onClick={fn}><h3>{item.name}</h3><p>{item.content}</p></a></li>
+        )
+        let ul=<ul>{newArr}</ul>
+        ReactDOM.render(list.length?ul:<h1>暂无评论！</h1>,document.getElementById('root'))
+        
+       
+    </script>
+</body>
+
+</html>

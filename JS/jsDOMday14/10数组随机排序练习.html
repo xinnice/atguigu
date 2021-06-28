@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 4, 3, 5];
+
+        var newArr = [];
+        while (newArr.length < arr.length) {
+            var randomIndex = arr[random(0, arr.length)];
+            if (newArr.indexOf(randomIndex) === -1) {
+                newArr.push(randomIndex)
+            }
+        };
+        console.log(newArr);
+
+
+        function random(a, b) {
+            return Math.floor(Math.random() * (b - a) + a)
+        };
+
+        // var a = 0;
+        // console.log(1, a);
+        // if (true) {
+        //     console.log(2, a);
+        //     a = 1;
+        //     console.log(3, a);
+
+        //     function a() {};
+        //     // var a=200;
+        //     console.log(4, a);
+        //     a = 100;
+        //     console.log(5, a);
+        // }
+        // console.log(6, a);//6,1
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        var oHtml=document.querySelector("html");
+        var oHead=document.querySelector("head");
+        var oBody=document.querySelector("body");
+        console.log(oHtml);
+        console.log(oHead);
+        console.log(oBody);
+
+        //DOM提供了更简便的方法获取 html body  head元素
+        var oHtml1=document.documentElement;
+        var oHead1=document.head;
+        var oBody1=document.body;
+        console.log(oHtml===oHtml1);
+        console.log(oHead===oHead1);
+        console.log(oBody===oBody1);
+    </script>
+</body>
+</html>

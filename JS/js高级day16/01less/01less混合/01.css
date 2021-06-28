@@ -1,0 +1,52 @@
+/* .center() {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+} */
+/* .center(@w, @h, @c) {
+    position: absolute;
+    width: @w;
+    height: @h;
+    color: @c;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+} */
+#outer {
+  position: absolute;
+  width: 300px;
+  height: 600px;
+  color: hotpink;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#outer #inner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  color: yellow;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#outer #inner #con {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: #a6e4c1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

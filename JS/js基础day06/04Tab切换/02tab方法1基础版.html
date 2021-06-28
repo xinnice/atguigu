@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #container {
+            width: 500px;
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+
+        #title {
+            display: flex;
+        }
+
+        #title h2 {
+            width: 98px;
+            border: 1px solid #000;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        #title h2.oncheck {
+            background-color: greenyellow;
+            color: #fff;
+        }
+
+        #content ul li {
+            width: 500px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 40px;
+            display: none;
+        }
+
+        #content ul li.onshow {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="title">
+            <h2 class="oncheck">精选</h2>
+            <h2>社会</h2>
+            <h2>娱乐</h2>
+            <h2>生活</h2>
+            <h2>体育</h2>
+        </div>
+        <div id="content">
+            <ul>
+                <li class="onshow">精选内容</li>
+                <li>社会内容</li>
+                <li>娱乐内容</li>
+                <li>生活内容</li>
+                <li>体育内容</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        /* 
+            新知识点：
+                每一个DOM对象都有一个classList属性
+                classList属性上有add(),remove()等方法可以操作当前元素上的类名
+        
+        */
+        var oTitle = document.getElementById("title");
+        var oTLish = oTitle.getElementsByTagName("h2");
+        var oContent = document.getElementById("content");
+        var oCList = oContent.getElementsByTagName("li");
+
+        oTLish[1].onclick = function () {
+            oTLish[1].classList.add("oncheck");
+            oCList[1].classList.add("onshow");
+
+            oTLish[0].classList.remove("oncheck");
+            oCList[0].classList.remove("onshow");
+            oTLish[2].classList.remove("oncheck");
+            oCList[2].classList.remove("onshow");
+            oTLish[3].classList.remove("oncheck");
+            oCList[3].classList.remove("onshow");
+            oTLish[4].classList.remove("oncheck");
+            oCList[4].classList.remove("onshow");
+        }
+
+        oTLish[0].onclick = function () {
+            oTLish[0].classList.add("oncheck");
+            oCList[0].classList.add("onshow");
+
+            oTLish[1].classList.remove("oncheck");
+            oCList[1].classList.remove("onshow");
+            oTLish[2].classList.remove("oncheck");
+            oCList[2].classList.remove("onshow");
+            oTLish[3].classList.remove("oncheck");
+            oCList[3].classList.remove("onshow");
+            oTLish[4].classList.remove("oncheck");
+            oCList[4].classList.remove("onshow");
+        }
+
+        oTLish[2].onclick = function () {
+            oTLish[2].classList.add("oncheck");
+            oCList[2].classList.add("onshow");
+
+            oTLish[0].classList.remove("oncheck");
+            oCList[0].classList.remove("onshow");
+            oTLish[1].classList.remove("oncheck");
+            oCList[1].classList.remove("onshow");
+            oTLish[3].classList.remove("oncheck");
+            oCList[3].classList.remove("onshow");
+            oTLish[4].classList.remove("oncheck");
+            oCList[4].classList.remove("onshow");
+        }
+        oTLish[3].onclick = function () {
+            oTLish[3].classList.add("oncheck");
+            oCList[3].classList.add("onshow");
+
+            oTLish[0].classList.remove("oncheck");
+            oCList[0].classList.remove("onshow");
+            oTLish[1].classList.remove("oncheck");
+            oCList[1].classList.remove("onshow");
+            oTLish[2].classList.remove("oncheck");
+            oCList[2].classList.remove("onshow");
+            oTLish[4].classList.remove("oncheck");
+            oCList[4].classList.remove("onshow");
+        }
+
+        oTLish[4].onclick = function () {
+            oTLish[4].classList.add("oncheck");
+            oCList[4].classList.add("onshow");
+
+            oTLish[0].classList.remove("oncheck");
+            oCList[0].classList.remove("onshow");
+            oTLish[1].classList.remove("oncheck");
+            oCList[1].classList.remove("onshow");
+            oTLish[2].classList.remove("oncheck");
+            oCList[2].classList.remove("onshow");
+            oTLish[3].classList.remove("oncheck");
+            oCList[3].classList.remove("onshow");
+        }
+    </script>
+</body>
+
+</html>

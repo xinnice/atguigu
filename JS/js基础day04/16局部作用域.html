@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            局部作用域：
+                1、使用函数划分作用域
+                2、函数内部的作用域统称为局部作用域
+        
+        */
+
+
+        var num = 100;
+
+        function func() {
+            //num在全局作用域中，可以在局部作用域中访问
+            console.log(num);
+
+            //声明func函数中的局部变量a,只能在func内使用
+            var a = 200;
+            console.log(a);
+            var b = 200;
+            //另一个局部作用域
+            function func1() {
+                console.log("func1");
+                console.log(num, a, b); //num ,a都是父辈或祖辈作用域中的变量，可以正常使用
+
+                //如果当前作用域中的变量与祖辈重名，以当前的为准
+                var c = 500;
+                console.log(c);
+                var d = 800;
+                //修改局部变量d的值
+                d = 1000;
+            }
+
+            func1();
+
+            console.log(b);
+            // console.log(c)//c是局部作用域func1中的变量，不可访问
+        }
+
+        func();
+        // console.log(a)//a是局部作用域func1中的变量，不可访问
+        //func1();func1是局部作用域，在全局不能访问
+    </script>
+</body>
+
+</html>

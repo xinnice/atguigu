@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        // 用户输入的账号和密码,只要账号不是laowang ,密码不是 88888,我们就一直提示请重新输入,否则 提出输入成功
+
+        // var userName = prompt("请输入账号");
+        // var userPwd = prompt("请输入密码");
+
+        // if (userName !== "laowang" || userPwd !== "88888") {
+        //     var userName = prompt("请输入账号");
+        //     var userPwd = prompt("请输入密码");
+        // }
+
+        //当代码达不到某个条件的时候 这个代码将会一直执行，那么可以选择while判断+循环
+        while (userName !== "laowang" || userPwd !== "88888") {
+            var userName = prompt("请输入账号");
+            var userPwd = prompt("请输入密码");
+        }
+
+        console.log("登录成功!!!");
+    </script>
+</body>
+
+</html>

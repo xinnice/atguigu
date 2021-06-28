@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            匿名函数：
+                声明了函数但没有具体名字
+
+            IIFE:
+                1、Immediately-Invoked Function Expression 立即调用函数表达式（匿名函数自调用）
+                2、作用：构成一个独立的作用域
+
+            小括号作用：
+                2、提升优先级
+                3、函数调用
+        
+        */
+
+        //匿名函数自调用 方法：把函数自身用小括号包起来，然后再用小括号调用
+        (function () {
+            alert("baby");
+        })();
+
+        //使用一元运算符 + - ~ !写在匿名函数前边，可以让函数变成一体，直接加小括号调用
+        +
+        function () {
+            alert("a");
+        }();
+
+        -
+        function () {
+            alert("b");
+        }();
+
+        ! function () {
+            alert("c");
+        }();
+
+        ~ function () {
+            alert("d");
+        }();
+    </script>
+</body>
+
+</html>

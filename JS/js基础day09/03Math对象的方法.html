@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //  Math.abs() 绝对值
+        console.log(Math.abs(-100));
+        console.log(Math.abs(100));
+
+
+        // Math.ceil()向上取整
+        console.log(Math.ceil(8.3));
+        console.log(Math.ceil(8.8));
+        console.log(Math.ceil(-8.3));
+
+        // Math.floor()向下取整
+        console.log(Math.floor(8.2));
+        console.log(Math.floor(8.7));
+        console.log(Math.floor(-8.2));
+
+        // Math.round() 四舍五入
+        console.log(Math.round(5.31));
+        console.log(Math.round(8.62));
+        console.log(Math.round(-4.55));
+        console.log(Math.round(4.55));
+
+        // Math.max() 最大值
+        console.log(Math.max(1, 2, 3, 23, 2, 32, 4, 345, 45, 45, 45));
+        // Math.min() 最小值
+        console.log(Math.min(1, 2, 3, 23, 2, 32, 4, 345, 45, 45, 45));
+
+        // Math.pow(a,b) a的b次方
+        console.log(Math.pow(3, 10));
+        console.log(3 ** 10);
+
+        // Math.sqrt() 求平方根
+        console.log(Math.sqrt(64));
+
+        /* 
+            弧度=弧长/半径
+            圆的弧长:2*PI*r
+            弧度:2*PI*r/r=2*PI
+            1度的弧度:2*PI/360
+        */
+
+        //Math.sin Math.cos Math.tan 要求内部书写的是弧度
+        //sin对边比斜边 cos邻边比斜边 tan对边比邻边
+        console.log(Math.sin(30*2*Math.PI/360));
+        console.log(Math.cos(60*2*Math.PI/360));
+        console.log(Math.tan(60*2*Math.PI/360));
+    </script>
+</body>
+
+</html>

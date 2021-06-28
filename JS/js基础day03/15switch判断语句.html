@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <input type="text" id="itxt">
+    <button type="button" id="btn">成绩等级</button>
+    <script>
+        /* 
+            switch语句 ：
+                switch(value){
+                    case value1:
+                        XXXX;
+                        break;
+                    case value2:
+                        XXXX;
+                        break;
+                    case value3:
+                        XXXX;
+                        break;
+                    default:
+                        XXX
+                }
+                
+
+            注意事项：
+                1、switch的判断是全等判断
+                2、break的作用，跳出switch语句不再往下面执行，如果不书写break，将一直按顺序执行其他case的语句，直到碰到break为止
+                3、default语句是为了处理所有case条件都不满足的情况
+        */
+
+        var a = 100;
+        switch (a) {
+            case 10:
+                alert("10");
+            case 100:
+                alert("100");
+            case 30:
+            case 40:
+            case 50:
+            case 60:
+            case 70:
+                alert("hello world");
+                break;
+            default:
+                alert("其他情况");
+        }
+    </script>
+</body>
+
+</html>

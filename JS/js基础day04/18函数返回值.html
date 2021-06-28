@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            函数的执行：
+                1、功能1：执行某段代码,只要把代码执行了就行，不需要反馈信息
+                2、功能2: 代码执行完成后，得到一个结果，把结果返回，我们拿到结果可以继续使用
+
+            return语句：
+                1、函数返回值
+                2、退出函数
+        */
+
+        function hello() {
+            console.log("hello world!!!");
+        }
+        var res = hello();
+        console.log(res); //函数没有返回值，返回的是undefined
+
+        //功能2：需要函数执行代码后 返回一个结果
+        function mul(a, b) {
+            //先执行return后面的语句代码，再把语句的结果return返回
+            return a * b;
+        }
+        console.log(mul(10, 238));
+
+        (function(){
+            console.log("a");
+            console.log("b");
+            console.log("c");
+            return;
+            //return后面的语句并不会执行，此时函数已经结束
+            console.log("d");
+        })()
+    </script>
+</body>
+
+</html>

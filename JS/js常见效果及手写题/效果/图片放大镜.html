@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            position: relative;
+            width: 1000px;
+            margin: 50px auto;
+        }
+
+        #con .smallArea {
+            position: absolute;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+
+        #con .smallArea .mask {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(34, 35, 32, .2);
+            display: none;
+        }
+
+        #con .bigArea {
+            position: absolute;
+            display: none;
+            left: 420px;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        #con .bigArea img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div class="smallArea">
+            <div class="mask"></div>
+            <img src="./images/s3.png" alt="">
+        </div>
+        <div class="bigArea">
+            <img src="./images/b3.png" alt="">
+        </div>
+    </div>
+    <script>
+        //获取元素
+        var oSmall = document.querySelector(".smallArea");
+        var oMask = oSmall.querySelector(".mask");
+        var oBig = document.querySelector(".bigArea");
+        var oBigImg = oBig.querySelector("img");
+
+        //鼠标移入事件
+        oSmall.onmousemove = function (e) {
+
+            //让蒙版以及大图显示
+            oMask.style.display = "block";
+            oBig.style.display = "block";
+
+            //蒙版可移动横向总距离
+            var mAllWidthMove = oSmall.clientWidth - oMask.offsetWidth;
+            //蒙版可移动竖向总距离
+            var mAllHeightMove = oSmall.clientHeight - oMask.offsetHeight;
+            //大图可移动横向总距离
+            var imgAllWidthMove = oBigImg.offsetWidth - oBig.offsetWidth;
+            //大图可移动竖向总距离
+            var imgAllHeightMove = oBigImg.offsetHeight - oBig.offsetHeight;
+            //让鼠标在蒙版中间,倒推出蒙版位置
+            var maskPosition = {
+                left: e.clientX - (oMask.offsetWidth / 2) - oSmall.getBoundingClientRect().left,
+                top: e.clientY - (oMask.offsetHeight / 2) - oSmall.getBoundingClientRect().top
+            }
+            //判断边界值,蒙版移动距离超出时固定某个值
+            if (maskPosition.left <= 0) {
+                maskPosition.left = 0;
+            } else if (maskPosition.left >= mAllWidthMove) {
+                maskPosition.left = mAllWidthMove;
+            }
+            if (maskPosition.top <= 0) {
+                maskPosition.top = 0;
+            } else if (maskPosition.top >= mAllHeightMove) {
+                maskPosition.top = oSmall.offsetHeight - oMask.offsetHeight;
+            }
+
+            //蒙版位置
+            oMask.style.left = maskPosition.left + "px";
+            oMask.style.top = maskPosition.top + "px";
+
+            /* 
+                大图位置计算公式:
+                    蒙版横向(竖向)移动距离/蒙版可移动横向(竖向)总距离=大图横向(竖向)移动距离/大图能移动横向(竖向)总距离
+                    可得到
+                    大图横向(竖向)移动距离=(蒙版横向(竖向)移动距离/蒙版可移动横向(竖向)总距离)*大图能移动横向(竖向)总距离 
+            */
+            oBigImg.style.left = -(maskPosition.left / mAllWidthMove) * imgAllWidthMove + "px";
+            oBigImg.style.top = -(maskPosition.top / mAllHeightMove) * imgAllHeightMove + "px";
+        };
+
+        //鼠标移出事件
+        oSmall.onmouseleave = function (e) {
+            //让蒙版以及大图隐藏
+            oMask.style.display = "none";
+            oBig.style.display = "none";
+        };
+    </script>
+</body>
+
+</html>

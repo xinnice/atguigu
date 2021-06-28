@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            forEach方法:
+                1、专门用来遍历数组
+                2、forEach接收一个回调函数作为参数，数组的值会依次的进入函数执行
+                3、回调函数接受三个参数
+                    1、参数1：当前进入函数的数组的元素
+                    2、参数2：当前进入函数的数组的元素的下标
+                    3、参数3：当前数组的引用
+
+                4、空位数组的空位不会进入forEach中
+                5、forEach没有返回值
+                6、forEach中的回调函数的this是指向window
+        
+        */
+
+        var arr = ["a", "b", "c",, "d", "e", "f", "g"];
+        var res=arr.forEach(function (item, index, array) {
+            console.log(item, index, arr, this);
+            console.log(arr === array);
+        });
+        console.log(res);
+
+        var arr1=[10,20,30,40,50];
+        //让数组每个值加1
+        arr1.forEach(function(item,index){
+            arr1[index]=item+1;
+        })
+        console.log(arr1);
+
+    </script>
+</body>
+
+</html>

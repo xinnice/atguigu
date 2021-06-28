@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body{
+        margin:0px;
+      }
+      ul{
+        margin:0px;
+        padding: 0px;
+        list-style-type: none;
+      }
+      a{
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+      }
+      div>ul{
+        width: 100%;
+        height: 40px;
+
+        background-color: rgba(0, 0, 0, .9);
+      }
+      div>ul>li{
+        position: relative;
+        width: 150px;
+        height: 100%;
+        text-align: center;
+        line-height: 40px;
+        float: left;
+        font-size: 14px;
+      }
+      div>ul>li:hover ul{
+        height: auto;
+      }
+
+      div>ul>li ul{
+        position: absolute;
+        height:0; 
+        top: 40px;
+        height: 0px;
+        overflow:hidden;
+
+      }
+      div>ul>li ul li{
+        position: relative;
+        opacity: 0;
+        width: 150px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .8);
+      }
+      div>ul>li ul li:nth-child(odd){
+        left: -150px;
+      }
+      div>ul>li ul li:nth-child(even){
+        left: 150px;
+      }
+      div>ul>li:hover ul li{
+        left: 0;
+        opacity: 1;
+        transition-property: left,opacity;
+        transition-duration: 1s;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>
+          <a href="#">欧美</a>
+          <ul>
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单2</a></li>
+            <li><a href="#">菜单3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">日韩</a>
+          <ul>
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单2</a></li>
+            <li><a href="#">菜单3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">自拍</a>
+          <ul>
+            <li><a href="#">菜单1</a></li>
+            <li><a href="#">菜单2</a></li>
+            <li><a href="#">菜单3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

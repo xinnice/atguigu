@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //数组的解构赋值
+        let arr = [100, 200, 300, 400, 500];
+        let [a, b, c, d, e] = arr;
+        console.log(a, b, c, d, e);
+
+        let arr1 = [100];
+        let [num1, num2] = arr1;
+        console.log(num1, num2);
+
+        let arr2 = [100, 200];
+        let [num3] = arr2;
+        console.log(num3);
+
+        let [h = "hello", w = "world"] = [];
+        console.log(h, w);
+
+        let [o, p, q, ...arr3] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log(o, p, q, arr3);
+
+        let j = 30;
+        let k = 50;
+        [j, k] = [k, j];
+        console.log(`j:${j}`, `k:${k}`);
+
+        //let [f1 = foo, foo = 500] = [];
+        //console.log(f1, foo);
+
+        //对象的解构赋值
+        let {
+            foo,
+            hoo,
+            uoo
+        } = {
+            foo: 100,
+            hoo: "zs"
+        };
+        console.log(foo, hoo, uoo);
+
+        let name = "lisi";
+        let age = 20;
+        console.log({
+            name: name,
+            age: age
+        });
+        console.log({
+            name,
+            age
+        });
+
+        let {
+            m,
+            n = "ww"
+        } = {
+            m: "oho"
+        }
+        console.log(m, n);
+
+        let {
+            x,
+            y,
+            z: [z1, z2, z3]
+        } = {
+            x: 1,
+            y: 2,
+            z: [3, 4, 5]
+        }
+        console.log(x, y, z1, z2, z3);
+
+        //解构赋值,获取数组第一个和最后一个数
+        let arr4 = [2, 32, 32, 1, 23, 2, 45, 4545, 6, 2000];
+        let {
+            0: start,
+            [arr4.length - 1]: end
+        } = arr4;
+        console.log(start, end);
+
+
+        let jdata = {
+            sex: "man",
+            hobby: 90,
+            subject: "h5"
+        }
+        let {
+            sex,
+            hobby,
+            subject
+        } = jdata;
+        console.log(sex, hobby, subject);
+
+        function func([u, v, w]) {
+            console.log(u, v, w);
+        }
+        func([6, 7, 8]);
+    </script>
+</body>
+
+</html>

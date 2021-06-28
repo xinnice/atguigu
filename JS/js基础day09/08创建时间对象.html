@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            设置一个时间对象:
+                new Date();
+
+                1.字符串方式
+                2.传参方式
+                3.毫秒数方式
+        */
+
+        //字符串方式
+       var guoqing=new Date("2021-10-01 8:00:00");
+       console.log(guoqing);
+
+       //传参方式,月份从0开始,0表示1月
+       var guoqing=new Date(2021,9,1,8,0,0);
+       console.log(guoqing);
+
+        //毫秒数方式
+       var guoqing=new Date(1613213213213);
+       console.log(guoqing);
+    </script>
+</body>
+</html>

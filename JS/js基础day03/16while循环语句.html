@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            while循环语句:
+                1、while(判断式){代码块}
+                2、先执行判断式，如果成立则执行代码块
+                3、再执行判断式，如果成立则执行代码块
+                4、..... 直到判断式不成立，则while执行结束
+
+            需注意的是在代码块中要对判断式的内容做一些修改，
+            否则判断式一直成立的话，就是死循环
+        */
+
+        // var a=100;
+        // while(a>10){
+        //     console.log(a);
+        // }
+
+        //用while()循环来计算1+2+3 ... +98+99+100的值。
+        var sum=0,i=1;
+
+        //方法1
+        // while(i<=100){
+        //     sum+=i;
+        //     i++;
+        // }
+
+        //方法2
+        i=0;
+        while(i++<100){
+            sum+=i;
+        }
+        console.log(sum);
+
+
+        // 将1-100之间  3的倍数找出来 并打印
+        var num=1;
+        while(num<=100){
+            if(num%3===0){
+                console.log(num)
+            }
+            num++;
+        }
+
+    </script>
+</body>
+
+</html>

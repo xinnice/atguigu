@@ -1,0 +1,8 @@
+#con {
+  /* 
+        字符串插值是在字符串中插入变量  直接使用@{变量名即可}
+        ~是转义字符，把字符串转义成非字符串格式
+    */
+  width: 30px;
+  background: url("http://www.atguigu.com/01.jpg");
+}

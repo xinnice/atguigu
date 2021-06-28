@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">点哦</button>
+    <ul id="con">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oCon = document.querySelector("#con");
+        var oLis = document.querySelectorAll("#con li");
+        oBtn.onclick = function () {
+            /* 
+                插入节点：
+                    - A.appendChild(B)
+                        - 把B插入到A的元素内部的末尾（也就是A是父元素）
+                    - A.insertBefore(new,old)
+                        - A是父元素，把new插入到old元素的上边的位置（new和old是兄弟）
+
+                    - 插入的不仅仅可以是新节点，也可以是老节点
+            */
+
+            var newLi=document.createElement("li");
+            newLi.textContent="newLi";
+            console.log(newLi);
+
+            //appendChild()方法插入
+            oCon.appendChild(newLi);
+
+            //insertBefore()方法插入
+            oCon.insertBefore(newLi,oLis[2]);
+
+            //已有元素之间的移动
+            oCon.insertBefore(oLis[4],oLis[1]);
+            oCon.appendChild(oLis[0]);
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            关系运算符有：
+                >,>=,<,<=:返回值是布尔值
+
+            如果类型不同，则会有类型的比较：
+                1.如果有数字，则按照数字比较
+                2.如果都是字符串，则按照字符串比较(按每一位字符的asc码比较
+                （小写>大写>数字），一位一位的比)
+                3.如果有一个值是null、undefiend或者布尔值，则转为数字运算
+                4.NaN和任意比较都是false
+                5.都是对象转字符串比较
+        */
+
+        console.log(2 > 3); //false
+        console.log(20 > "2"); //true
+        console.log("33" > "55"); //false
+        console.log("a" > 60); //false
+        console.log("ui" > "uia"); //false
+
+        console.log(100 > true); //true
+        console.log(100 > null); //true
+        console.log(100 > undefined); //false
+
+        console.log("100" > true); //true
+        console.log("100" > null); //true
+        console.log("100" > undefined); //false
+
+        console.log([] < [1]); //true
+        console.log([] <= []); //true
+
+        console.log(100 > {}); //false
+        console.log(100 <= {}); //flase
+    </script>
+</body>
+
+</html>

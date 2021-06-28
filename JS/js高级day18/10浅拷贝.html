@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            浅拷贝
+         */
+        var obj = {
+            name: "华子",
+            age: 29,
+            eat: function () {
+
+            },
+            girlFriends: ['小明', '小王', '小白']
+        }
+        var newObj = {};
+        for (var key in obj) {
+            newObj[key] = obj[key];
+        }
+
+        console.log(newObj);
+        console.log(obj === newObj);
+
+        newObj.girlFriends.shift();
+        console.log(obj.eat === newObj.eat);
+        console.log(obj.girlFriends);
+    </script>
+</body>
+
+</html>

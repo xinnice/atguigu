@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #con {
+            position: relative;
+            width: 750px;
+            height: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        #con .imgs {
+            display: flex;
+            position: absolute;
+        }
+
+        #con .switch p {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 60px;
+            color: #fff;
+            font-size: 20px;
+            line-height: 60px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        #con .switch p:first-child {
+            border-radius: 0 3px 3px 0;
+            left: 0;
+        }
+
+        #con .switch p:last-child {
+            border-radius: 3px 0 0 3px;
+            right: 0;
+        }
+
+        #con .switch p:hover {
+            cursor: pointer;
+        }
+
+        #con .point {
+            position: absolute;
+            display: flex;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+        }
+
+        #con .point p {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        #con .point p.active {
+            background-color: #FF3D00;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div class="imgs">
+            <img src="./images/kof-01.jpg">
+            <img src="./images/kof-02.jpg">
+            <img src="./images/kof-03.jpg">
+            <img src="./images/kof-04.jpg">
+            <img src="./images/kof-05.jpg">
+            <img src="./images/kof-01.jpg">
+        </div>
+        <div class="switch">
+            <p>&lt;</p>
+            <p>&gt;</p>
+        </div>
+        <div class="point">
+            <p class="active"></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <script>
+        //所有节点及资源加载完后触发事件
+        window.onload = function () {
+            //获取元素
+            var oImg = document.querySelector(".imgs");
+            var oImgs = oImg.querySelectorAll("img");
+            var oLeft = document.querySelector(".switch p:first-child");
+            var oRight = document.querySelector(".switch p:last-child");
+            var oPoint = document.querySelector(".point");
+            var oPoints = oPoint.querySelectorAll("p");
+
+
+
+
+            //图片容器移动单位就是图片的宽度
+            var imgWidth = oImgs[0].offsetWidth;
+            //图片容器初始位置
+            var oImgsPosition = {
+                left: 0,
+                top: 0
+            }
+            //计时器,让图片容器定时移动
+            var timer = null;
+            //当前图片下标
+            var i = 0;
+
+            autoSwitch();
+
+            //自动轮播
+            function autoSwitch() {
+                timer = setInterval(function () {
+                    i++;
+                    switchFirstOrLast(i);
+                    addActive(i);
+                    //图片容器位置
+                    oImg.style.left = -imgWidth * i + "px";
+                }, 1500);
+            }
+
+            //给圆点添加选中样式
+            function addActive(j) {
+                //清除所有圆点背景色
+                oPoints.forEach(function (item, index) {
+                    item.classList.remove("active");
+                });
+                //添加当前圆点背景色
+                oPoints[j].classList.add("active");
+            }
+
+            //回到第一张或最后一张
+            function switchFirstOrLast(j) {
+                if (j >= oPoints.length) {
+                    i = 0;
+                } else if (j < 0) {
+                    i = oPoints.length - 1;
+                }
+            }
+
+            //向右切换
+            oRight.onclick = function () {
+                //先清掉自动播放的定时器带来的影响
+                clearInterval(timer);
+                i++;
+                switchFirstOrLast(i);
+                addActive(i);
+                oImg.style.left = -imgWidth * i + "px";
+                autoSwitch();
+            }
+
+            //向左切换
+            oLeft.onclick = function () {
+                //先清掉自动播放的定时器带来的影响
+                clearInterval(timer);
+                i--;
+                switchFirstOrLast(i);
+                addActive(i);
+                oImg.style.left = -imgWidth * i + "px";
+                autoSwitch();
+            }
+
+            //点击圆点切换图片
+            oPoints.forEach(function (item, index) {
+                item.onclick = function () {
+                    clearInterval(timer);
+                    i = index;
+                    addActive(index);
+                    oImg.style.left = -imgWidth * i + "px";
+                    autoSwitch();
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

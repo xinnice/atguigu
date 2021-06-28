@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <div id="con"></div>
+    <script>
+        /* 
+            键盘事件：
+                keydown:键盘按下
+                keyup: 键盘抬起
+                两种绑定：
+                    1、给可输入表单绑定
+                    2、直接给document绑定，然后再事件函数中操作被控制元素
+        
+        */
+
+        var oInput = document.getElementById("ipt");
+        var oDiv = document.getElementById("con");
+
+        oInput.onkeydown = function () {
+            console.log("键盘按下");
+        };
+        oInput.onkeyup = function () {
+            console.log("键盘抬起");
+        };
+
+        var start = 100;
+        document.onkeydown = function () {
+            console.log("键盘按下");
+            start++;
+            oDiv.style.width = start + "px";
+        }
+    </script>
+</body>
+
+</html>

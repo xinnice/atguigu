@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            break、continue是默认退出离当前最近的循环
+            label声明相当于给循环起了一个别名，当使用break或continue时，可以决定跳出哪层循环
+         */
+
+        a:
+            for (var i = 0; i < 10; i++) {
+                if (i === 5) {
+                    continue a;
+                }
+                console.log(i);
+            }
+
+        outer:
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    if (j > 5) {
+                        break outer;
+                    }
+                    console.log(i, j);
+                }
+            }
+    </script>
+</body>
+
+</html>

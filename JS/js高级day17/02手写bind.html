@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            bind作用：
+                1.改变了函数的上下文对象
+                2.返回一个改变上下文对象指向的一个函数
+
+                //换一种思考方法
+                bind返回了一个函数，当我调用这个函数的时候，把函数的this指向改变为bind的第一个参数
+        */
+
+        Function.prototype.myBind=function(context){
+            //拿到函数的调用者
+            var _this=this;
+            //获取传入的参数
+            var args=Array.from(arguments).slice(1);
+            //返回一个函数,当函数执行则调用函数的调用者,并把调用者的this指向context
+            return function(){
+                _this.apply(context,args);
+            };
+        }
+
+        function func(a,b){
+            console.log(this,a+b);
+        }
+    
+        var res=func.myBind(100,100,200);
+        res();
+        var res=func.myBind("abcd",100,200);
+        res();
+        var res=func.myBind(true,100,200);
+        res();
+        var res=func.myBind(null,100,200);
+        res();
+        var res=func.myBind(undefined,100,200);
+        res();
+        var res=func.myBind(["o", "p"],100,200);
+        res();
+        var res=func.myBind(function () {},100,200);
+        res();
+        var res=func.myBind({
+            age: 18
+        },100,200);
+        res();
+    </script>
+</body>
+
+</html>

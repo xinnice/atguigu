@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul id="con">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        /* 
+            selectors API:
+                HTML5提供两个新接口用来获取元素，可以使用css选择器的方式获取
+                document.querySelector("选择器") 无论选择器选择多少个元素，永远只获取第一个 单个
+                document.querySelectorAll("选择器");无论选择器选择多少个元素，永远获取的是一个nodeList对象，需要使用下标来获取具体元素
+        */
+
+        var oBoxLi = document.querySelector("#con li");
+        var oBoxLi = document.querySelector("#con li:nth-child(2)");
+        console.log(oBoxLi);
+
+        var oBox = document.querySelectorAll("#con");
+        console.log(oBox);
+
+        var oBoxLis = document.querySelectorAll("#con li");
+        console.log(oBoxLis);
+
+        //nodeList对象有forEach方法
+        oBoxLis.forEach(function (item, index) {
+            item.style.backgroundColor = "lightgreen";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      #kof{
+        width: 500px;
+        margin:10px auto;
+      }
+      #kof .big-kof{
+        position:relative;
+        width: 100%;
+        height: 400px;
+      }
+      #kof .big-kof a{
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top:0px;
+      }
+      #kof .big-kof a:first-child{
+        z-index: 1;
+      }
+      #kof .big-kof a:target{
+        z-index: 2;
+      }
+      #kof .big-kof a img{
+        height: 100%;
+      }
+
+      #kof .small-kof{
+        margin-top:10px ;
+        width: 100%;
+      }
+      #kof .small-kof ul{
+        margin: 0px;  
+        padding:0px;
+        list-style-type:none ;
+      }
+      #kof .small-kof ul li{
+        float: left;
+        margin-left: 10px;
+      }
+      #kof .small-kof ul li a{
+        display:block;
+        height: 70px;
+      }
+      #kof .small-kof ul li a img{
+        height: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="kof">
+      <div class="big-kof">
+        <a name="kof1">
+          <img src="./kof-01.jpg" alt="">
+        </a>
+        <a name="kof2">
+          <img src="./kof-02.jpg" alt="">
+        </a>
+        <a name="kof3">
+          <img src="./kof-03.jpg" alt="">
+        </a>
+        <a name="kof4">
+          <img src="./kof-04.jpg" alt="">
+        </a>
+        <a name="kof5">
+          <img src="./kof-05.jpg" alt="">
+        </a>
+      </div>
+      <div class="small-kof">
+        <ul>
+          <li>
+            <a href="#kof1">
+              <img src="./kof-01.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#kof2">
+              <img src="./kof-02.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#kof3">
+              <img src="./kof-03.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#kof4">
+              <img src="./kof-04.jpg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#kof5">
+              <img src="./kof-05.jpg" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </body>
+</html>

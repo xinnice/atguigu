@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //因定时器是直接自己调用的,所有this指向windon
+        setTimeout(function () {
+            console.log(this);
+        }, 500);
+
+        //定时器是除了函数以外的第二种异步代码
+        for (var i = 0; i < 10; i++) {
+            setTimeout(function () {
+                console.log(i); //打印10个10
+            }, 0);
+        }
+
+        for (var i = 0; i < 10; i++) {
+            (function (p) {
+                setTimeout(function () {
+                    console.log(p); //打印1到10
+                }, 0);
+            })(i);
+        }
+    </script>
+</body>
+
+</html>

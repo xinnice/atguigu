@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            基本类型和对象类型：
+                基本类型：
+                    number、string、boolean、null、undefined
+                对象类型:
+                    object(object、array、function)
+                分类原因:
+                    两种大类型存储的位置不一样
+
+            基本类型的特点:
+                1.基本类型存储在栈内存中，可以直接操作当前的值
+                2.基本类型的值不可变(不能被改变，不是不能被重新赋值)
+                3.基本类型不能添加属性和方法
+                4.基本类型的比较就是存储在栈中值的比较
+
+            对象类型的特点:
+                1.对象类型同时存储在栈内存和堆内存中，在堆内存中存储的是
+                对象的值，在栈内存中存储的是对象的引用地址，用户访问时，
+                先访问到对象的引用地址，再找到堆中的值
+                2.对象类型的值可变
+                3.对象类型的赋值和比较都是引用地址的赋值和比较
+        */
+
+        //基本类型值不可变
+        var str = "hello world";
+        var res = str.toLocaleUpperCase();
+        console.log(str);
+        console.log(res);
+
+        //基本类型值不能添加属性和方法
+        var str1 = "javascript";
+        str1.des = "yes";
+        /* var _str1=new String();
+        _str1.des="yes";
+        delete _str1; */
+        console.log(str1.des);
+
+        //对象类型的值可变
+        var arr = [100, 200, 300, 80, 800]
+        arr.reverse();
+        console.log(arr);
+
+        //对象类型值的赋值和比较都是引用地址的赋值和比较
+        var obj1 = {};
+        var obj2 = {};
+        //obj1和obj2是两个不同的对象，因为保存的引用地址的值是不同的，比较的是引用地址的值
+        console.log(obj1 === obj2);
+
+        var obj = {
+            name: "lipeihua"
+        };
+        //两个对象的引用地址的值是相同的
+        var obj3 = obj;
+        obj.name = "yanhaijing";
+        console.log(obj);
+    </script>
+</body>
+
+</html>

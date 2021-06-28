@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #tarea {
+            resize: none;
+            width: 500px;
+            height: 400px;
+            font-size: 40px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="tarea"></textarea>
+    <p>还可以输入<span id="zi">40</span>字</p>
+    <script>
+        var oText = document.getElementById("tarea");
+        var oZi = document.getElementById("zi");
+        var allNum = 40;
+        oText.oninput = function () {
+            var textLength = allNum - this.value.length;
+            oZi.textContent = textLength;
+            if (textLength < 0) {
+                this.style.borderColor = "red";
+                oZi.style.color = "red";
+            } else {
+                this.style.borderColor = "#000";
+                oZi.style.color = "#000";
+            }
+        };
+    </script>
+</body>
+
+</html>

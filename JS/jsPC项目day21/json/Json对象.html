@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        var data = {
+            student: [{
+                "name": "yanhaijing",
+                "age": 20,
+                "sex": "男",
+                "friends": {
+                    "girlfriend": "小红"
+                }
+            }, {
+                "name": "lipeihua",
+                "age": 30,
+                "sex": "男",
+                "friends": {
+                    "girlfriend": "小黄"
+                }
+            }, {
+                "name": "zhangsan",
+                "age": 30,
+                "sex": "女",
+                "friends": {
+                    "boyfriend": "小华"
+                }
+            }],
+            run: function () {
+                console.log("跑步");
+            }
+        };
+
+        //JSON的stringify()方法无法对函数、正则等对象进行转换
+        var res1 = JSON.stringify(data);
+        console.log(res1);
+
+        var res2 = JSON.parse(res1);
+        console.log(res2);
+
+        
+
+    </script>
+</body>
+
+</html>

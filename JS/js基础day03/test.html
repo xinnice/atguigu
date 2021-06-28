@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con{
+            width:100px;
+            height:100px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <label>
+         请输入第一个值:<input type="text" id="itxt1">
+    </label>
+    <label>
+         请输入第二个值:<input type="text" id="itxt2">
+    </label>
+    <button type="button" id="btn">点我</button>
+    <div id="con"></div>
+    <input type="text" id="itxt3">
+    <button type="button" id="cl">点我</button>
+    <script>
+        var oText1=document.getElementById("itxt1");
+        var oText2=document.getElementById("itxt2");
+        var oText3=document.getElementById("itxt3");
+        var oBtn=document.getElementById("btn");
+        var oClick=document.getElementById("cl");
+        var div=document.getElementById("con");
+        oBtn.onclick=function(){
+            var val1=oText1.value;
+            var val2=oText2.value;
+            div.style.width=val1+"px";
+            div.style.height=val2+"px";
+        }
+        
+    </script>
+</body>
+</html>

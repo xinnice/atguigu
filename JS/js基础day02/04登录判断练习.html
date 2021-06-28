@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div>
+        <div>
+            <label for="itxt">账号:</label>
+            <input type="text" id="itxt">
+        </div>
+        <div>
+            <label>
+                密码:<input type="password" id="ipwd">
+            </label>
+        </div>
+    </div>
+    <button type="button" id="btn">登录</button>
+    <script>
+        /* 
+        需求：用户提交后前端判断用户名和密码是否正确 用户名:dashuaibi 密码:oho
+
+        步骤:
+        1.获取元素
+        2.跟按钮绑定点击事件
+        3.获取账号和密码的值
+        4.判断用户名和密码是否正确,是则弹出正确,否则错误
+        */
+
+        //获取账号、密码、按钮元素
+        var username=document.getElementById("itxt");
+        var pwd=document.getElementById("ipwd");
+        var btn=document.getElementById("btn");
+
+        btn.onclick=function(){
+            //获取账号和密码
+            var userValue=username.value;
+            var pwdValue=pwd.value;
+            //如果账号正确
+            if(userValue==="dashuaibi"){
+                //如果密码正确
+                if(pwdValue==="oho"){
+                    alert("登录成功!");
+                }
+                //密码不正确
+                else{
+                    alert("密码错误!");
+                }
+            }
+            //账号不正确
+            else{
+                alert("用户名错误!");
+            }
+        }
+    </script>
+</body>
+
+</html>

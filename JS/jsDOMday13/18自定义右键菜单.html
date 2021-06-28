@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul {
+            width: 200px;
+            height: 300px;
+            border: 1px solid rgba(217, 220, 224, .7);
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        ul li{
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #000;
+            text-align: center;
+            border-bottom:1px solid rgba(217, 220, 224, .7);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>AAA</li>
+        <li>BBB</li>
+        <li>CCC</li>
+        <li>DDD</li>
+    </ul>
+    <script>
+        var oUl = document.querySelector("ul");
+        document.oncontextmenu = function (e) {
+            var oUlNow = {
+                x: e.clientX,
+                y: e.clientY
+            };
+            if (oUlNow.x >= document.documentElement.clientWidth - oUlNow.x) {
+                oUlNow.x = e.clientX - oUl.offsetWidth
+            }
+            if (oUlNow.y >= document.documentElement.clientHeight - oUlNow.y) {
+                oUlNow.y = e.clientY - oUl.offsetHeight
+            }
+            oUl.style.display = "block";
+            oUl.style.left = oUlNow.x + "px";
+            oUl.style.top = oUlNow.y + "px";
+            return false;
+        };
+        document.onclick=function(){
+            oUl.style.display="none";
+        };
+    </script>
+</body>
+
+</html>

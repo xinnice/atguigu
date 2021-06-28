@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            Date对象:
+                获取当前的时间:new Date();
+                计算机保存的时间:保存的是当前到1970年1月1日8点的总毫秒数
+        */
+
+       var now=new Date();
+       console.log(now);
+
+       //得到原始值
+       console.log(now.valueOf());
+
+       //时间转成数组,也是毫秒数
+       console.log(+now);
+    </script>
+</body>
+</html>

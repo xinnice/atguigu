@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        //ReferenceError：变量不存在时会抛出
+        // console.log(a);
+
+        // SyntaxError：语法错误时会抛出
+        // for (var i = 0, i < 10; i++) {
+
+        // }
+
+        // TypeError：属性值类型发生错误时抛出
+        // var oList = document.getElementsByTagName("li");
+        // oList.style.color = "red";
+
+
+        //我们可以自己书写一个报错信息 throw语句 抛出错误
+        // throw new Error("错了得承认")
+        // throw new SyntaxError("你说话语法有问题")
+
+
+
+
+        /* 
+            try..catch...finally:
+                1、异常处理语句
+                2、当有一段代码可能出现错误，就会停止整个代码的执行
+                3、try代码块放里面可能出现异常的代码，出现异常的时候则会执行catch代码块里面的代码，相当于抛出异常
+                4.无论抛不抛出异常，都会执行finally代码块
+        */
+
+
+        try {
+            console.log(a);
+        } catch (e) {
+            //如果try中代码出现问题，则catch就会捕获到这个错误
+            //e就是catch中的错误信息
+            console.log(e);
+            //接下来就判断e是什么问题，然后对这个错误进行处理
+        } finally {
+            //无论try中是否出现问题，都会执行finally语句
+            console.log(1);
+        }
+        console.log("yeah");
+    </script>
+</body>
+
+</html>

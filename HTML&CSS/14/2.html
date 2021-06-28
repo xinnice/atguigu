@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0px;
+            padding:0px;
+        }
+        body{
+            position: relative;
+            }
+        body>div{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 500px;
+            height:500px;
+            /* border: 1px solid gray; */
+        }
+        body>div>div{
+            position: absolute;
+            overflow: hidden;
+            width: 45px;
+            height: 88px;
+            background-image: url(./img/start.gif);
+            animation-name: test1,test2,test3,test4,xxx;
+            animation-duration: 5s,5s,5s,5s;
+            animation-delay: 0s,5s,10s,15s;
+        }
+        @keyframes test1{
+            0%{
+                background-image: url(./img/right.gif);
+                right:455px;
+            }
+            100%{
+                background-image: url(./img/right.gif);
+                right:0;
+            }
+        }
+        @keyframes test2{
+            0%{
+                background-image: url(./img/bottom.gif);
+                right:0;
+                top:0;
+            }
+            100%{
+                background-image: url(./img/bottom.gif);
+                right:0;
+                top:412px;
+            }
+        }
+        @keyframes test3{
+            0%{
+                background-image: url(./img/left.gif);
+                right:0;
+                bottom:0;
+            }
+            100%{
+                background-image: url(./img/left.gif);
+                right:455px;
+                bottom:0;
+            }
+        }
+        @keyframes test4{
+            0%{
+                background-image: url(./img/top.gif);
+                left:0;
+                bottom:0;
+            }
+            100%{
+                background-image: url(./img/top.gif);
+                left:0;
+                bottom:412px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div></div>
+    </div>
+  </body>
+</html>

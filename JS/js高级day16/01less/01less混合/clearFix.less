@@ -1,0 +1,15 @@
+.clearFix(){
+    *zoom:1;//兼容IE8- 开启haslayout 类似于BFC 清浮动
+
+    &::after{
+        content: "\200B";// \200B代表空的意思
+        height:0;
+        display: block;
+        clear: both;
+    }
+
+}
+
+#con{
+    .clearFix();
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        let arr = ["a", "b", "c", "d"];
+        let arr1 = [1, 2, 3, 4, 5];
+        console.log(arr);
+        console.log(...arr);
+        console.log([...arr]); //数组克隆
+        console.log([...arr, ...arr1]);
+        console.log(1, 2, 3, 4, ...[5, 6, 7], 8);
+
+        function func(u, v, w, x, y, z) {
+            console.log(u, v, w, x, y, z);
+        }
+        func(...arr1);
+
+        let say = "hello world";
+        console.log([...say]);
+
+        let oLis = document.querySelectorAll("li");
+        let oLiArr = Array.from(oLis);
+        oLiArr.forEach((item) => {
+            console.log(item);
+        });
+
+        let numArr = Array.of(100, "AAA", ...arr1, 400, 500);
+        console.log(numArr);
+        console.log(Array.of(1000));
+
+        let nArr = [];
+        nArr.length = 20;
+        nArr.fill("high salary");
+        console.log(nArr);
+
+        let mArr = [66, 8, 9];
+        mArr.fill(100, 1, 3);
+        console.log(mArr);
+
+        let arr5 = [{
+            name: "zs",
+            age: 20
+        }, {
+            name: "li",
+            age: 18
+        }, {
+            name: "ww",
+            age: 25
+        }, {
+            name: "zl",
+            age: 15
+        }];
+
+        let arr6 = [1];
+        arr6.fill({
+            name: "lz",
+            age: 100
+        });
+        console.log(arr6);
+
+        var obj = arr5.find((item, index) => {
+            return item.age < 20;
+        });
+        var objIndex = arr5.findIndex((item, index) => {
+            return item.age < 20;
+        });
+        console.log(arr5, obj, objIndex);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #con {
+            width: 600px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        ul {
+            width: 200px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+        ul li{
+            text-align: center;
+        }
+        ul#center {
+            background-color: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <ul id="lul">
+            <li>11111</li>
+            <li>22222</li>
+            <li>33333</li>
+            <li>44444</li>
+            <li>55555</li>
+        </ul>
+        <ul id="center">
+            <li><button id="left">
+                    <<<<</button> </li> <li><button id="right">>>>></button></li>
+        </ul>
+        <ul id="rul">
+            <li>66666</li>
+            <li>77777</li>
+            <li>88888</li>
+            <li>99999</li>
+            <li>00000</li>
+        </ul>
+    </div>
+    <script>
+        var lUl = document.querySelector("#lul");
+        var rUl = document.querySelector("#rul");
+        var lLis = document.querySelectorAll("#lul li");
+        var rLis = document.querySelectorAll("#rul li");
+        var lBtn = document.querySelector("#left");
+        var rBtn = document.querySelector("#right");
+
+        function setBackground(item) {
+            item.setAttribute("click", "true");
+            item.style.background = "blue";
+        }
+
+        function moveElements(newLis, ulCon) {
+            newLis.forEach(function (item, index) {
+                if (item.getAttribute("click")) {
+                    ulCon.appendChild(item);
+                    item.style.background = "transparent";
+                    item.removeAttribute("click");
+                }
+            });
+        }
+
+        lLis.forEach(function (item, index) {
+            item.onclick = function () {
+                setBackground(item);
+            }
+        });
+
+        rLis.forEach(function (item, index) {
+            item.onclick = function () {
+                setBackground(item);
+            }
+        });
+
+        rBtn.onclick = function () {
+            var newLis = document.querySelectorAll("#lul li");
+            moveElements(newLis, rUl);
+        }
+
+        lBtn.onclick = function () {
+            var newLis = document.querySelectorAll("#rul li");
+            moveElements(newLis, lUl);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            使用for 把1-100的整数以二维的形式储存在数组中
+            [
+                [1..10],
+                [11....20],
+                [21.....30],
+                ....
+                [91....100]
+            ]
+        */
+        var arr = [];
+        for (var i = 0; i < 10; i++) {
+            var currentArr = [];
+            for (var j = 0; j < 10; j++) {
+                currentArr[j] = i * 10 + j + 1;
+            }
+            arr[i] = currentArr;
+        }
+        console.log(arr);
+    </script>
+</body>
+
+</html>

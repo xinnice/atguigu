@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            body{
+                margin: 0px;
+            }
+            div{
+                border: 1px solid green;
+                /* height: 50px; */
+                line-height: 50px;
+                color: hotpink;
+                text-align: center;
+            }
+            .title{
+                font-size: 24px;
+                font-weight: bold;
+                color: pink;
+            }
+            .prev{
+                float: left;
+            }
+            .next{
+                float: right;
+            }
+            .prev,.next{
+                text-decoration: none;
+                color: hotpink;
+            }
+            div::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="#" class="prev">上一页</a>
+            <span class="title">本节标题：嫣儿再现</span>
+            <a href="#" class="next">下一页</a>
+        </div>
+    </body>
+</html>

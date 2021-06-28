@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">点哦</button>
+    <ul id="con">
+        <li>1<a href="#">a1</a></li>
+        <li>2<a href="#">a2</a></li>
+        <li>3<a href="#">a3</a></li>
+        <li>4<a href="#">a4</a></li>
+        <li>5<a href="#">a5</a></li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oCon = document.querySelector("#con");
+        var oLis = document.querySelectorAll("#con li");
+        var oDeleteA = document.querySelectorAll("#con li a");
+        
+        /* 
+        删除元素
+            - A.removeChild(B)
+                A是父元素 删除父元素中的B
+            - A.remove()
+                删除A
+        */
+
+        oDeleteA.forEach(function (item, index) {
+            //给每个a标签绑定点击事件,当事件触发的时候删除a所在的父元素li
+            item.onclick = function () {
+                this.parentNode.remove();
+            };
+        });
+    </script>
+</body>
+
+</html>

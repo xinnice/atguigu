@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 200px;
+            height: 200px;
+            background-color: tan;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <script>
+        /* 
+            滚轮事件：
+                chrome/ie:
+                    onmousewheel事件
+                        上滚：e.wheelDelta: 120
+                        下滚：e.wheelDelta: -120 
+
+                firefox:
+                    DOMMouseScroll事件
+                        上滚：e.detail -3
+                        下滚：e.detail 3
+        */
+
+        var oCon = document.getElementById("con");
+        var wid = 200;
+        /* oCon.onmousewheel = function (e) {
+            console.log(1);
+            console.log(e);
+            if (e.wheelDelta > 0) {
+                wid += 10;
+                console.log("上滚");
+            } else {
+                wid -= 10;
+                console.log("下滚");
+            }
+            oCon.style.width = wid + "px";
+        }
+
+        oCon.addEventListener("DOMMouseScroll", function (e) {
+            console.log(e);
+            if (e.detail > 0) {
+                wid -= 10;
+                console.log("下滚");
+            } else {
+                wid += 10;
+                console.log("上滚");
+            }
+            oCon.style.width = wid + "px";
+        }, false); */
+
+        function mouseScroll(e) {
+            if (e.wheelDelta) {
+                if (e.wheelDelta > 0) {
+                    wid += 10;
+                    console.log("上滚");
+                } else {
+                    wid -= 10;
+                    console.log("下滚");
+                }
+            } else {
+                if (e.detail >= 0) {
+                    wid -= 10;
+                    console.log("下滚");
+                } else {
+                    wid += 10;
+                    console.log("上滚");
+                }
+            }
+            oCon.style.width = wid + "px";
+        }
+        oCon.addEventListener("DOMMouseScroll", mouseScroll, false);
+        oCon.onmousewheel = mouseScroll;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #con .aside {
+            position: relative;
+            background-color: mediumspringgreen;
+            width: 100px;
+            height: 50px;
+        }
+
+        #con .aside:nth-of-type(2) {
+            margin: 20px 0;
+        }
+
+        #con .aside h2 {
+            position: absolute;
+            margin: 0;
+            line-height: 50px;
+            z-index: 2;
+        }
+
+        #con .aside p {
+            position: absolute;
+            width: 100px;
+            left: 0;
+            margin: 0;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: moccasin;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div class="aside">
+            <h2>侧边栏1</h2>
+            <p>AAAAA</p>
+        </div>
+        <div class="aside">
+            <h2>侧边栏2</h2>
+            <p>BBBBB</p>
+        </div>
+        <div class="aside">
+            <h2>侧边栏3</h2>
+            <p>CCCCCC</p>
+        </div>
+    </div>
+    <script>
+        var oAside = document.querySelectorAll('#con .aside');
+        var oPs = document.querySelectorAll('#con .aside p');
+
+        oAside.forEach(function (item, index) {
+            item.index = index;
+            move(item, index);
+        });
+
+        function move(item, index) {
+            var timer = null;
+            var l = 0;
+            item.onmouseenter = function () {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    l--;
+                    if (l <= -100) {
+                        l = -100;
+                        clearInterval(timer);
+                    }
+                    oPs[index].style.left = l + "px";
+                }, 10);
+            };
+            item.onmouseleave = function () {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    l++;
+                    if (l >= 0) {
+                        l = 0;
+                        clearInterval(timer);
+                    }
+                    oPs[index].style.left = l + "px";
+                }, 10);
+            };
+        }
+    </script>
+</body>
+
+</html>

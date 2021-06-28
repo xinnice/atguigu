@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            浅拷贝：
+                把原有对象复制出来
+        */
+
+        var obj1 = {
+            name: "李沛华",
+            age: 33,
+            sex: "女"
+        };
+
+        var obj2 = {};
+
+        //遍历obj1的所有key,同时给obj2
+        for (var key in obj1) {
+            obj2[key] = obj1[key];
+        }
+        console.log(obj2)
+    </script>
+</body>
+
+</html>

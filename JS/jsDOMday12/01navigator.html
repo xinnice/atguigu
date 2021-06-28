@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            navigator:
+                navigator对象存储了与浏览器相关的基本信息,如名称、版本和系统等。
+
+                通过 window.navigator可以引用该对象,并利用它的属性来读取客户端基本信息。
+
+
+                - onLine:判断是否有网络
+
+                - userAgent:客户端识别码（用户代理字符串）
+
+                - platform:操作系统
+        */
+
+        console.log(navigator);
+        console.log(navigator.onLine);
+        console.log(navigator.userAgent);
+        console.log(navigator.platform);
+
+         //不同浏览器兼容方法1：浏览器检测法，根据浏览器的结果 执行对应操作
+        /* var ua = navigator.userAgent.toLowerCase();
+        var info = {
+            ie: /msie/.test(ua) && !/opera/.test(ua),
+            op: /opera/.test(ua),
+            sa: /version.*safari/.test(ua),
+            ch: /chrome/.test(ua),
+            ff: /gecko/.test(ua) && !/webkit/.test(ua)
+        }
+        info.ie && console.log("ie");
+        info.op && console.log("op");
+        info.sa && console.log("sa");
+        info.ch && console.log("ch");
+        info.ff && console.log("ff"); */
+
+        //不同浏览器的兼容方法2:特征检测法
+        //IE6 7 8 不识别lastElementChild  只能识别lastChild  获取最后一个子元素节点
+        //谷歌中  lastChild获取的不是最后一个子元素节点 而是最后一个子节点 只能使用lastElementChild
+        if(ele.lastElementChild){
+            console.log(ele.lastElementChild);
+        }else{
+            console.log(ele.lastChild);
+        }
+        //三元表达式
+        console.log(ele.lastElementChild?ele.lastElementChild:ele.lastChild);
+
+        //操作系统检测
+        //判断是否是Windows系统
+        var isWin=(navigator.userAgent.indexOf("Win")!==-1);
+        //判断是否是Mac系统
+        var isMac=(navigator.userAgent.indexOf("Mac")!==-1);
+        //判断是否是UNIX系统
+        var isUnix=(navigator.userAgent.indexOf("X11")!==-1);
+        //判断是否是Linux系统
+        var isLinux=(navigator.userAgent.indexOf("Linux")!==-1);
+        console.log(isWin);
+    </script>
+</body>
+
+</html>

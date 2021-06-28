@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //代码片段一
+        /*  var name = "The Window";
+         var object = {
+             name: "My Object",
+             getNameFunc: function () {
+                 return function () {
+                     return this.name;
+                 };
+             }
+         };
+         console.log(object.getNameFunc()()); //the window */
+
+        //代码片段二
+        /* var name2 = "The Window";
+        var object2 = {
+            name2: "My Object",
+            getNameFunc: function () {
+                var that = this;
+                return function () {
+                    return that.name2;
+                };
+            }
+        };
+        console.log(object2.getNameFunc()()); //My Object */
+
+
+        /*  var a = function (val, index) {
+             console.log(index);
+             return {
+                 fn: function (name) {
+                     return a(name, val)
+                 }
+             }
+         }
+         var b = a(0); //undefined
+         b.fn(1); //0
+         b.fn(2); //0
+         b.fn(3); //0
+
+         var c = a(0).fn(1).fn(2).fn(3); //undefined 0 1 2 */
+
+        /* var x = 1;
+        var y = 2;
+
+        function show() {
+            var x = 2;
+            return {
+                x: x, //返回对象的时候 x已经解析为2了 将来把show的x改变了也不影响
+                fun: function (a, b) {
+                    x = a + b;
+                }
+            }
+        }
+        var obj = show();
+        obj.fun(x, y)
+        console.log(obj.x);
+        
+        console.log(x); */
+
+
+
+
+        /* var name = "aaa";
+        var obj = {
+            name: "bbb",
+            dose: function () {
+                this.name = "ccc";
+                return function () {
+                    return this.name
+                }
+            }
+        }
+        alert(obj.dose().call(this)) //aaa
+        alert(obj.name) //ccc */
+
+        /* function Foo() {
+            var i = 0;
+            return function () {
+                alert(i++);
+            }
+        }
+        var f1 = Foo();
+        f2 = Foo();
+        f1(); //0
+        f1(); //1
+        f2(); //0 */
+
+
+        function test(a, b) {
+            b = a + 10;
+            alert(b);
+            return {
+                test: function (a, b) {
+                    return test(b, a);
+                }
+            }
+        }
+
+        var a = test(100, 200); //110
+        a.test(300); //310
+        a.test(400); //410
+
+        var b = test(101).test(201).test(401); //111 211 411
+        var c = test(102).test(202, 302);//112  212
+        c.test();//NAN
+
+        /* function fun(n, o) {
+            console.log(o)
+            return {
+                fun: function (m) {
+                    return fun(m, n)
+                }
+            }
+        }
+        var a = fun(0)
+        a.fun(1)
+        a.fun(2)
+        a.fun(3) //undefined,0 0 0 
+
+        var b = fun(0).fun(1).fun(2).fun(3) //undefined, 0 1 2
+
+        var c = fun(0).fun(1)
+        c.fun(2)
+        c.fun(3) //undefined,0 1 1 */
+    </script>
+</body>
+
+</html>

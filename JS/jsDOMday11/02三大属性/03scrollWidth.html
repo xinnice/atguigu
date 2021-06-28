@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 300px;
+            overflow: auto;
+            padding: 10px;
+            background-color: aliceblue;
+            border: 2px solid #000;
+            margin: 5px;
+        }
+        #box{
+            width: 1000px;
+            height: 200px;
+            border: 2px solid greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div id="box"></div>
+    </div>
+    <script>
+        /* 
+            scrollWidth:
+                获取元素内包含的完全内容的宽度
+        */
+
+        var oCon = document.getElementById("con");
+        console.log(oCon.scrollWidth);
+    </script>
+</body>
+
+</html>

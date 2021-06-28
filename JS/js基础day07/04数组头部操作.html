@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            数组头部操作:
+                unshift:
+                    1、向数组头部插入一个多多个值
+                    2、原数组发生改变，返回改变后数组的长度
+
+                shift:
+                    1、删除数组头部的第一个值
+                    2、原数组发送改变，返回删除的值
+        */
+
+        //unshift方法
+        var arr=[1,23,4,5,65,6,7];
+        var res=arr.unshift(100);
+        res=arr.unshift(100,200);
+        //unshift分批次插入和一次性插入的结果不一样
+        arr.unshift(1000);
+        arr.unshift(2000);
+        arr.unshift(3000);
+        console.log(arr);
+        console.log(res);
+
+        //shift方法
+        var arr1=[1,2,3,4,5];
+        var res1=arr1.shift();
+        console.log(arr1);
+        console.log(res1);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            逗号运算符：
+                1.多个操作写在一条语句上面
+                2.执行的时候，先执行逗号左侧，再执行逗号右侧，最后返回逗号最右侧的值
+
+
+                其他的使用场景：
+                    1.函数参数以多个逗号隔开
+                    2.数组元素以多个逗号隔开
+                    3.对象的每一对键值对key-value以逗号隔开
+
+        */
+
+        // 1.一条语句声明多个变量
+        var num1 = 100,
+            num2 = 200;
+
+        //2.逗号操作符返回逗号右侧的值
+        var temp = (434, 432, 434, 2, 7, 76, 878, 7, 984, 900);
+        console.log(temp);
+
+
+        /* 
+            先执行var i = 0
+            然后执行i<4，如果条件成立,则执行下面语句
+            直到i<4不成立,则跳出语句执行
+        */
+        for (var i = 0; i < 4; i++) {
+            console.log(i);
+        }
+        //第二条语句返回的布尔值看的是逗号最后测的值,当j为10时才不执行后面的语句
+        for (var i = 0, j = 0; i < 4, j < 10; i++, j++) {
+            console.log(i, j);
+        }
+
+
+        /* 其他的使用场景：
+            1.函数参数以多个逗号隔开
+            2.数组元素以多个逗号隔开
+            3.对象的每一对键值对key-value以逗号隔开 
+        */
+        console.log(1, 2, 3)
+        var arr = ["yanhaijing", "lipeihua"];
+        var obj = {
+            name: "dashuaibi",
+            sex: "nan",
+            age: 25
+        }
+    </script>
+</body>
+
+</html>

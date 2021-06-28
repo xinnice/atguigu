@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <button id="btn">点击</button>
+    <ul class="box">
+        <li>1 <a href="###">XX</a></li>
+        <li>2 <a href="###">XX</a></li>
+        <li>3 <a href="###">XX</a></li>
+        <li>4 <a href="###">XX</a></li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oBox = document.querySelector('.box');
+        var oLis = document.querySelectorAll('.box li');
+        var oDele = document.querySelectorAll('.box li a');
+        //封装一个在元素内部的最上边插入beforeChild
+        function beforeChild() {
+            var newLi=document.createElement("li");
+            newLi.textContent="123";
+            oBox.insertBefore(newLi,oLis[0]);
+        }
+
+
+        //封装一个在兄弟元素后边插入一个元素的方法 insertAfter
+        function insertAfter() {
+            var newLi=document.createElement("li");
+            newLi.textContent="123";
+            oBox.insertBefore(newLi,oLis[1].nextElementSibling);
+        }
+
+        oBtn.onclick=function(){
+            beforeChild();
+            insertAfter();
+        }
+    </script>
+</body>
+</html>

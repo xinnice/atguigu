@@ -1,0 +1,27 @@
+{
+    "person": [{
+        "name": "yanhaijing",
+        "age": 20,
+        "sex": "男",
+        "friends": {
+            "boyfriend": "小明",
+            "girlfriend": "小红"
+        }
+    }, {
+        "name": "lipeihua",
+        "age": 30,
+        "sex": "男",
+        "friends": {
+            "boyfriend": "小小",
+            "girlfriend": "小黄"
+        }
+    }, {
+        "name": "zhangsan",
+        "age": 30,
+        "sex": "女",
+        "friends": {
+            "boyfriend": "小白",
+            "girlfriend": "小华"
+        }
+    }]
+}

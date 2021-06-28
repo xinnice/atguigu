@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            加法运算符：
+                多个操作数中，只有出现字符串，全都转换为字符串拼接，
+                出现对象也转换为字符串拼接
+        */
+        console.log(1 + 1) //2
+        console.log(1 + "1") //'11'
+        console.log("1" + "1") //'11'
+        console.log(null + "1") //'null1'
+        console.log(null + 1) //1
+        console.log(null + undefined) //NaN
+        console.log("1" + undefined) //'1undefined'
+        console.log([] + undefined) //'undefined'
+        console.log([] + {}) //'[object Object]'
+        console.log([] + null) //'null'
+        console.log({} + 1) //'[object Object]1'
+
+
+        //字符串拼接
+        var age = 38;
+        var name = "lipeihua";
+        var hobby = "paoniu";
+
+        var str = "我是" + name + "，我今年" + age + "岁，我喜欢" + hobby;
+        console.log(str);
+
+
+        var str = 1 + 2 + "3" + 4; //'334'
+        var str = "1" + 2 + 3 + "4"; //'1234'
+        var str = "1" + 2 + 3 + 4; //'1234'
+        var str = "1" + 2 + "3" + 4; //'1234'
+
+
+        var num5 = 1;
+        var num6 = 2;
+        alert("num5 + num6 = " + num5 + num6); //'num5+num6=12'
+    </script>
+</body>
+</html>

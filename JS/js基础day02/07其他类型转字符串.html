@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            其他类型转string
+                1.number转string,会直接添加引号转换成字符串
+                    两种方法:
+                        1.全局的方法String()
+                        2.除了null、undefined，其他类型都有toString()方法
+                2.boolean转string 
+                    直接添加引号转换成字符串
+                3.null、undefined转string
+                   直接添加引号转换成字符串
+        */
+
+        //number转字符串
+        console.log(String(1));
+        console.log(String(2.1));
+        console.log(String(-3.1));
+        console.log(String(Infinity));
+        console.log(String(0));
+        console.log(String(NaN));
+        console.log((2).toString());
+        console.log((NaN).toString());
+        console.log((Infinity).toString());
+
+
+        //boolean转字符串
+        console.log(String(true));
+        console.log(String(false));
+        console.log(true.toString());
+        console.log(false.toString());
+
+        //null、undefined转字符串
+        console.log(String(null));
+        console.log(String(undefined));
+
+
+        //object转字符串
+        console.log(String([]));
+        console.log(String([100]));
+        console.log(String([1000, 20000]));
+        console.log(String({}));
+        console.log(String(function(){}));
+        console.log([1,2,3,4,5].toString())
+        console.log({}.toString())
+        console.log((function(){}).toString());
+    </script>
+</body>
+
+</html>

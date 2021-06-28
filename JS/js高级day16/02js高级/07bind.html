@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            bind:
+                - 语法和call一样
+                - bind也是改变函数的上下文this执行
+                - bind并不会调用函数，而是返回了一个改变this指向后的函数
+        */
+
+        function fn(a, b) {
+            console.log(this, a + b);
+        }
+
+        fn(100, 200);
+
+        var fn1 = fn.bind([100, 200], 100, 200);
+        console.log(fn1);
+        fn1();
+
+        document.onclick = function () {
+            setTimeout((function () {
+                console.log(this);
+            }).bind(this), 50);
+        }
+    </script>
+</body>
+
+</html>

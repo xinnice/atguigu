@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* 清除系统滚动条 */
+        html,
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #bar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 30px;
+            height: 100%;
+            background-color: yellowgreen;
+        }
+
+        #box {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 30px;
+            /* height: 60px; */
+            background-color: royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <div id="bar">
+        <div id="box"></div>
+    </div>
+    <script>
+        var oCon = document.getElementById("con");
+        var oBar = document.getElementById("bar");
+        var oBox = document.getElementById("box");
+        for (var i = 0; i < 50; i++) {
+            oCon.innerHTML += "哦嚯!" + i + "<br/>";
+        }
+
+        //窗口高度/文档高度=滑块高度/滑槽高度
+        //文档高度/滑槽高度=窗口高度/滑块高度
+        var oConHeight = oCon.offsetHeight;
+        var oBarHeight = oBar.offsetHeight;
+        var winHeight = document.documentElement.clientHeight;
+        var scale = oConHeight / oBarHeight;
+        var oBoxHeight = winHeight / scale;
+        oBox.style.height = oBoxHeight + "px";
+
+        oBox.onmousedown = function (e) {
+            e.preventDefault();
+            var oMouseToBox = e.offsetY;
+
+            document.onmousemove = function (e) {
+                oBoxLocation = e.clientY - oMouseToBox;
+                if (oBoxLocation <= 0) {
+                    oBoxLocation = 0;
+                } else if (oBoxLocation >= oBar.clientHeight - oBox.offsetHeight) {
+                    oBoxLocation = oBar.clientHeight - oBox.offsetHeight;
+                }
+                oBox.style.top = oBoxLocation + "px";
+
+                var oBoxScrollGoAll = oBar.clientHeight - oBox.offsetHeight;
+                var oConScrollGoAll = oCon.offsetHeight - document.documentElement.clientHeight;
+                var scale = oConScrollGoAll / oBoxScrollGoAll;
+                oCon.style.transform = "translateY(-" + oBoxLocation * scale + "px)";
+            }
+
+
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        };
+    </script>
+</body>
+
+</html>

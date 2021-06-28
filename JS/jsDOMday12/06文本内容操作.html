@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">点哦</button>
+    <div id="con">
+        <span>hello world</span>
+    </div>
+    <script>
+        /* 
+            innerHTML:可以设置或获取元素的内容  设置的时候可以解析标签 获取的时候可以获取标签
+            innerText:可以设置或获取元素的内容 设置的时候不能解析标签 获取的时候获取不到标签
+
+            outerHTML:可以设置或获取元素的内容 和innerHTML类似 但是包含了当前的元素
+            outerText:可以设置或获取元素的内容 和innerText类似 但是包含了当前的元素
+
+            textContent:和innerText类似 如果没有标签的情况下 推荐使用textContext
+        */
+
+       var oBtn=document.getElementById("btn");
+       var oCon=document.getElementById("con");
+
+       oBtn.onclick=function(){
+            // console.log(oCon.innerHTML);
+            // oCon.innerHTML="<b>尚硅谷</b>";
+
+            // console.log(oCon.innerText);
+            // oCon.innerText="<b>尚硅谷</b>";
+
+            // console.log(oCon.textContent);
+            // oCon.textContent="<b>尚硅谷</b>";
+
+            // console.log(oCon.outerHTML);
+            // oCon.outerHTML="<b>尚硅谷</b>";
+
+            console.log(oCon.outerText);
+            oCon.outerText="<b>尚硅谷</b>";
+       };
+
+    </script>
+</body>
+
+</html>

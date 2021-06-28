@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+         /* 
+            this:
+                1、是一个指针型的变量，代表的是当前的运行环境
+                2、除了函数以外，全局也有自己的this，指向window对象
+                3、每一个函数都有自己的this，指向当前函数的调用者,如果没有调用者，则指向全局对象window
+            
+            函数的调用方式：
+                1、默认调用，自己调用
+                2、上下文对象调用
+        
+        */
+
+        console.log(this);
+
+        //函数调用方式
+        function func() {
+
+        }
+
+        //默认调用
+        func();
+
+        //上下文对象调用
+        var obj = {
+            name: "laoli",
+            do: function () {
+
+            }
+        }
+        //obj是上下文对象，do是被上下文对象调用的
+        obj.do();
+
+
+
+        //根据函数调用方式确定this指向
+        //1.默认调用
+        /* function fn2() {
+            console.log(this);
+        }
+        fn2(); //fn2的this指向window */
+
+        //2.上下文对象调用
+        /* var obj2 = {
+            do: function () {
+                console.log(this);
+            },
+            do2: fn2 //把fn2代表的函数 给了do2
+        }
+        obj2.do(); //do中的this指向obj2
+        obj2.do2(); //do2中的this指向obj2 */
+
+        //3.隐式丢失
+        /* var fn3 = obj2.do;
+        fn3(); //this指向window */
+
+
+
+
+        //练习1
+        /* //事件函数的this,一般指向当前的绑定事件的对象
+        document.onclick = function () {
+            console.log(this);
+        }
+        // document.onclick(); */
+
+
+        //练习2
+        /* var obj3 = {
+            do: function () {
+                console.log(this) //obj3
+                function fn3() {
+                    console.log(this); //window
+                }
+                fn3();
+            }
+        }
+
+        obj3.do(); */
+
+
+
+        //练习3
+        var x = 1;
+        var obj = {
+            f: function () {
+                console.log(this.x);
+            },
+            x: 2,
+        };
+
+        (obj.f = obj.f)(); //赋值操作符返回了 obj.f的这个函数，这个函数自己调用，则this指向window
+        (false || obj.f)(); //隐式丢失返回window
+        (obj.f, obj.f)(); //隐式丢失返回window
+        (obj.f)() //小括号只是执行提升优先级但是并不会执行运算，所以和obj.f()一样
+    </script>
+</body>
+
+</html>

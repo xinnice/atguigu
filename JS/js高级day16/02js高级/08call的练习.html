@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul id="con">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        /* 
+            数组的slice方法，如果不传递任何参数的话，会返回和原数组一样的一个数组
+            slice方法一定会返回一个数组，所以可以让伪数组调用数组的slice方法，即可转变成数组
+        */
+        var oCon = document.getElementById("con");
+        var oLis = oCon.getElementsByTagName("li");
+
+        console.log(oLis);
+
+        var res = Array.prototype.slice.call(oLis);
+        console.log(res);
+
+        //也可以用数组的遍历forEach()方法
+        Array.prototype.forEach.call(oLis, function (item, index) {
+            console.log(item);
+        });
+
+        //给函数扩展一个方法，当函数调用这个方法的时候，此函数会自动调用
+        /* function fn2() {
+            console.log(111);
+        }
+        fn2.a = function () {
+            this();
+        }
+        fn2.a() */
+
+
+        //面试题
+        function fn1() {
+            console.log(1);
+        }
+
+        function fn2() {
+            console.log(2);
+        }
+        fn1.call(fn2); //1
+
+        //第一个call叫做call1  第二个call叫做call2
+        //先执行的是call2 ：改变了call1的this执行，并且执行了call1
+        //原本call1的this执行是fn1，后来变成了fn2，call1调用的时候 其实就是内部的this调用了
+        //内部的this已经指向了fn2  所以以下代码调用的是fn2函数
+        fn1.call.call(fn2); //2 fn1.call(fn2)
+        
+        fn1.call.call.call(fn2); //2
+
+        fn1.call.call.call.call(fn2); //2
+
+
+        //1.call想要拿到fn1，肯定用了自己的this call的this指向的是fn1
+        //2.call想要调用fn1，call中肯定执行了类似的 this()的代码
+        // fn1.call()
+
+        function fn3(){
+            console.log("123");
+        }
+        fn3.fn4=function(){
+            console.log(this,"456");
+        }
+        fn3.fn4();
+    </script>
+</body>
+
+</html>

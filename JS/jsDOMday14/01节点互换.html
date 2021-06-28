@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            display: flex;
+            border: 1px solid #000;
+            margin: 20px auto;
+            width: 600px;
+        }
+
+        #con div {
+            width: 200px;
+            height: 500px;
+            text-align: center;
+        }
+
+        #con .left,
+        #con .right {
+            background-color: lightgreen;
+        }
+
+        #con .change {
+            background-color: lightsalmon;
+        }
+
+        #con .change button {
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div class="left">
+            <p>left1</p>
+            <p>left2</p>
+            <p>left3</p>
+            <p>left4</p>
+            <p>left5</p>
+        </div>
+        <div class="change">
+            <button class="btnRight">&gt;&gt;&gt;</button>
+            <button class="btnLeft">&lt;&lt;&lt;</button>
+        </div>
+        <div class="right">
+            <p>right1</p>
+            <p>right2</p>
+            <p>right3</p>
+            <p>right4</p>
+            <p>right5</p>
+        </div>
+    </div>
+    <script>
+        var oLeft = document.querySelector(".left");
+        var oLeftPs = oLeft.querySelectorAll("p");
+        var oChange = document.querySelector(".change");
+        var oRightBtn = oChange.querySelector(".btnRight");
+        var oLeftBtn = oChange.querySelector(".btnLeft");
+        var oRight = document.querySelector(".right");
+        var oRightPs = oRight.querySelectorAll("p");
+
+        oLeftPs.forEach(function (item, index) {
+            item.onclick = function (e) {
+                if (e.target.nodeName === "P") {
+                    e.target.style.background = "darkcyan";
+                    e.target.dataset.click = "true";
+                }
+            }
+        });
+        oRightPs.forEach(function (item, index) {
+            item.onclick = function (e) {
+                if (e.target.nodeName === "P") {
+                    e.target.style.background = "darkcyan";
+                    e.target.dataset.click = "true";
+                }
+            }
+        });
+
+        oRightBtn.onclick = function () {
+            var oLeftPs = oLeft.querySelectorAll("p");
+            var frag = document.createDocumentFragment();
+            oLeftPs.forEach(function (item, index) {
+                if (item.dataset.click) {
+                    item.style.background = "transparent";
+                    delete item.dataset.click;
+                    frag.appendChild(item);
+                }
+            })
+            oRight.appendChild(frag);
+        };
+
+        oLeftBtn.onclick = function () {
+            var oRightPs = oRight.querySelectorAll("p");
+            var frag = document.createDocumentFragment();
+            oRightPs.forEach(function (item, index) {
+                if (item.dataset.click) {
+                    item.style.background = "transparent";
+                    delete item.dataset.click;
+                    frag.appendChild(item);
+                }
+            })
+            oLeft.appendChild(frag);
+        };
+    </script>
+</body>
+
+</html>

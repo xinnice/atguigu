@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            concat方法:
+                此方法能合并字符串,但通常使用,使用+拼接字符串效率会更高
+
+            charAt方法:
+                1、查询某个字符串中下标对应字符串,查不到返回空字符串
+                2、可以直接使用下标代替，查询不到返回字符串
+
+            indexOf和lastIndexOf方法:
+                1、查询某个字符串在当前字符串中出现的下标
+                2、查询不到返回-1
+
+            search方法:
+                1、查询某个字符串中第一次出现的位置下标
+                2、里面可以写正则表达式
+                3、indexOf是search的底层实现,不使用正则的情况下,用indexOf效率更高
+            
+            match方法:
+                1、找出所有符合条件的子字符串,组成数组返回
+                2、通常结合正则表达式使用
+
+            replace方法:
+                1、字符串的替换,不适应正则的情况只能替换第一个
+        */
+
+        //concat()
+        var str = "hello";
+        var res = str.concat("world");
+        console.log(str);
+        console.log(res);
+
+        //charAt()
+        var str1 = "fasdjhfjkd";
+        console.log(str1.charAt(4));
+        console.log(str1.charAt(200));
+        console.log(str1[4]);
+        console.log(str1[200]);
+
+        //indexOf()
+        var str2 = "rueowiuriew";
+        console.log(str2.indexOf("w"));
+        console.log(str2.indexOf("ur"));
+        console.log(str2.indexOf("e", 2));
+        console.log(str2.indexOf("o", 8));
+        console.log(str2.lastIndexOf("r", -1));
+
+        //search()
+        var str3 = "hell88o wo99rld";
+        var reg3 = /\d/gi;
+        console.log(str3.search(reg3));
+
+        //match()
+        var str4="李沛华18832738281闫海静13878253123";
+        var reg4=/\d{11}/gi;
+        console.log(str4.match(reg4));
+
+        //replace()
+        var str5="yanhaijinglipeihua";
+        console.log(str5.replace("yanhaijing","qianyiming"));
+        console.log(str5.replace("i",1));
+        console.log(str5.replace(/i/gi,"1"));
+
+        var str6="吊打李沛华,手撕闫海静,大猫哥打不动";
+        var reg6=/李沛华|闫海静|大猫哥/gi;
+        console.log(str6.replace(reg6,"***"));
+    </script>
+</body>
+
+</html>

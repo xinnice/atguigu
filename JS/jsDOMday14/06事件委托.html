@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">点哦</button>
+    <ul id="con">
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oCon = document.getElementById("con");
+        var oLis = oCon.querySelectorAll("li");
+
+
+        oLis.forEach(function (item, index) {
+            //给每个li添加绑定事件
+            item.onclick = function () {
+                item.style.backgroundColor = "red";
+            };
+        });
+
+
+        oBtn.onclick = function () {
+            //新增的li没有给自动绑定点击事件
+            var newLi = document.createElement("li");
+            newLi.textContent = "AAA";
+            oCon.appendChild(newLi);
+        };
+
+        /* 
+            事件委托：
+                - 事件代理、事件托管
+                - 把事件交给自己的父级或者祖辈元素绑定
+                - 冒泡的原理，当自己发生事件的时候，也会触发父级的代理的事件
+
+                - 在event事件对象中，有一个target属性代表事件发生的目标元素
+
+                -优点：
+                    - 减少遍历 提高效率
+                    - 可以给未来的元素绑定事件
+        
+        */
+
+        //使用委托,给祖辈元素绑定点击事件
+        oCon.onclick = function (e) {
+            // e.target==>事件发生的目标元素
+            if (e.target.nodeName === "LI") {
+                e.target.style.background = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>

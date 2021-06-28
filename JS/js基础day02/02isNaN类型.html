@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <input type="text"  id="itxt"  autofocus> 
+    <button type="button" id="btn">点击</button>
+    <script>
+        
+        /* 
+        isNaN()方法:
+            判断一个值是不是NaN,如果是则返回true,如果不是则返回false
+
+        需求:判断用户输入的是不是纯数字
+        1.获取输入文本、按钮元素
+        2.给按钮绑定点击事件
+        3.点击按钮之后获取文本输入内容
+        4.判断文本输入的内容是不是纯数字
+        5.若是则弹出正确，否则弹出错误
+        */
+
+        //1.获取输入文本、按钮元素
+        var oText=document.getElementById("itxt");
+        var oBtn=document.getElementById("btn");
+
+        //2.给按钮绑定点击事件
+        oBtn.onclick=function(){
+            //3.点击按钮之后获取文本输入内容,直接获取标签的value属性
+            var txt=oText.value;
+            /* 4.判断文本输入的内容是不是纯数字,不是则弹出错误，是则弹出正确 
+                if(判断条件){如果是则执行里面代码}else{不是则执行里面代码}
+                isNan()检测文本内容,如果不是数字先转成数字
+            */
+            if(isNaN(txt)){
+                //不是纯数字则执行的语句
+                alert("错误");
+            }
+            else{
+                //是纯数字则执行的语句
+                alert("正确");
+            }
+        }
+    </script>
+</body>
+</html>

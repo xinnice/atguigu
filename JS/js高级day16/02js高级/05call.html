@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            call:
+                - 在Function的原型对象上有 call apply bind 三个方法，可以供所有的函数使用
+                - 这三个方法是必须函数才能调用，存在意义是改变函数执行时的上下文，再具体一点就是改变函数运行时的this指向
+                - call的作用：
+                    1.改变函数的this执向为自己的第一个参数
+                    2.调用了函数
+                - call的第一个参数有3种情况：
+                    1.null和undefined：默认就会把this执行window
+                    2.基本包装类型：把this指向当前数据的包装对象
+                    3.对象类型：this直接指向该对象
+                - call方法从第二个参数开始，依次都是给被调用函数传递的参数
+        */
+
+        console.dir(Function.prototype);
+
+        function fn(a, b) {
+            console.log(this, a + b);
+        }
+
+        fn.call();
+        fn.call(1, 100, 200);
+        fn.call("b", 100, 200);
+        fn.call(true, 100, 200);
+        fn.call(window, 100, 200);
+        fn.call(undefined, 100, 200)
+        fn.call(null, 100, 200);
+        fn.call({
+            age: 18
+        }, 100, 200);
+        fn.call([1, 100, 200], 100, 200);
+        fn.call(function () {}, 100, 200);
+        fn.call(new Date(), 100, 200);
+        fn.call(/\d/gi, 100, 200);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">点哦</button>
+    <div id="con" data-qwer="1234"></div>
+    <script>
+        /* 
+            h5自定义属性
+                - 每一个DOM节点都有一个dataset属性,dateset属性是一个对象，包含了当前DOM元素上所有的自定义属性
+                - h5要求 自定义属性使用data-*前缀
+                - 我们只需要操作dataset属性，即可操作元素的自定义属性
+        */
+
+        var oBtn = document.getElementById("btn");
+        var oCon = document.getElementById("con");
+
+        oBtn.onclick = function () {
+            console.log(oCon.dataset);
+            //增
+            oCon.dataset.uio = "asdf";
+
+            //删
+            delete oCon.dataset.qwer;
+
+
+            //查
+            console.log(oCon.dataset.qwer);
+        };
+    </script>
+</body>
+
+</html>

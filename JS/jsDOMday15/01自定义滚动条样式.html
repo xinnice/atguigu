@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* 清除系统滚动条 */
+        html,body{
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #bar{
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 30px;
+            height: 100%;
+            background-color: yellowgreen;
+        }
+
+        #box{
+            position: absolute;
+            right:0;
+            top:0;
+            width: 30px;
+            height:60px;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="con"></div>
+    <div id="bar">
+        <div id="box"></div>
+    </div>
+    <script>
+        var oCon=document.getElementById("con");
+        for(var i=0;i<50;i++){
+            oCon.innerHTML+="哦嚯!"+i+"<br/>";
+        }
+    </script>
+</body>
+</html>

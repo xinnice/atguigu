@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body{
+            margin: 0;
+        }
+        #one{
+            height: 952px;
+            background-image: url(./01.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+        #two{
+            height: 321px;
+            background-image: url(./02.png);
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+        #three{
+            height: 600px;
+            background-image: url(./03.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        #four{
+            position: relative;
+            margin: 0 auto;
+            width: 960px;
+            height: 584px;
+        }
+        #four::before{
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            width: 664px;
+            height: 763px;
+            background-image: url(./05.png);
+            background-repeat: no-repeat;
+
+        }
+        #four::after{
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 130px;
+            width: 487px;
+            height: 107px;
+            background-image: url(./04.png);
+            background-repeat: no-repeat;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+</body>
+</html>

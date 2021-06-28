@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+         /* 
+            parseInt方法:
+                1.将字符串转数字然后取整
+                2.从第一位开始读，遇到非数字则停止，然后把前面的提取出来
+        
+
+            parseFloat方法
+                1.将字符串转数字可以取浮点数
+                2.从第一位开始读，遇到非数字则停止(直到遇到第一个小数点则停止)，然后把前面的提取出来
+        */
+
+        //parseInt方法
+        console.log(parseInt("3213")) 
+        console.log(parseInt("3433.45")) 
+        console.log(parseInt("1ad23.45")) 
+        console.log(parseInt("123a.45")) 
+        console.log(parseInt("a123a.45")) 
+        console.log(parseInt("898px")) 
+        console.log(parseInt(100.12545)) 
+
+
+        //parseFloat方法
+        console.log(parseFloat("3213")) 
+        console.log(parseFloat("3433.45")) 
+        console.log(parseFloat("1ad23.45")) 
+        console.log(parseFloat("123a.45")) 
+        console.log(parseFloat("a123a.45")) 
+        console.log(parseFloat("898px")) 
+        console.log(parseFloat(100.12545)) 
+
+
+        // parseInt的进制转换功能
+        //把2进制的'231321' 转为10进制的数字
+        console.log(parseInt("011000011", 2)) 
+        console.log(parseInt("ee", 16)) 
+        console.log(parseInt("12412", 6)) 
+        console.log(parseInt("za", 36)) 
+        console.log(parseInt("89fdhnjdhf", 36))
+        console.log(parseInt("100", 2)) 
+        console.log(parseInt("0", 1)) 
+        console.log(parseInt("1", 0)) 
+    </script>
+</body>
+</html>

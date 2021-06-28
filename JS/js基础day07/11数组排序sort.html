@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            sort方法：
+                1、在原数组的基础上对数组的元素进行排序
+                2、如果在调用sort的时候没有传入任何参数，则会按照字符串的格式对数组的元素进行排序
+                3、如果想按照其他的顺序进行排序，就必须向sort方法中传入比较函数
+                4、比较函数有两个参数，比较函数会进行比较这两个参数
+                5、sort内部
+                    1、a是后边的值，b是前边的值
+                    2、return的值只要是负数则交换顺序,如果是0或者正数则不交换
+        
+        */
+
+        //sort无参数情况
+        /* var arr=[1,22,3,33,44,55];
+        var res=arr.sort();
+        console.log(arr);
+        console.log(res); */
+
+        //sort传参情况
+        var arr = [1, 22, 3, 33, 44, 55];
+        arr.sort(function (a, b) {
+            return b - a;
+        });
+        console.log(arr);
+
+        var persons = [{
+            name: "zhangsan",
+            age: 18,
+            gender: "男"
+        }, {
+            name: "lisi",
+            age: 19,
+            gender: "女"
+        }, {
+            name: "liyi",
+            age: 16,
+            gender: "男"
+        }, {
+            name: "huanger",
+            age: 17,
+            gender: "男"
+        }, {
+            name: "wangwu",
+            age: 20,
+            gender: "男"
+        }, {
+            name: "zhaoliu",
+            age: 21,
+            gender: "女"
+        }];
+        persons.sort(function (a, b) {
+            //年龄从小到大排序
+            // return a.age-b.age;
+            //年龄从大到小排序
+            return b.age - a.age;
+        })
+        console.log(persons);
+    </script>
+</body>
+
+</html>

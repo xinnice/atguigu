@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            &&:与 (有一个假全是假)
+                表达式a && 表达式b:
+                    1、先执行表达式a，看表达式a的返回值
+                    2、如果表达式a返回的值是false或者类型转为false，则逻辑与执行结束，返回表达式a的返回值
+                    3、如果表达式a返回true或者类型转换为true，则执行表示b，并直接返回表达式b的返回值
+
+
+            ||:或（有一个真全是真）
+                表达式a || 表达式b:
+                    1、先执行表达式a,看表达式a的返回值
+                    2、如果表达式a返回值是true或者类型转换为true，则停止或运算，直接返回表达式a的返回值
+                    3、如果表达式a返回值是false或者类型转换为false，则继续执行表达式b，直接返回表达式b的返回值
+
+            !:非
+                !a：
+                    1、一定返回布尔值
+                    2、把表达式a转为布尔值 然后取反
+        
+        */
+
+        console.log(11&&44);//44
+        console.log(0&&44);//0
+        console.log(11&&0);//0
+        console.log(1||0);//1
+
+        console.log(true&&false);//false
+        console.log(false&&false);//false
+        console.log(false||true);//true
+        console.log(false||false);//false
+
+        var a=5,b=10;
+        var res=(a>b)&&(a=10);
+        console.log(a);//5
+        console.log(res);//false
+
+        res=(a<b)&&(a=20);
+        console.log(a);//20
+        console.log(res);//20
+
+        res=(a>b)||(a=30);
+        console.log(a);//20
+        console.log(res);//true
+
+        res=(a<b)||(a=40);
+        console.log(a);//40
+        console.log(res);//40
+
+
+        console.log(!true); //false
+        console.log(!false); //true
+        console.log(!0); //true
+        console.log(!""); //true
+        console.log(!"100"); //false
+        console.log(!undefined); //true
+    </script>
+</body>
+</html>

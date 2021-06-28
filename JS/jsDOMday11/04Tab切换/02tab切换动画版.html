@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #con {
+            width: 600px;
+            margin: 30px auto;
+            border: 1px solid #000;
+        }
+
+        #title {
+            display: flex;
+        }
+
+        #title h2 {
+            width: 200px;
+            height: 40px;
+            border: 1px solid #000;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+
+        #title h2.active {
+            color: #fff;
+            background-color: yellowgreen;
+        }
+
+        #content {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        #content li {
+            text-align: center;
+            font-size: 30px;
+            height: 300px;
+            line-height: 300px;
+        }
+
+        #content li:nth-of-type(1) {
+            background-color: wheat;
+        }
+
+        #content li:nth-of-type(2) {
+            background-color: aqua;
+        }
+
+        #content li:nth-of-type(3) {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div id="title">
+            <h2 class="active">标题1</h2>
+            <h2>标题2</h2>
+            <h2>标题3</h2>
+        </div>
+        <ul id="content">
+            <li>内容1</li>
+            <li>内容2</li>
+            <li>内容3</li>
+        </ul>
+    </div>
+    <script>
+        var oTitle = document.querySelector("#title");
+        var oContent = document.querySelector("#content");
+        var oH2s = oTitle.querySelectorAll("h2");
+        var oLis = oContent.querySelectorAll("li");
+        var timer = null;
+        oH2s.forEach(function (item, index) {
+            item.onclick = function () {
+                clearInterval(timer);
+                oH2s.forEach(function (item, index) {
+                    item.classList.remove("active");
+                });
+                this.classList.add("active");
+                var startLocation = oContent.scrollTop;
+                var endLocation = index * oLis[0].offsetHeight;
+                var startStep = 0;
+                var endStep = 40;
+                var averageStep = (endLocation - startLocation) / endStep;
+                timer = setInterval(function () {
+                    startStep++;
+                    if (startStep >= endStep) {
+                        clearInterval(timer);
+                    }
+                    startLocation += averageStep;
+                    oContent.scrollTop = startLocation;
+                }, 10);
+            };
+
+        });
+    </script>
+</body>
+
+</html>

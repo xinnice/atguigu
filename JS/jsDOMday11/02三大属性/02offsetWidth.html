@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+            background-color: aliceblue;
+            border: 2px solid #000;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <script>
+        /* 
+            offsetWidth:
+                获取元素的宽度 获取的是border-box的宽度
+                当元素被display;none隐藏 或者元素没有加载完成的时候，得到是0
+        */
+
+        var oCon = document.getElementById("con");
+        console.log(oCon.offsetWidth);
+    </script>
+</body>
+
+</html>

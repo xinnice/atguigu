@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #outer {
+            width: 500px;
+            height: 500px;
+            overflow: auto;
+            border: 1px solid #000;
+            background-color: indianred;
+        }
+
+        #inner {
+            height: 3000px;
+            border: 1px solid #000;
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点哦</button>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+    <script>
+        /* 
+            scrollTop scrllLeft:
+                - 获取或设置滚动条滚动过的距离
+        */
+
+        var oBtn = document.getElementById("btn");
+        var oOuter = document.getElementById("outer");
+        oBtn.onclick=function(){
+            // console.log(oOuter.scrollTop);
+            oOuter.scrollTop=500;
+        };
+    </script>
+</body>
+
+</html>

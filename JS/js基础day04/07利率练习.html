@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        //本金
+        var price=50000;
+        //翻倍金额
+        var totalPrice=100000;
+        //选择利率
+        var scale=prompt("请输入年利率(1.01-1.5之前)");
+        //经过多少年后本金翻倍
+        var num=0;
+        //当本金未达到翻倍时，年数+1
+        while(price<totalPrice){
+            price*=scale;
+            num++;
+        }
+        console.log(num+"年后本金翻倍");
+    </script>
+</body>
+</html>

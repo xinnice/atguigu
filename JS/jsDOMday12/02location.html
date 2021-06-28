@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            location对象和url信息相关
+                href : 声明或获取当前文档完整的URL
+                protocol:协议部分包括后缀的冒号。例如http:
+                host:主机和端口名称 www.baidu.com:8080
+                hostname:主机名称
+                port：端口号
+                pathname 路径部分
+                search：url的查询部分，包括前导问号
+                hash：锚部分包括前导 #
+
+                assign方法 :和href相当
+                reload方法 :重新加载文档
+                replace方法 :可以装载一个新文档而无须为它创建一个新的历史记录。替换当前文档的历史记录
+        */
+
+        document.onclick=function(){
+            console.log(location.href);
+            console.log(location.protocol);
+            console.log(location.host);
+            console.log(location.hostname);
+            console.log(location.port);
+            console.log(location.pathname);
+            console.log(location.search);
+            console.log(location.hash);
+
+            //location.href属性除了可以设置外还能进行跳转
+            // location.href="http://www.atguigu.com";
+
+            // location.assign("http://www.atguigu.com");
+            location.reload();
+            location.replace("http://www.atguigu.com");
+        }
+    </script>
+</body>
+
+</html>

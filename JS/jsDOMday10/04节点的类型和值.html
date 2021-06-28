@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul id="con">
+        <li>1</li>
+        <li>2</li>
+        <!-- <li>3</li> -->
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        /* 
+            childNodes:获取一个节点内所有的子节点,返回一个nodeList对象(自身拥有foreach方法,可以遍历)
+
+            nodeType:节点类型
+            nodeName:节点名称
+            nodeValue:节点的值
+                
+        */
+
+        var oBox = document.getElementById("con");
+        var oBoxChildren = oBox.childNodes;
+        console.log(oBoxChildren);
+
+        //创建1个属性节点
+        var attr = document.createAttribute("hello");
+        attr.value = "world";
+        console.log(attr);
+
+        //nodeType(用数字来表示节点的类型)
+        console.log(document.nodeType);
+        console.log(oBoxChildren[0].nodeType);
+        console.log(oBoxChildren[1].nodeType);
+        console.log(oBoxChildren[5].nodeType);
+        console.log(attr.nodeType);
+
+        //nodeName节点名称
+        console.log(document.nodeName);
+        console.log(oBoxChildren[0].nodeName);
+        console.log(oBoxChildren[1].nodeName);
+        console.log(oBoxChildren[5].nodeName);
+        console.log(attr.nodeName);
+
+        //nodeValue 节点的值
+        console.log(document.nodeValue);
+        console.log(oBoxChildren[0].nodeValue);
+        console.log(oBoxChildren[1].nodeValue);
+        console.log(oBoxChildren[5].nodeValue);
+        console.log(attr.nodeValue);
+    </script>
+</body>
+
+</html>

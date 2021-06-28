@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <script>
+        var oIpt = document.getElementById("ipt");
+
+        function center(e) {
+            console.log(111);
+            console.log(e);
+            console.log(this);
+        }
+        oIpt.oninput = debounce(center, 1000);
+
+        function debounce(func, time) {
+            var timer = null;
+            return function () {
+                clearTimeout(timer);
+                var _this = this;
+                var arg = arguments[0];
+                timer = setTimeout(function () {
+                    func.call(_this, arg);
+                }, time);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">揍我</button>
+    <ul id="con">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        /* 
+           getElementsByTagName返回的是HTMLConllection对象
+           HTMLConllection是动态的，只要元素发生变化，这个对象的内容也会跟着变化
+        */
+        //旧方法
+        var oBtn = document.getElementById("btn");
+        var oBox = document.getElementById("con");
+        var oBoxLis = oBox.getElementsByTagName("li");
+        // /* oBtn.onclick=function(){
+        //     for(var i=0;i<oBoxLis.length;i++){
+        //         var newLi=document.createElement("li");
+        //         oBox.appendChild(newLi);
+        //     }
+        // } */
+
+
+        /* 
+           querySelectorAll返回的是nodeList对象
+           nodeList是静态的，无论将来元素发生怎样的变化，这个对象的内容永远不会改变
+        */
+        //新方法
+        var oBtn = document.getElementById("btn");
+        var oBox = document.getElementById("con");
+        var oBoxLis = oBox.querySelectorAll("li");
+        oBtn.onclick = function () {
+            for (var i = 0; i < oBoxLis.length; i++) {
+                var newLi = document.createElement("li");
+                oBox.appendChild(newLi);
+            }
+        }
+    </script>
+</body>
+
+</html>

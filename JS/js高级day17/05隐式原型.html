@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            隐式原型：
+                - 每一个对象都有一个隐式原型__proto__
+                - 每一个函数都有一个显式原型prototype
+                - 对象的隐式原型指向其构造函数的显示原型
+                - 使用
+                    - 当对象获取某个属性，自己没有的时候，会沿着隐式原型__proto__找到其构造函数的显式原型prototype
+                    - 当给对象设置一个属性或方法的时候，不会通过隐式原型，而是直接给对象设置上去
+        */
+
+        var arr = [100, 200, 300];
+        console.log(arr.__proto__);
+        console.log(arr.__proto__ === Array.prototype);
+
+        function Person(){
+
+        }
+        Person.prototype.say=function(){
+            console.log("我不管,劳资最帅!");
+        }
+        var p1=new Person();
+        //实例化对象本身并没有say()方法，会沿着其隐式原型__proto__找到其构造函数的显示原型prototype
+        p1.say();
+
+
+        var p2=new Person();
+        p2.say=function(){
+            console.log("hello javascript");
+        }
+        //p2对象扩展了自己的方法，就不会再沿着其隐身原型__proto__去找
+        p2.say();
+    </script>
+</body>
+
+</html>

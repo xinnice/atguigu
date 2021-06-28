@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /*  
+
+            注意：对象的属性名其实都是字符串，只不过可以省略引号
+            点操作符：
+                1、成员访问
+                2、当.去获取一个对象的属性的时候，点后边跟的也是一个字符串，而且引号必须省略
+                3、点操作符可以访问对象的属性，但是一些特殊的属性无法进行获取（key是不规则字符串，key是一个变量）
+
+            中括号操作符：
+                1、获取对象的属性，万能通用
+                2、中括号可以进行运算，也可以解析变量，也可以直接书写字符串
+
+            使用规范：
+                1、一般情况下使用点操作符
+                2、点操作符不能使用，则使用中括号操作符
+            
+        
+        */
+
+        var obj = {
+            name: "xiaowang",
+            "age": 18,
+            "content-type": "x-www-form-application"
+        }
+        console.log(obj);
+        //key的值是一个不规则的字符串的时候无法获取
+        // console.log(obj.content - type);
+
+        //当key被一个变量保存
+        var a = "age";
+        // console.log(obj.a); //点后跟的是字符串，并不会解析变量,其实这么写获取的是obj的a属性
+
+
+        //中括号操作符：
+        console.log(obj[name]) //不能获取到name的属性，只是把name当做变量了
+
+        //在一般情况下 点和中括号通用
+        console.log(obj["name"]) //获取name属性
+        console.log(obj.name) //获取name属性
+
+        //在点不能使用的情况下（key是不规则字符串，key是一个变量），中括号是要被使用的
+        console.log(obj["content-type"]) //x-www-form-application
+        console.log(obj[a]) //18
+
+
+
+
+        var a = {}
+        var obj1 = {
+            n: 2
+        }
+        var obj2 = {
+            m: 3
+        }
+        //一定要把obj1这个对象当做是a的key，但是对象的key一定是一个字符串，所以要把obj转换为字符串，对象转字符串就是[object Object]
+        a[obj1] = 4;
+        //此时a就是 {'[object Object]':4}
+        console.log(a);
+
+
+        //仍然要把obj2转为字符串，字符串是[object Object]，值为5  把刚才的属性直接覆盖
+        a[obj2] = 5
+        //此时a对象只有一个属性{'[object Object]':5}
+        console.log(a);
+        //获取的时候 仍然要把obj1解析为字符串 字符串是[object Object] 所以值为5
+        console.log(a[obj1]) // 输出多少?  5
+    </script>
+</body>
+
+</html>

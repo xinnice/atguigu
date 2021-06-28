@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script async src="test.js">
+    /* 方式3： 在head里面引入, 此处并不会获取到html元素,
+    因为html是从上往下执行的, 要获取的元素此时还未给浏览器解析到 
+    可以使用给script标签加属性defer、async的方式：
+
+    defer：是一种异步加延迟的方式,js的使用分为先加载、后执行两步,
+    defer属性可以让html在解析的时候,同时加载js，在html解析完成之后
+    再执行js,引入多个js文件时,执行也是分先后顺序的
+
+    async：是一种异步的方式，在html解析的同时加载并执行js,因其是异步的，
+    加载多个js文件时，因文件小的通常会先加载执行完成
+    */
+  </script>
+</head>
+
+<body>
+  <div id="container"></div>
+  <!-- 方式1：在body结束标签前面引用  -->
+  <script type="text/javascript">
+    //获取container元素
+    var con = document.getElementById("container");
+    //打印container元素
+    console.log(con);
+  </script>
+
+  <!-- 方式2：引入外部的js文件,即使在script标签里面写上js代码,也不会生效 -->
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="test.js">
+    // 下面js代码不会执行
+    alert("123456");
+  </script>
+</body>
+
+<!--在html结束标签前面引用,一般不推荐,因为html一般只包含head、body,
+      浏览器在解析的时候也会把他包含在body结束标签前面  -->
+<script type="text/javascript">
+  //获取container元素
+  var con = document.getElementById("container");
+  //打印container元素
+  console.log(con);
+</script>
+
+</html>

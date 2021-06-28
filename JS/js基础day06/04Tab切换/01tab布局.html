@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        #container {
+            width: 500px;
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+
+        #title {
+            display: flex;
+        }
+
+        #title h2 {
+            width: 98px;
+            border: 1px solid #000;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        #title h2.oncheck {
+            background-color: greenyellow;
+            color: #fff;
+        }
+
+        #content ul li {
+            width: 500px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 40px;
+            display: none;
+        }
+
+        #content ul li.onshow {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="title">
+            <h2 class="oncheck">精选</h2>
+            <h2>社会</h2>
+            <h2>娱乐</h2>
+            <h2>生活</h2>
+            <h2>体育</h2>
+        </div>
+        <div id="content">
+            <ul>
+                <li class="onshow">精选内容</li>
+                <li>社会内容</li>
+                <li>娱乐内容</li>
+                <li>生活内容</li>
+                <li>体育内容</li>
+            </ul>
+        </div>
+    </div>
+    </script>
+</body>
+
+</html>

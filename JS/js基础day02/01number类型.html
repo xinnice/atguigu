@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //1.数字直接量
+        var num = 11; //整数
+        var num = 11.23; //浮点数
+        var num = -11.23; //负浮点数
+
+        //2.以不同的进制来表示
+        //二进制以0b开头
+        var num1 = 0b1101;
+        console.log(num1); //打印出来的时候会把其他进制转换为十进制
+
+        //八进制以0开头
+        var num2 = 030;
+        console.log(num2);
+        //八进制新写法，以0o开头
+        var num2 = 0o53;
+        console.log(num2);
+
+        //十六进制以0x开头
+        var num3 = 0xee;
+        console.log(num3);
+
+        //3.科学计数法,下面三种写法一样
+        var num4 = 89E12;
+        var num4 = 89E+12;
+        var num4 = 89e12;
+        console.log(num3);
+
+        //4.无穷来表示  Infinity:无穷大  -Infinity:无穷大
+        var num5 = 6 / 0;
+        console.log(num4);
+        //当值开始大于2的1024次方的时候，js开始使用Infinity来表示
+        console.log(2 ** 1023);
+        console.log(2 ** 1024);
+
+        //5.最大值和最小值
+        console.log(Number.MAX_VALUE); //正数最大值
+        console.log(Number.MIN_VALUE); //正数最小值
+
+        //6.js计算精确问题,2的53次方的最大精确数字,大于2的52次方之后不再显示精确数字
+        console.log(2 ** 53);
+        console.log(2 ** 53 + 1);
+        console.log(2 ** 53 + 2);
+        console.log(2 ** 53 + 3);
+
+        //7.NaN(Not a number)强制转换时，将一些字符串无法转换为number类型时会出现NaN
+        console.log('A' - 10);
+        var num6 = NaN;
+
+
+        console.log(typeof (num1));
+        console.log(typeof (num2));
+        console.log(typeof (num3));
+        console.log(typeof (num4));
+        console.log(typeof (num5));
+        console.log(typeof (num6));
+    </script>
+</body>
+
+</html>

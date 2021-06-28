@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <input type="text" id="itxt">
+    <button type="button" id="btn">计算圆的周长面积</button>
+    <script>
+        
+        var oText=document.getElementById("itxt");
+        var oBtn=document.getElementById("btn");
+
+        oBtn.onclick=function(){
+            //获取输入的圆的半径
+            var r=oText.value;
+            // alert("圆的周长:"+parseFloat(3.14*2*r)+"\n圆的面积:"+parseFloat(3.14*r*r));
+            alert("圆的周长:"+parseInt(3.14*2*r)+"\n圆的面积:"+parseInt(3.14*r*r));
+
+        }
+
+    </script>
+</body>
+</html>

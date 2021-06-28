@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .progress {
+            width: 500px;
+            height: 50px;
+            border: 2px solid #000;
+        }
+
+        .con {
+            height: 100%;
+            background-color: blue;
+        }
+
+        #box {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+
+        #box div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom:0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress">
+        <div class="con"></div>
+    </div>
+    <div id="box">
+        <div></div>
+    </div>
+    <p>已经加载了<span id="scale">0</span>%</p>
+    <script>
+        var oCon = document.querySelector(".con");
+        var scale = document.querySelector("#scale");
+        var count = 0;
+        for (var i = 1; i < 31; i++) {
+            var img = new Image();
+            img.src = "./images/" + (i < 10 ? "0" + i : i) + ".jpg";
+
+            img.onload = function () {
+                count++;
+                var schedule = parseInt((count / 30) * 100);
+                oCon.style.width = schedule + "%";
+                scale.textContent = schedule;
+            }
+        }
+    </script>
+</body>
+
+</html>

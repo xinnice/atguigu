@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            任意进展转换
+        */
+        function to2b(n, m) {
+            var yu = null;
+            var str = "";
+            var arr = [];
+            var base = "0123456789abcdefghijklmnopqrstuvwxyz";
+            while (n > 0) {
+                yu = n % m;
+                arr.push(yu);
+                n = parseInt(n / m);
+            }
+            while(arr.length>0){
+                str+=base[arr.pop()];
+            }
+            return str;
+        }
+        var res = to2b(5000, 30);
+        console.log(res);
+    </script>
+</body>
+
+</html>

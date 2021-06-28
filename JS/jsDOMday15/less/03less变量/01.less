@@ -1,0 +1,31 @@
+//1.作为普通变量
+@mainColor: #e8a7c8;
+@boxColor: #e807c8;
+//2.变量作为属性名使用,用的时候用{}括起来
+@h: height;
+
+//3.作为选择器的名字来使用
+@b: #box;
+@c: #con;
+
+//4.作为url保存
+@url1: "https://tva1.sinaimg.cn/large/00831rSTgy1gdnerxegkhj30j008d3yj.jpg";
+
+@url2: url(@url1);
+
+
+
+
+
+@{c} {
+    width: 300px;
+    @{h}: 200px;
+    background-color: @mainColor;
+
+    #box {
+        width: 100px;
+        height: 100px;
+        color: @boxColor;
+        background: @url2;
+    }
+}

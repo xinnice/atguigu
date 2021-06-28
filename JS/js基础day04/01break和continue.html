@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            break：
+                当循环(while、fop)遇到break时，则跳出整个循环不再执行循环里面的代码
+
+            continue:
+                当循环(while、fop)遇到continue时，则跳出当前循环，执行下次循环
+         */
+
+        for (var i = 1; i < 100; i++) {
+            if (i % 3 !== 0) {
+                continue;
+            }
+            console.log(i);
+        }
+
+        var a = 100;
+        while (a < 200) {
+            a++;
+            if (a % 10 !== 0) {
+                continue;
+            }
+            console.log(a);
+        }
+
+        var num = 0;
+        for (var i = 0; i < 10; i++) {
+            if (i === 5) {
+                // break;
+                continue;
+            }
+            num++;
+        }
+        console.log(num);
+    </script>
+</body>
+
+</html>

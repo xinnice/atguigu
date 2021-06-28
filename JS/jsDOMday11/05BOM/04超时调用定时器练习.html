@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 400px;
+            margin: 30px auto;
+            position: relative;
+        }
+
+        #con h2 {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 18px;
+            background-color: magenta;
+        }
+
+        #box {
+            position: absolute;
+            left: 0;
+            top: 30px;
+            width: 400px;
+            height: 300px;
+            background-color: lawngreen;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <h2>标题</h2>
+        <div id="box"></div>
+    </div>
+    <script>
+        var oCon = document.querySelector("#con");
+        var oBox = document.querySelector("#box");
+        var timer = null;
+        oCon.onmouseenter = function () {
+            clearTimeout(timer);
+            oBox.style.display = "block";
+        };
+
+        oCon.onmouseleave = function () {
+            timer = setTimeout(function () {
+                oBox.style.display = "none";
+            }, 500);
+        };
+    </script>
+</body>
+
+</html>

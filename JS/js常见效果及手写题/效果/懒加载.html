@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #box {
+            width: 700px;
+            border: 1px solid #000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 0 auto;
+        }
+
+        #box img {
+            width: 300px;
+            height: 420px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./images/loading.gif" data-src="./images/m1.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m2.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m3.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m4.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m5.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m6.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m7.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m8.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m9.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m10.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m11.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m12.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m13.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m14.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m15.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m16.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m17.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m18.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m19.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m20.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m21.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m22.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m23.jpg" alt="">
+        <img src="./images/loading.gif" data-src="./images/m24.jpg" alt="">
+    </div>
+    <script>
+        //获取所有的图片元素
+        var oImgs = document.querySelectorAll("#box img");
+        //获取元素到文档的距离
+        function getEleHeigtToDoc(ele) {
+            var e = ele;
+            var p = {
+                l: 0,
+                t: 0
+            };
+            //当有父级目标元素时,不断往上找
+            while (e) {
+                if (e === ele) {
+                    p.l += e.offsetLeft;
+                    p.t += e.offsetTop;
+                } else {
+                    p.l += e.clientLeft + e.offsetLeft;
+                    p.t += e.clientTop + e.offsetTop;
+                }
+                e = e.offsetParent;
+            }
+            return p;
+        }
+
+        //监听节点及所有资源加载完成事件
+        //监听滚动条事件滚动事件
+        window.onload = window.onscroll = function () {
+            //遍历所有的图片元素
+            oImgs.forEach(function (item, index) {
+                var toDoc = getEleHeigtToDoc(item);
+                //滚动条滚动的距离+浏览器窗口高度
+                var allHeight = window.pageYOffset + document.documentElement.clientHeight;
+                //当元素到文档的距离小于等于滚动条滚动的距离+浏览器窗口高度时,即表示元素刚好进入浏览器窗口
+                //此时把图片src属性的值替换成img元素的另一个属性的值
+                if (toDoc.t <= allHeight) {
+                    item.src = item.dataset.src;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

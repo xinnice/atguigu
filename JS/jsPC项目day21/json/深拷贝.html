@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "huahua",
+            age: 18,
+            run: function () {},
+            girlfriends: {
+                first: "one",
+                second: "two",
+                third: "three",
+                fourth: "four",
+                fifth: "five"
+            }
+        };
+
+        //对obj进行深拷贝
+        var res = JSON.parse(JSON.stringify(obj));
+        obj.girlfriends.first = "AAA";
+        console.log(obj.girlfriends);
+        console.log(res.girlfriends === obj.girlfriends);
+        console.log("obj", obj);
+        console.log("res", res);
+    </script>
+</body>
+
+</html>

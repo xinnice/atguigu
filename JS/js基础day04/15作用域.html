@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /*  
+            作用域：
+                1、变量作用域（scope）是指变量在程序中可以访问的有效范围
+                2、作用域分为全局作用域和局部作用域，ES3中，作用域是通过函数来划分的，函数内部的都是局部作用域
+                
+                全局作用域：
+                    1、在最外层声明的变量都属于全局变量
+                    2、全局变量和全局函数 都是window对象的属性和方法
+
+            ES规定 Global作为js的全局顶层对象，但是在浏览器并没有实现Global
+            但是window对象一直扮演这Global的角色，作为js的全局对象
+        */
+
+        //声明的变量num就是全局的
+        var num = 100;
+
+        //声明的函数func也是全局的
+        function func() {
+            console.log("hello world!!!");
+        }
+        func();
+
+
+        console.log(window);
+        console.log(window.isNaN);
+        console.log(window.num);
+        console.log(window.func);
+    </script>
+</body>
+
+</html>

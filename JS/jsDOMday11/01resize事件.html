@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            resize事件：
+                当窗口的大小改变的时候触发
+                document.documentElement.clientWidth获取窗口的宽度
+        */
+        window.onresize = function () {
+            if (document.documentElement.clientWidth <= 800) {
+                document.body.style.background = "blue";
+            } else {
+                document.body.style.background = "green";
+            }
+        }1
+    </script>
+</body>
+
+</html>

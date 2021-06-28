@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            公有私有静态特权概念：
+                - 公有属性和公有方法：
+                    是设置给实例化对象的属性和方法  
+
+                - 私有属性和私有方法
+                    是因为一些逻辑，在构造函数中声明的变量或函数
+
+                - 静态属性和方法
+                    是把构造函数当做对象，扩展的属性和方法
+
+                - 特权方法
+                    如果直接设置给实例化对象的方法，被称作特权方法
+        */
+
+        function Student(name, age) {
+            //公有属性
+            this.name = name;
+            this.age = age;
+
+            //私有属性
+            var that = this;
+
+            //私有方法
+            function func() {
+
+            }
+
+            //特权方法
+            this.study = function () {
+                console.log("study");
+            };
+        }
+
+        //公有方法
+        Student.prototype.eat = function () {
+            console.log("吃饭");
+        };
+
+        //静态属性和静态方法
+        Student.score = 100;
+        Student.run = function () {
+
+        };
+    </script>
+</body>
+
+</html>

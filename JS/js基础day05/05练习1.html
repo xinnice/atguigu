@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //demo1
+        /* var v = "hello";
+
+        (function () {
+            alert(v); //undefined
+            var v = "world";
+            alert(v); //world
+        })();
+
+        alert(v); //hello */
+
+
+        //demo2
+        /* (function () {
+            alert(a + b + c); //NaN
+            var a = "1";
+            var f = function () {};
+            var b = "2";
+            var c = "3";
+        })(); */
+
+
+
+
+        //demo3
+        /* (function () {
+            f2();
+            // f1(); //f1 is not a function
+            var f1 = function () {
+                alert(2)
+            };
+
+            function f2() {
+                alert(1);
+            }
+        })(); */
+
+
+
+
+
+        //demo4
+        /* var a = 1;
+
+        function outer() {
+            var b = 2;
+
+            function inner() {
+                var c = 4;
+                alert(a); //1
+            }
+            inner();
+        }
+        outer(); */
+
+
+
+        //demo5
+        /*  var a = 1;
+
+         function check() {
+             //获取的全局变量的a 改的是全局变量
+             a = 100;
+             alert(a); //100
+         }
+         check();
+         alert(a); //100 */
+
+
+
+
+        //demo6
+        /* var v = "hello";
+        if (true) {
+            alert(v); //hello
+            var v = "world";
+        }
+        alert(v); //world */
+
+        //demo6.1
+        /* if (false) {
+            alert(v);
+            var v = "world";
+        }
+        alert(v); //undefined */
+
+
+
+
+
+        //demo7
+        /* function rain() {
+            var x = 1;
+
+            function man() {
+                x = 100;
+            }
+            man();
+            alert(x); //100
+        }
+        rain(); */
+
+
+
+        //demo8
+        /* var x = 1;
+
+        function rain() {
+            alert(x); //undefined
+            var x = 'man';
+            alert(x); //man
+        }
+        rain() */
+
+
+        //demo9
+        /* function rain() {
+            //没有var 声明 直接赋值 则是全局的
+            x = 100;
+        }
+        rain();
+        alert(x); //100 */
+
+
+
+        //demo10
+        /* var t = 'a';
+
+        function test2() {
+            alert(t); //undefined
+            var t = 'b';
+            alert(t); //b
+        }
+        test2(); */
+
+        //demo11
+        /* var t = 'a';
+
+        function test2() {
+            alert(t); //a
+            t = 'b';
+            alert(t); //b
+        }
+        alert(t); //a
+        test2();
+        alert(t); //b */
+
+        //demo12
+        /* var a = "Hello";
+
+        function test() {
+            alert(a); //hello
+            a = "World";
+            alert(a); //world
+        }
+        test(); */
+
+        //demo13
+         var a = 1;
+
+         function test() {
+             alert(a); //undefined
+             a = 4;
+             alert(a) //4
+             var a = 2;
+             alert(a); //2
+         }
+         test();
+         alert(a); //1
+
+
+
+        /*  function fn1(a) {
+             console.log(a); //1
+             var a = 2;
+             console.log(a); //2
+         }
+         fn1(1); */
+
+        /* function fn2() {
+            console.log(foo); //fun
+
+            function foo() {}
+            var foo = 1;
+            console.log(foo) //1
+        }
+        fn2(); */
+    </script>
+</body>
+
+</html>

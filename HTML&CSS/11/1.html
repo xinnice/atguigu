@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="" />
+        <style>
+            div ul{
+                width: 500px;
+                margin:0px;
+                padding:0px;
+                list-style-type:none ;
+            }
+            div ul::after{
+                content: '';
+                clear: both;
+                display: block;
+            }
+            div ul li input{
+                display: none;
+            }
+            div ul li label{
+                float: left;
+                width: 400px;
+                height: 30px;
+                line-height: 30px;
+                margin-top: 10px;
+            }
+            div ul li input+label::before{
+                float: left;
+                content:"";
+                border:1px solid blue;
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+            div ul li input:checked +label::before{
+                content: "√";
+                color: #fff;
+                background-color: blue;
+                text-align: center;
+                font-weight: bold;
+            }
+            div ul li:last-of-type input:checked +label::after{
+                content: "这么多帅哥,咋回事啊!";
+                color: green;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li>
+                    <input type="radio" name="shuai" id="hehe1" /><label for="hehe1">帅哥1</label>
+                </li>
+                <li>
+                    <input type="radio" name="shuai" id="hehe2" /><label for="hehe2">帅哥2</label>
+                </li>
+                <li>
+                    <input type="radio" name="shuai" id="hehe3" /><label for="hehe3">帅哥3</label>
+                </li>
+                <li>
+                    <input type="radio" name="shuai" id="hehe4" /><label for="hehe4">帅哥4</label>
+                </li>
+                <li>
+                    <input type="radio" name="shuai" id="hehe5" /><label for="hehe5">帅哥5</label>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

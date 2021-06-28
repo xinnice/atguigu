@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul id="container">
+        <li class="con"></li>
+        <li class="con"></li>
+        <li class="con"></li>
+        <li class="con"></li>
+        <li class="con"></li>
+        <li class="con"></li>
+    </ul>
+    <script>
+        /* 
+        JS中String字符串是由0到多个Unicode字符所组成的字符序列，0个字符表示空字符串
+
+        字符串的表示方法注意事项:
+            1.字符串用单引号或双引号表示
+            2.单引号内可以嵌套双引号，双引号内可以嵌套单引号
+            3.转义符可以转义一些特殊字符 引号、斜杆等等
+            4.不允许书写的时候换行
+            5.有显示换行的方式\n
+
+        */
+
+        //1.单引号或双引号表示字符串
+        var str1 = 'fdhkjlas98r7923';
+        var str2 = "&*^%YH#JKHKJRWE*(";
+        console.log(str1, str2);
+
+        //2.双引号中嵌套单引号
+        var str3 = "劳资总是说:'劳资真棒!!!'";
+        console.log(str3);
+
+        //3.转义符的操作
+        var str4 = "我是一个双引号\"\"";
+        var str5 = "我是一个斜杆\\";
+        //如果转义不成功,忽略转义符而正常显示
+        var str6 = "\静\静\说:'他很棒!'";
+        console.log(str4);
+        console.log(str5);
+        console.log(str6);
+
+        //4.书写换行
+        var str7 = '    <ul id=container">\
+                        <li class="con"></li>\
+                        <li class="con"></li>\
+                        <li class="con"></li>\
+                        <li class="con"></li>\
+                        <li class="con"></li>\
+                        <li class="con"></li>\
+                      </ul>';
+        console.log(str7);
+
+        //5.换行显示
+        var str8="今天\n天气好晴朗";
+        console.log(str8);
+
+        //6.字符串的长度
+        var str9="sdfhjldf87da啊s987f9df7d";
+        console.log(str9.length);
+
+        //7.字符串值的获取
+        //字符串中的每一个值都对应了一个下标,字符串中的值可以通过下标获取,下标是从0开始计算的
+        console.log(str9[10],str9[14],str9[0]);
+    </script>
+</body>
+
+</html>

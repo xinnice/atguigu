@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        Function.prototype.myApply = function (context) {
+            //判断centext的类型，并改变context类型
+            if (context === null || context == undefined) {
+                context = window;
+            }
+            if (typeof context !== "object" && typeof context !== "function") {
+                context = Object(context);
+            }
+
+            //获取传入的参数
+            var args = arguments[1];
+
+            //调用函数,并改变this指向
+            var key = Date.now().toString(36);
+            context[key] = this;
+            eval("context[key](" + args.toString() + ")");
+
+            //删除不用的属性
+            delete context[key];
+        }
+
+        function func(a, b) {
+            console.log(this, a + b);
+        };
+        func.myApply(100,[100,200]);
+        func.myApply("abcd",[100,200]);
+        func.myApply(true,[100,200]);
+        func.myApply(null,[100,200]);
+        func.myApply(undefined,[100,200]);
+        func.myApply(["o", "p"],[100,200]);
+        func.myApply(function () {},[100,200]);
+        func.myApply({
+            age: 18
+        },[100,200]);
+    </script>
+</body>
+
+</html>

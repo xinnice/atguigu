@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            1.已知一个url地址字符串
+            http://www.baidu.com?username=xiaowang&password=12345&age=18&sex=女&score=90
+            //得到一个查询字符串的值，以对象表示
+            // {username:"xiaowang",password:12345,age:18,sex:"女",score:90}
+        */
+        var str = "http://www.baidu.com?username=xiaowang&password=12345&age=18&sex=女&score=90";
+        var obj = {};
+        var arr = str.split("?").pop().split("&");
+        arr.forEach(function (item, index) {
+            var parms = item.split("=");
+            obj[parms[0]] = parms[1];
+        });
+        console.log(obj);
+
+
+
+
+        /* 
+            2.已知用户输入的内容组成的对象 {username:"xiaowang",password:12345,age:18,sex:"女",score:90}
+            已知一个url地址：http://www.baidu.com
+            请把对象以查询字符串的形式拼接在url地址上得到如下结果：
+            http://www.baidu.com?username=xiaowang&password=12345&age=18&sex=女&score=90
+        */
+        var formObj = {
+            username: "xiaowang",
+            password: 12345,
+            age: 18,
+            sex: "女",
+            score: 90
+        };
+        var url = "http://www.baidu.com";
+        var urlArr = [];
+        for (var key in formObj) {
+            urlArr.push(key + "=" + formObj[key]);
+        }
+        var urlStr = url + "?" + urlArr.join("&");
+        console.log(urlStr);
+
+
+
+        /* 
+            3.给定一个字符串如：“abaasdffggghhjjkkgfddsssss3444343”问题如下：
+                - 字符串的长度
+                - 取出指定位置的字符，如：0,3,5,9等
+                - 查找指定字符是否在以上字符串中存在，如：i，c ，b等
+                - 替换指定的字符，如：g替换为22,ss替换为b等操作方法
+                - 截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
+                - 找出以上字符串中出现次数最多的字符和出现的次数
+                - 在字符串的开头和末尾添加一个@符号
+        */
+        var str3 = "abaasdffggghhjjkkgfddsssss3444343";
+        var arr3 = str3.split("");
+
+        //字符串的长度
+        console.log(str3.length);
+
+        //取出指定位置的字符，如：0,3,5,9等
+        console.log(str3[0], str3[3], str3[5], str3[9]);
+
+        //查找指定字符是否在以上字符串中存在，如：i，c ，b等
+        console.log(str3.indexOf("i") !== -1 ? "i存在" : "i不存在");
+        console.log(str3.indexOf("c") !== -1 ? "c存在" : "c不存在");
+        console.log(str3.indexOf("d") !== -1 ? "d存在" : "d不存在");
+
+        //替换指定的字符，如：g替换为22,ss替换为b等操作方法
+        console.log(str3.replace(/g/gi, "22"));
+        console.log(str3.replace(/ss/gi, "b"));
+
+        //截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
+        console.log(str3.substring(0, 5));
+
+        //找出以上字符串中出现次数最多的字符和出现的次数
+        var obj = {};
+        for (var i = 0; i < str3.length; i++) {
+            if (obj[str3[i]]) {
+                obj[str3[i]]++;
+            } else {
+                obj[str3[i]] = 1;
+            }
+        }
+        var max = 0;
+        var maxKey = null;
+        for (var key in obj) {
+            if (obj[key] > max) {
+                max = obj[key];
+                maxKey = key;
+            }
+        }
+        console.log(obj, maxKey + ":" + max);
+
+        //在字符串的开头和末尾添加一个@符号
+        arr3.unshift("@");
+        arr3.push("@");
+        console.log(arr3.join(""));
+        console.log("@" + str3 + "@");
+    </script>
+</body>
+
+</html>

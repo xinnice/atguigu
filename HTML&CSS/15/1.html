@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      div {
+        width: 56px;
+        height: 100px;
+        background-image: url(dancer.png);
+        background-repeat: no-repeat;
+        animation-name: test;
+        animation-duration:5s ;
+        animation-timing-function: steps(22);
+        animation-iteration-count: infinite;
+        /* animation-direction: alternate; */
+      }
+      @keyframes test {
+        from {
+          background-position: 0px 0px;
+        }
+        to {
+          background-position: -1229px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

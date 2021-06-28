@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            递增递减运算符
+                ++、--运算符操作可以让1个操作数进行加1、减1
+
+                a++:后置递增
+                ++a:前置递增
+                a--:后置递减
+                --a:前置递减
+
+                让某个值单纯加1情况下，前置、后置没有区别
+                当要考虑返回值的情况下,区别如下:
+                    后置:返回值是累加之前的值，即原来的值
+                    前置:返回值是累加之后的值，即原来的值加1
+        */
+
+        //单纯让a加1
+        var a = 9;
+        a++;
+        ++a;
+        console.log(a);
+
+        var b = 10;
+        c = b++;
+        c = ++b;
+        c = b--;
+        c = ++b;
+        console.log(c);
+        console.log(b);
+
+
+        var d = 1;
+        e = d++ + d++ + 1 + ++d + d++ + ++d + d + ++d;
+        //e = 1 + 2 + 1 + 4 + 4 + 6 + 6 + 7;
+        console.log(d);
+        console.log(e);
+
+        //使用d，并让d加1
+        console.log(d++);
+    </script>
+</body>
+
+</html>

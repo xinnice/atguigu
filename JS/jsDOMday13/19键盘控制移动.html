@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 100px;
+            height: 100px;
+            background-color: navajowhite;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <script>
+        var oCon = document.querySelector("#con");
+        var oConNow = {
+            left: 0,
+            top: 0
+        }
+        document.onkeydown = function (e) {
+
+            var keyCode = e.keyCode;
+            console.log(keyCode);
+            switch (keyCode) {
+                case 37:
+                    if (oConNow.left > 0) {
+                        oConNow.left-=5;
+                        oConNow.left = oConNow.left;
+                    }
+                    break;
+                case 38:
+                    if (oConNow.top > 0) {
+                        oConNow.top-=5;
+                        oConNow.top = oConNow.top;
+                    }
+                    break;
+                case 39:
+                    if (oConNow.left < document.documentElement.clientWidth - oCon.offsetWidth) {
+                        oConNow.left+=5;
+                        oConNow.left = oConNow.left;
+                        console.log(oConNow.left);
+                    }
+                    break;
+                case 40:
+                    if (oConNow.top < document.documentElement.clientHeight - oCon.offsetHeight) {
+                        oConNow.top +=5;
+                        oConNow.top = oConNow.top;
+                    }
+                    break;
+            }
+
+            oCon.style.left = oConNow.left + "px";
+            oCon.style.top = oConNow.top + "px";
+
+        }
+    </script>
+</body>
+
+</html>

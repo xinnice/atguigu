@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <button id="btn">点哦</button>
+    <h1>111</h1>
+    <a href="./02.html">222</a>
+    <a href="./03.html">333</a>
+    <script>
+        var oBtn=document.getElementById("btn");
+        oBtn.onclick=function(){
+            //back()后退一步方法
+            // history.back();
+
+            //forward()前进一步方法
+            history.forward();
+
+            //go()方法 任意参数是一个数字，正数代表前进层数，负数代表后退层数
+            // history.go(-2);
+            history.go(2)
+        };
+    </script>
+</body>
+</html>

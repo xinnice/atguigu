@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">销毁事件</button>
+    <div id="con">Con</div>
+    <script>
+        /* 
+            销毁事件:   
+                1.DOM0的销毁方式
+                    将事件属性赋值为null即可
+
+                2.DOM2的销毁方式
+                    使用 removeEventListener()
+                    - 参数1：事件名
+                    - 参数2：哪一个事件函数
+
+                3.IE的销毁方式
+                    使用 detachEvent()销毁
+        */
+
+        var oCon = document.getElementById("con");
+        var oBtn = document.getElementById("btn");
+        /*  oCon.onclick = function () {
+             console.log("abc");
+         };
+         oBtn.onclick = function () {
+             oCon.onclick = null;
+         }; */
+
+        function fn() {
+            console.log("hello world");
+        }
+        oCon.addEventListener("click", fn, false);
+
+        oBtn.onclick = function () {
+            oCon.removeEventListener("click", fn);
+        };
+    </script>
+</body>
+
+</html>

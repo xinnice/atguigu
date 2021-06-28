@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            join方法：
+                1、把数组转为字符串
+                2、可以在join方法中传入参数，代表替代字符串中的逗号
+                3、不会改变原数组，返回一个字符串
+                4、其实是把每一个元素调用了toString方法转字符串（null和undefined转为空串）
+        */
+
+        var arr = ["a", "u", null, undefined, false, 100];
+        var res = arr.join();
+        res = arr.join("--");
+        console.log(arr);
+        console.log(res);
+    </script>
+</body>
+
+</html>

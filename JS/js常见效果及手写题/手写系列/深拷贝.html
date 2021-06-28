@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            深拷贝
+        */
+        var obj = {
+            name: "华子",
+            age: 29,
+            eat: function () {
+
+            },
+            girlFriends: ['小明', '小王', '小白']
+        }
+
+        Object.prototype.checkType = function () {
+            return Object.prototype.toString.call(this).slice(8, -1).toLowerCase();
+        }
+
+        function deepClone(d) {
+            if (d.checkType() === "object") {
+                var newObj = {};
+            } else if (d.checkType() === "array") {
+                var newObj = [];
+            } else {
+                return d;
+            }
+            for (var key in d) {
+                newObj[key] = deepClone(d[key]);
+            }
+
+            return newObj;
+        }
+
+        var obj1 = deepClone(obj);
+        console.log(obj1);
+        console.log(obj.girlFriends === obj1.girlFriends);
+    </script>
+</body>
+
+</html>

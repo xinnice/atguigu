@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            手写new
+                - new做了什么？
+                    - 创建了一个对象，并把这个对象返回
+                    - 把构造函数的this指向这个创建的对象
+                    - 将这个对象的原型链修改，将隐式原型指向构造函数的显式原型
+        
+        */
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            // return [];
+        }
+        Person.prototype.run = function () {
+            console.log("run");
+        }
+        var p1 = new Person();
+        console.log(p1);
+
+
+        function myNew(construc) {
+            //创建一个对象
+            var obj = {};
+            //获取传入的参数
+            var args = Array.from(arguments).slice(1);
+            //修改构造函数的this指向obj,并拿到调用构造函数的返回值
+            var res = construc.apply(obj, args);
+            //让对象的隐身原型__proto__指向构造函数的显示原型prototype
+            obj.__proto__ = construc.prototype;
+
+            //是object类型(对象、函数)则直接返回
+            if (typeof res === "object" && typeof res !== "null" || typeof res === "function") {
+                return res;
+            }
+
+            return obj;
+        }
+        var p2 = myNew(Person, "华子", 29);
+        console.log(p2);
+
+        console.log(p1.constructor === p2.constructor);
+        console.log(p1.do === p2.do);
+    </script>
+</body>
+
+</html>

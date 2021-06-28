@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            函数参数：
+                1.形参：定义函数的时候，预计需要的参数，书写在function的小括号中，多个形参使用逗号隔开，形参属于标识符，命名要求符合标识符规范，形参只能在当前函数内部生效
+                
+                2.实参：在调用函数的时候，实际传入的参数，多个参数使用逗号隔开
+        */
+
+        //函数声明
+        //name、age就是函数func的形参
+        function func(name, age) {
+            console.log("大家好");
+            console.log("我叫" + name);
+            console.log("今年" + age + "岁");
+        }
+
+        //函数调用
+        //"静静"、38就是函数func的实参
+        func("静静", 38);
+
+        //形参和实参匹配问题
+        //如果实参比形参少，则多余的形参的值是undefined
+        //如果实参比形参多，则忽略多余的参数，可以使用arguments获取到所有的实参
+        function func1(a, b, c) {
+            console.log(a, b, c);
+        }
+        func1(1);
+        func1(1, 2, 3, 4, 5);
+
+        var func2 = function (a, b, c, d, e) {
+            console.log(a, b, c, d, e);
+        }
+        func2(2, 3, 4, 5, 6);
+
+
+
+        //实例化Function创建函数传参
+        //Function可以接受多个参数，最后一个参数是函数体的代码，前边所有的参数都是形参
+        var func3 = new Function("a", "b", "c", "console.log(a, b, c);console.log('hello world!!!')");
+        func3(100, 200, 300);
+    </script>
+
+
+</body>
+
+</html>

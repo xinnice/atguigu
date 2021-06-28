@@ -1,0 +1,37 @@
+{
+  "id": "2114302",
+  "name": "apple头部",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "693586",
+      "name": "搜索",
+      "font_class": "search",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "1496251",
+      "name": "苹果",
+      "font_class": "pingguo",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "14095293",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e789",
+      "unicode_decimal": 59273
+    },
+    {
+      "icon_id": "14666030",
+      "name": "购物袋",
+      "font_class": "gouwudai",
+      "unicode": "e725",
+      "unicode_decimal": 59173
+    }
+  ]
+}

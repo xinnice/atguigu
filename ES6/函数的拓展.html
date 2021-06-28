@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        function fn(a, b = "hello") {
+            console.log(a, b);
+        }
+        fn(100);
+        fn(100, "");
+        fn(100, null);
+        fn(100, undefined);
+
+
+        /* 
+            箭头函数:
+                1.没有this,this指外层的this
+                2.没有arguments
+                3.无法当构造函数使用 
+        */
+        let func = (x, y) => {
+            console.log(x + y);
+        };
+        func(100, 200);
+
+
+        let func1 = x => console.log(++x);
+        func1(200);
+
+        let func2 = () => console.log("jsyyds");
+        func2();
+
+        let func3 = (...arr) => {
+            console.log(arr);
+        };
+        func3(1,32,32,4,4,45,6,7);
+    </script>
+</body>
+
+</html>

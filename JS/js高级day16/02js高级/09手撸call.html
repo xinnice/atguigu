@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            1.判断context
+            2.给context扩展一个方法ff
+            3.调用context.ff
+            4.删除ff方法
+            5.获取实参 在调用ff的时候 传入
+            6.把ff这个名字换了
+        */
+        /* 
+            手写call:
+                - call是每一个函数都有的
+                - call可以改变函数的this指向
+                - call可以调用函数
+                - 函数执行的时候 call可以给函数传参
+        */
+
+        Function.prototype.myCall = function (context) {
+            //根据context的特征来判断context的类型
+            //null跟undefined,context指向window
+            if (context === null || context === undefined) {
+                context = window;
+            }
+            //如果用typeof判断类型不是对象(object)并且不是函数(function),context指向基本包装对象
+            if (context !== "object" && context !== "function") {
+                context = Object(context);
+            }
+            //其余传入的参数从arguments的第二个元素开始取
+            var args = Array.from(arguments).slice(1);
+            console.log(args);
+
+            //此方法最终要实现的结果:调用fn方法并吧fn的this指向context
+            //当前的this指向者myCall函数的调用者fn方法(暂定fn是函数的调用者)
+            //给context扩展方法fn,执行context.fn()即相当于执行myCall函数的调用者fn方法
+            //因为对象的属性名可能重复所以需要让他尽可能不重复,可以把时间戳转36进制来作为属性名
+            //context.fn=this;
+            var key = Date.now().toString(36);
+            context[key] = this;
+            //调用fn方法
+            eval("context[key](" + args.toString() + ")");
+            //调用fn方法之后,删除不再需要的属性
+            delete context[key];
+        }
+
+
+        function func(a, b) {
+            console.log(a + b);
+            console.log(this, a + b);
+        }
+
+        func.myCall(100, 200, 300);
+        func.myCall("abc", 200, 300);
+        func.myCall(true, 200, 300);
+        func.myCall([100, 200, 300], 200, 300);
+        func.myCall({
+            age: 10
+        }, 200, 300);
+
+
+
+
+        //让fn的this指向obj
+        var obj = {};
+
+        function fn() {
+            console.log(this);
+        }
+        obj.f = fn;
+        obj.f();
+
+        var arr = [100, 200, 300];
+
+        function fn1(a, b, c) {
+            console.log(a + b + c);
+        }
+        eval("fn1(" + arr.toString() + ")");
+    </script>
+</body>
+
+</html>

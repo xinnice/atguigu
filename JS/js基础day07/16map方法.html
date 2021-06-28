@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            映射数组：
+                1、参数和forEach类似
+                2、遍历数组，并返回一个和原数组长度一样的数组
+                3、原数组每次会进入回调函数执行，当前回调函数的返回值就是映射数组对应位置的值
+
+            对比forEach:
+                都是遍历数组，map会返回一个和原数组一样长度的数组，forEach没有返回值
+        */
+
+        var arr = [10, 20, 30, 40, 50];
+        var res = arr.map(function (item, index) {
+            return item + 6;
+        });
+        console.log(res);
+
+        var persons = [{
+            name: "zhangsan",
+            age: 18,
+            gender: "男"
+        }, {
+            name: "lisi",
+            age: 19,
+            gender: "女"
+        }, {
+            name: "liyi",
+            age: 16,
+            gender: "男"
+        }, {
+            name: "huanger",
+            age: 17,
+            gender: "男"
+        }, {
+            name: "wangwu",
+            age: 20,
+            gender: "男"
+        }, {
+            name: "zhaoliu",
+            age: 21,
+            gender: "女"
+        }];
+        //如果是男生年龄+5,女生年龄-5
+        var newPersons = persons.map(function (item, index) {
+            if (item.gender === "男") {
+                item.age -= 5;
+            } else {
+                item.age += 5;
+            }
+            return item;
+        });
+        console.log(newPersons);
+    </script>
+</body>
+
+</html>

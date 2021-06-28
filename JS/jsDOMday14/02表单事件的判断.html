@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            display: flex;
+            border: 1px solid #000;
+            margin: 20px auto;
+            width: 600px;
+        }
+
+        #con div {
+            width: 200px;
+            height: 500px;
+            text-align: center;
+        }
+
+        #con .left,
+        #con .right {
+            background-color: lightgreen;
+        }
+
+        #con .change {
+            background-color: lightsalmon;
+        }
+
+        #con .change button {
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div class="left">
+            <p>
+                <label>
+                    <input type="checkbox">left1
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left2
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left3
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left4
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left5
+                </label>
+            </p>
+        </div>
+        <div class="change">
+            <button class="btnRight">&gt;&gt;&gt;</button>
+            <button class="btnLeft">&lt;&lt;&lt;</button>
+        </div>
+        <div class="right">
+            <p><label><input type="checkbox">right1</label></p>
+            <p><label><input type="checkbox">right2</label></p>
+            <p><label><input type="checkbox">right3</label></p>
+            <p><label><input type="checkbox">right4</label></p>
+            <p><label><input type="checkbox">right5</label></p>
+        </div>
+    </div>
+    <script>
+        var oLeft = document.querySelector(".left");
+        var oChange = document.querySelector(".change");
+        var oRightBtn = oChange.querySelector(".btnRight");
+        var oLeftBtn = oChange.querySelector(".btnLeft");
+        var oRight = document.querySelector(".right");
+
+
+
+        oRightBtn.onclick = function () {
+            var oLeftIps = oLeft.querySelectorAll("input");
+            var frag = document.createDocumentFragment();
+            oLeftIps.forEach(function (item, index) {
+                if (item.checked) {
+                    item.checked = false;
+                    frag.appendChild(item.parentNode.parentNode);
+                }
+            })
+            oRight.appendChild(frag);
+        };
+
+        oLeftBtn.onclick = function () {
+            var oRightIps = oRight.querySelectorAll("input");
+            var frag = document.createDocumentFragment();
+            oRightIps.forEach(function (item, index) {
+                if (item.checked) {
+                    item.checked = false;
+                    frag.appendChild(item.parentNode.parentNode);
+                }
+            })
+            oLeft.appendChild(frag);
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            其他的类型转boolean类型
+            1.number转boolean
+                0为false,非0为true,NAN为false
+            2.string转boolean
+                ""空位false ,非空位ture
+
+            3.undefined、null都是false
+
+            4.object转boolean都为true
+        */
+        
+        //1.number转boolean
+        console.log(Boolean(2));//true
+        console.log(Boolean(2.1));//true
+        console.log(Boolean(-2.1));//true
+        console.log(Boolean(Infinity));//true
+        console.log(Boolean(-Infinity));//true
+        console.log(Boolean(NaN));//false
+        console.log(Boolean(0));//false
+
+        //2.string 转boolean
+        console.log(Boolean(""));//false
+        console.log(Boolean(" "));//true
+        console.log(Boolean("12345"));//true
+
+        //3.null、undefined转boolean
+        console.log(Boolean(null));//false
+        console.log(Boolean(undefined));//false
+
+        //object转boolean
+        console.log(Boolean([]));//true
+        console.log(Boolean([1]));//true
+        console.log(Boolean({}));//true
+        console.log(Boolean(function(){}));//true
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./appleHeader/iconfont.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+      div ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        background-color: #000;
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+      }
+      div > ul > li {
+        height: 48px;
+        line-height: 48px;
+        margin: 0px 10px;
+      }
+      div > ul > li:first-child ul{
+          display: none;
+      }
+      div > ul > li > a.iconfont {
+        text-decoration: none;
+        color: #fff;
+        font-size: 24px;
+      }
+
+      @media (min-width: 768px) {
+        div>ul>li{
+            margin: 0;
+            text-align: center;
+        }
+
+        div>ul>li:first-child>a{
+            display: none;
+        }
+
+        div>ul>li:first-child ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        div>ul>li:first-child a {
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+        }
+        div>ul>li a{
+            font-size: 14px;
+        }
+        div>ul>li a.iconfont{
+            font-size: 20px;
+        }
+        div>ul>li:first-child{
+            flex-grow: 0.88;
+        }
+        div>ul>li:nth-child(2){
+            order: -1;
+            flex-grow: 0.08;
+        }
+        div>ul>li:last-child{
+            flex-grow: 0.07;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>
+          <a href="#" class="iconfont icon-caidan"></a>
+          <ul>
+            <li><a href="#">Mac</a></li>
+            <li><a href="#">iPad</a></li>
+            <li><a href="#">iPhone</a></li>
+            <li><a href="#">Watch</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">技术支持</a></li>
+            <li><a href="#" class="iconfont icon-search"></a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="iconfont icon-pingguo"></a></li>
+        <li><a href="#" class="iconfont icon-gouwudai"></a></li>
+      </ul>
+    </div>
+  </body>
+</html>

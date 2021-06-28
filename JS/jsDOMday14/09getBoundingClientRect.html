@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #outer {
+            width: 500px;
+            height: 500px;
+            border: 5px solid #000;
+            background-color: olive;
+        }
+
+        #inner {
+            width: 300px;
+            height: 300px;
+            border: 5px solid #000;
+            margin: 20px;
+            background-color: palegreen;
+        }
+
+        #con {
+            width: 100px;
+            height: 100px;
+            border: 5px solid #000;
+            margin: 20px;
+            background-color: limegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="con"></div>
+        </div>
+    </div>
+    <script>
+        var oCon = document.querySelector("#con");
+        //getBoundingClientRect()获取元素的外边框到视口的距离,返回值是一个对象,包含上下左右边框
+        console.log(oCon.getBoundingClientRect());
+        console.log(oCon.getBoundingClientRect().left);
+        console.log(oCon.getBoundingClientRect().top);
+        console.log(oCon.getBoundingClientRect().right);
+        console.log(oCon.getBoundingClientRect().bottom);
+    </script>
+</body>
+
+</html>

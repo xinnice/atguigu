@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: indianred;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <script>
+        var oDiv = document.getElementById("con");
+        var left = oTop = 0;
+        var lflag = tflag = rflag = bflag = false;
+        document.onkeydown = function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    lflag = true;
+                    break;
+                case 38:
+                    tflag = true;
+                    break;
+                case 39:
+                    rflag = true;
+                    break;
+                case 40:
+                    bflag = true;
+                    break;
+            }
+        }
+        document.onkeyup = function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    lflag = false;
+                    break;
+                case 38:
+                    tflag = false;
+                    break;
+                case 39:
+                    rflag = false;
+                    break;
+                case 40:
+                    bflag = false;
+                    break;
+            }
+        }
+
+        setInterval(function () {
+            if (lflag) {
+                left -= 10;
+            }
+            if (tflag) {
+                oTop -= 10;
+            }
+            if (rflag) {
+                left += 10;
+            }
+            if (bflag) {
+                oTop += 10;
+            }
+            console.log(tflag, top);
+            oDiv.style.left = left + "px";
+            oDiv.style.top = oTop + "px";
+        }, 100);
+    </script>
+</body>
+
+</html>

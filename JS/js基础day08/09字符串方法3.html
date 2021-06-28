@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            大小写转换：
+                toLowerCase():
+                    字符串转小写
+
+                toUpperCase()：
+                    字符串转大写
+
+            字符串转数字:
+                split():
+                    1、将字符串转为数组
+                    2、如果不传参，则把字符串当做数组唯一一个值
+                    3、可以传递参数，控制字符串以什么字符进行切割 转换为数组
+
+            字符串去空格:
+                trim():去前后空格
+                trimEnd():去后空格
+                trimStart():去前空格
+    
+        */
+
+        var str = "Li hAn xIn Da SHAuaiBI";
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+
+        console.log(str.split());
+        console.log(str.split(""));
+        console.log(str.split(" "));
+
+        //字符串翻转
+        var newStr = str.split("").reverse().join("");
+        console.log(newStr);
+        // var newStr="";
+        // for(var i=str.length-1;i>=0;i--){
+        //     newStr+=str[i];
+        // }
+        // console.log(newStr);
+
+
+
+        //去除空格
+        var str1 = "  asdf fdsf fds fad    ";
+        console.log(str1.trim());
+        console.log(str1.trimEnd());
+        console.log(str1.trimStart());
+
+        //用replace加正则表达式去除所有空格
+        var reg1 = /\s/gi;
+        console.log(str1.replace(reg1, ""));
+
+        //用split、join方法去除空格
+        var str2 = str1.split(" ").join("");
+        console.log(str2);
+    </script>
+</body>
+
+</html>

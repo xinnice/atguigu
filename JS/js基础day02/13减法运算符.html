@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        console.log("3" - 1) //2
+        console.log("3" - "1") //2
+        console.log("3" - "1a") //NaN
+        console.log(null - true) //-1
+        console.log(null - undefined) //NaN
+        console.log([] - []) //0
+        console.log([2] - []) //2
+        console.log({} - []) //NaN
+
+
+        /* 
+            Infinity的运算操作
+        */
+        console.log(Infinity * Infinity) //Infinity
+        console.log(Infinity + Infinity) //Infinity
+        console.log(Infinity - Infinity) //NaN
+        console.log(Infinity / Infinity) //NaN
+        console.log(Infinity % Infinity) //NaN
+
+        console.log(Infinity * -Infinity) //-Infinity
+        console.log(Infinity + -Infinity) //NaN
+        console.log(Infinity - -Infinity) //Infinity
+        console.log(Infinity / -Infinity) //NaN
+        console.log(Infinity % -Infinity) //NaN
+    </script>
+</body>
+</html>

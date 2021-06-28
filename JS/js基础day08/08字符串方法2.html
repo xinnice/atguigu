@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            截取字符串:
+                substr():
+                    参数1:指定的开始的下标
+                    参数2:指定的截取的长度
+
+                substring():
+                    参数1:指定的开始的下标(负数全部默认从0开始)
+                    参数2:指定的结束的下标(不包含结束下标,可以为负数但一般不这么写)
+                    如果参数1小于参数2,则会自行互换位置进行截取
+
+                slice():
+                    参数1:指定的开始的下标
+                    参数2:指定的结束的下标
+                    如果参数为负数,则是倒着数再开始截取
+        */
+
+        var str="lihanxindashuaibi";
+        console.log(str.substr(3,10));
+l
+        console.log(str.substring(3,10));
+        console.log(str.substring(-3,10));
+        console.log(str.substring(3,-10));
+
+        console.log(str.slice(2,8));
+        console.log(str.slice(5,-8));
+        console.log(str.slice(-5,8));
+        console.log(str.slice(0,-1));
+    </script>
+</body>
+</html>

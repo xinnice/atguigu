@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        //父类
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.login = function () {
+            console.log("登录");
+        }
+
+        //子类
+        function Student(subject, name, age) {
+            this.subject = subject;
+            //调用父类,让父类的this指向子类的实例化对象
+            Person.call(this, name, age);
+        }
+        
+
+        //让子类的实例化对象要能访问父类的方法，即实例化对象要能够访问到父类的原型对象，其原型链需经过父类的原型对象
+        //父类的实例化对象可以访问到父类的原型对象,可把父类的实例化对象赋值给子类的原型对象
+        Student.prototype = new Person();
+        //上面会把子类的构造器给改掉,就不能够访问子类的方法,需把构造器重新指向子类
+        Student.prototype.constructor=Student;
+
+        Student.prototype.time = function () {
+            console.log("896");
+        }
+        
+        var stu=new Student("数学","张三",18);
+        console.log(stu.subject);
+        console.log(stu.name);
+        console.log(stu.age);
+        console.log(stu.time());
+        console.log(stu.login());
+        console.log(stu.constructor);
+    </script>
+</body>
+
+</html>

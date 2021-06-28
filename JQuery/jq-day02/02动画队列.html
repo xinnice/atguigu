@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnStart">动起来</button>
+    <button id="btnStop">停下来</button>
+    <div></div>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $("#btnStart").click(function () {
+            $("div").hide(2000).slideDown(2000).fadeOut(2000);
+        });
+        $("#btnStop").click(function () {
+            //stop有两个参数,默认都是false
+            //第1个参数为是否清空当前队列
+            //第2个参数为是否到当前最终动画效果
+            // $("div").stop();
+            // $("div").stop(true,false);
+            // $("div").stop(false,true);
+            $("div").stop(true,true);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        #d1{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="btn">点击</button>
+    <div id="d1">
+
+    </div>
+    <script>
+        /* 
+            Boolean类型只有两个值:
+                true为真
+                false为假
+                通常用在判断上面
+
+            需求:默认div背景蓝色,单击按钮让div背景在蓝色和绿色之间切换
+
+            步骤:
+                1.获取元素
+                2.给按钮绑定点击事件
+                3.两种状态的切换,首先想到boolean类型,用一个变量来保存布尔值,有两种状态true、false
+        */
+
+        //获取按钮、div、元素
+       var btn=document.getElementById("btn");
+       var div=document.getElementById("d1");
+
+       //默认背景色为蓝色的初始状态为boolean值true
+       var flag=true;
+
+       //给按钮绑定点击事件
+       btn.onclick=function(){
+           //如果是默认的蓝色则需要切换成绿颜色
+           if(flag){
+               div.style.backgroundColor="green";
+               flag=false;
+           }
+           //如果是蓝色则需要切换默认的绿色
+           else{
+               div.style.backgroundColor="blue";
+               flag=true;
+           }
+       }
+
+    </script>
+</body>
+</html>

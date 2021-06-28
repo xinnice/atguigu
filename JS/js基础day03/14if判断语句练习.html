@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <input type="text" id="itxt">
+    <button type="button" id="btn">成绩等级</button>
+    <script>
+        /* 
+        用户输入成绩 然后弹出成绩的等级
+            90-100:S
+            80-90:A
+            70-80:B
+            60-70:C
+            0-60:D
+        */
+        var oText = document.getElementById("itxt");
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function () {
+            var score = oText.value;
+            if (score >= 90) {
+                alert("S");
+            } else if (score >= 80) {
+                alert("A");
+            } else if (score >= 70) {
+                alert("B");
+            } else if (score >= 60) {
+                alert("C");
+            } else {
+                alert("D");
+            }
+
+            switch (parseInt(score / 10)) {
+                case 10:
+                case 9:
+                    alert("S");
+                    break;
+                case 8:
+                    alert("A");
+                    break;
+                case 7:
+                    alert("B");
+                    break;
+                case 6:
+                    alert("C");
+                default:
+                    alert("D")
+                    break;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

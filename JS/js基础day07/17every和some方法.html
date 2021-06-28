@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            every方法
+                1、和forEach的书写格式一致
+                2、会把数组的每一个值拿到回调函数中去，如果有一个回调函数返回false，则停止遍历，every直接返回false
+                3、如果全局遍历结束，回调函数都返回true，则整个every方法返回true
+
+            some方法：
+                1、和forEach的书写格式一致                                                                                                                                                                                                                                                                                                                                                                                                 和forEach的书写格式一致
+                2、会把数组的每一个值拿到回调函数中去，如果有一个回调函数返回true，则停止遍历，some直接返回true
+                3、如果全局遍历结束，回调函数都返回false，则整个some方法返回false
+        */
+
+        var persons = [{
+            name: "zhangsan",
+            age: 18,
+            gender: "男"
+        }, {
+            name: "lisi",
+            age: 19,
+            gender: "女"
+        }, {
+            name: "liyi",
+            age: 16,
+            gender: "男"
+        }, {
+            name: "huanger",
+            age: 17,
+            gender: "男"
+        }, {
+            name: "wangwu",
+            age: 20,
+            gender: "男"
+        }, {
+            name: "zhaoliu",
+            age: 21,
+            gender: "女"
+        }];
+        //判断所有人中是否都有年满18的
+        var res1=persons.every(function(item,index){
+            // if(item.age>=18){
+            //     return true;
+            // }else{
+            //     return false;
+            // }
+            return item.age>=18;
+        });
+        console.log(res1);
+
+
+        //判断所有人中存在不年满18的
+        var res2=persons.some(function(item,index){
+            // if(item.age<18){
+            //     return true;
+            // }else{
+            //     return false;
+            // }
+            return item.age<18;
+        });
+        console.log(res2);
+
+    </script>
+</body>
+
+</html>

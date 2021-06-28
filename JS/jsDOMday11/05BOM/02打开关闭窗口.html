@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="open">打开</button>
+    <button id="close">关闭</button>
+    <script>
+        /* 
+                window.open():
+                    - 打开窗口
+                    - 参数1：url地址
+                    - 参数2：_self和_blank
+                    - 参数3：窗口的信息 比如大小 位置
+                    - 返回值：窗口的名字
+        */
+
+       var oOpen=document.getElementById("open");
+       var oClose=document.getElementById("close");
+       var newWin=null;
+
+        oOpen.onclick=function(){
+            // window.open("01window对象.html");
+            // window.open("01window对象.html","_self");
+            // window.open("01window对象.html","_blank","width=300,height=300,top=50,left=50");
+            newWin=window.open("01window对象.html","_blank");
+            console.log(newWin);
+        };
+
+        oClose.onclick=function(){
+            
+            // newWin.close();
+
+             window.close();
+        };
+    </script>
+</body>
+
+</html>

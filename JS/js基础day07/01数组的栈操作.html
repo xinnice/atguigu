@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            数组尾部操作:
+                push():
+                    1、向数组尾部添加一个或多个值
+                    2、改变了原来的数组，并返回修改后数组的长度
+
+                pop():
+                    1、删除数组最后面的一个值
+                    2、返回被删的值
+        */
+
+        var arr = [1, 2, 3, 4, 5, 6, 7];
+
+        //push方法
+        var res = arr.push(100);
+        res = arr.push(200, 500, 300);
+        res = arr.push([1, 2, 3]);
+        console.log(arr);
+        console.log(res);
+
+        //pop方法
+        var arr1 = [1, 2, 3, 4, 5, 6, 7];
+        var res1 = arr1.pop();
+        console.log(arr1);
+        console.log(res1);
+    </script>
+</body>
+
+</html>

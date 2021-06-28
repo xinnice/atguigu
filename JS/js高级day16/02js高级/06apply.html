@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+           apply:
+                和apply类似
+                区别：给函数传参的时候
+                    - apply 是第二个参数开始依次传参
+                    - apply 是 把所有的参数放入一个数组中  然后传入apply的第二个参数
+        */
+
+        function fn(a, b) {
+            console.log(this, a + b);
+        }
+
+        fn.apply();
+        fn.apply(1, [100, 200]);
+        fn.apply("b", [100, 200]);
+        fn.apply(true, [100, 200]);
+        fn.apply(window, [100, 200]);
+        fn.apply(undefined, [100, 200])
+        fn.apply(null, [100, 200]);
+        fn.apply({
+            age: 18
+        }, [100, 200]);
+        fn.apply([1, [100, 200]], [100, 200]);
+        fn.apply(function () {}, [100, 200]);
+        fn.apply(new Date(), [100, 200]);
+        fn.apply(/\d/gi, [100, 200]);
+    </script>
+</body>
+
+</html>

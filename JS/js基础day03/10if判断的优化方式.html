@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+
+        //有变量a 和b , 如果a大于3，则b等于5，否则b等于6
+
+        var a = 10,
+            b = 0;
+
+        //if方式
+        if (a > 3) {
+            b = 5;
+        } else {
+            b = 6;
+        }
+
+        //三元运算符方式
+        //a > 3 ? b = 5 : b = 6;
+        b = a > 3 ? 5 : 6;
+
+        //与或非方式
+        a > 3 && (b = 5)
+        a > 3 || (b = 6)
+
+        //简写方式
+        a > 3 && (b = 5) || (b = 6)
+    </script>
+</body>
+
+</html>

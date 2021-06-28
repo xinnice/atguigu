@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        // 1.求1 - n之间所有数的和
+        var sum = 0;
+
+        function add1(n) {
+            for (var i = 1; i <= n; i++) {
+                sum += i;
+            }
+            console.log("1到" + n + "的和:" + sum);
+        }
+        add1(100);
+
+
+        //2.求n - m之间所有数的和
+        sum = 0;
+
+        function add2(n, m) {
+            for (var i = n; i <= m; i++) {
+                sum += i;
+            }
+            console.log(n + "到" + m + "的和:" + sum);
+        }
+        add2(100, 200);
+
+        //3.圆的面积
+        function radiuArea(r) {
+            console.log("半径为" + r + "的圆的面积为:" + (3.14 * r * r));
+        }
+        radiuArea(10);
+
+
+        //4.求2个数中的最大值
+        function max1(num1, num2) {
+            console.log(num1 + "和" + num2 + "中的最大值是:" + (num1 > num2 ? num1 : num2));
+        }
+        max1(784, 388);
+
+        //5.求3个数中的最大值
+        function max2(num1, num2, num3) {
+            var str = num1 + "、" + num2 + "、" + num3 + "中的最大值是:";
+            if (num1 > num2) {
+                if (num1 > num3) {
+                    console.log(str + num1);
+                } else {
+                    console.log(str + num3);
+                }
+            } else {
+                if (num3 > num2) {
+                    console.log(str + num3);
+                } else {
+                    console.log(str + num2);
+                }
+            }
+        }
+        max2(1440, 2800, 15000);
+
+        //6.判断一个数是否是素数(又叫质数， 只能被1和自身整数的数)
+        function isZhiShu(n) {
+            var flag = true; //标记是否是质数，默认是
+            for (var i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    flag = false;
+                    console.log(n + "不是质数");
+                    break;
+                }
+            }
+            if (flag) {
+                console.log(n + "是质数");
+            }
+        }
+        isZhiShu(211);
+        
+        for (var i = 2; i <= 100; i++) {
+            var zhiShu = true;
+            for (var j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    zhiShu = false;
+                    break;
+                }
+            }
+            if (zhiShu) {
+                console.log("质数:" + i);
+            }
+        }
+
+        //7.求任意个数的最大值
+        function max3() {
+            var max = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            console.log("任意个数的最大值是:" + max);
+        }
+        max3(300, 22222, 100, 33, 3232, 1223, 900, 1888);
+
+        //8.求任意个数的和
+        sum = 0;
+
+        function add3() {
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log("任意个数的和是:" + sum);
+        }
+        add3(300, 200, 100, 888, 9999, 1000, 32738, 199);
+
+        //9.打印出3-100之间所有的质数
+        for (var i = 3; i <= 100; i++) {
+            var flag = true; //标记是否是质数，默认是
+            for (var j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                console.log(i + "是质数");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+      /*   Undefined类型:
+            Undefined类型的值只有一个,就是undefined未定义,一般情况是变量已声明但未赋值。
+            undefined发生的场景有以下4种情况:
+            1.变量已声明,但并未赋值
+            2.调用有参数的函数时,少传输了参数
+            3.对象没有该属性,却调用了
+            4.调用没有返回值的函数 */
+
+        //场景1:
+        var temp;//声明变量未赋值
+        console.log(temp);//打印未赋值的变量
+
+        // 场景2:
+        //声明函数func,有三个参数name、age、gender
+        function func(name,age,gender){
+            console.log("我叫:"+name);
+            console.log("年龄:"+age);
+            console.log("性别:"+gender);
+        }
+        //正常调用func函数
+        func("沛华呵呵",35,"女")
+        //调用上面的函数,并少传输一个参数
+        func("大帅逼",18);
+
+        //场景3:
+        var obj={name:"大帅逼",age:13};//声明obj对象
+        console.log(obj.name);//打印obj对象的name属性
+        console.log(obj.hobby);//打印obj对象不存在的hobby属性
+
+
+        //场景4 
+        //声明没有返回值的函数noreturn
+        function noreturn(){
+            console.log("哦嚯!!!");//只打印,并没有返回值
+        }
+        //接受noreturn函数的返回值
+        var res=noreturn();
+        //打印函数noreturn的返回值
+        console.log(res);
+    </script>
+</body>
+</html>

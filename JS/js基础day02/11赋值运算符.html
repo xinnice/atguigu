@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        /* 
+            赋值运算符
+                1.把等号右侧的值赋值给等号左侧的变量
+                2.可以连续赋值
+                3.赋值运算符最终返回等号右侧的值
+        */
+
+        var temp = 1000; //把1000赋值给变量temp
+        
+        /*
+            把2赋值给b c d e
+            需注意的是此语句只声明了b变量,没有声明其他变量
+            变量未声明是可以赋值的，但不能使用他的值，因为没有则会报错
+        */
+        var b = c = d = e = 2;
+        f = c;
+        console.log(f);
+
+        //赋值运算符也有返回值
+        console.log(a = 2);
+    </script>
+</body>
+</html>

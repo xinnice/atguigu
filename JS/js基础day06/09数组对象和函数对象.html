@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            函数的两个身份:
+                1.作为函数，能被调用
+                2.作为对象，可以扩展属性和方法
+
+            数组的两个身份:
+                1.作为数组，可以保存数据
+                2.作为对象，可以扩展属性和方法
+        */
+
+        //函数
+        function func() {
+            console.log(1);
+        }
+        //函数调用
+        func();
+
+        //作为对象，扩展属性
+        func.hello = "world";
+        console.log(func);
+        //dir可以把函数看作一个对象，查看它的属性和方法
+        console.dir(func);
+        console.log(func.hello);
+
+        //数组
+        var arr = [1, 2, 3, 4, 5]
+        //可以把数组当作一个对象来扩展，但不属于数组的一份子
+        arr.name = "lipeiqian";
+        arr.age = 36;
+        console.log(arr);
+        console.log(arr.name);
+        console.log(arr.age);
+    </script>
+</body>
+
+</html>

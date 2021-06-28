@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="outer">outer
+        <div id="inner">inner
+            <div id="con">con</div>
+        </div>
+
+    </div>
+    <script>
+        /* 
+            DOM2绑定事件：
+                - 使用 元素的addEventListener()方法对一个元素注册一个事件
+                - 参数1：事件名（不要带on）
+                - 参数2：事件处理函数
+                - 参数3：布尔值 true代表捕获 false代表冒泡,默认false
+
+            特点：
+                - 可以对同一个元素绑定同一个事件多次，按照书写顺序执行
+                - 可以控制冒泡和捕获
+
+
+            选择绑定事件方式：
+                - 如果当前的事件是DOM2级事件，则必须通过DOM2绑定（DOMContentLoaded事件）
+                - 考虑是否要控制冒泡和捕获
+                - 如果对同一个元素绑定同一个事件多次，则选择DOM2
+        */
+
+
+        var oOuter = document.getElementById("outer");
+        var oInner = document.getElementById("inner");
+        var oCon = document.getElementById("con");
+
+        /* oCon.addEventListener("click",function(){
+            console.log("oCon1");
+        },false);
+        oCon.addEventListener("click",function(){
+            console.log("oCon2");
+        },false);
+        oCon.addEventListener("click",function(){
+            console.log("oCon3");
+        },true);
+        oCon.addEventListener("click",function(){
+            console.log("oCon4");
+        },false); */
+
+        oCon.addEventListener("click", function () {
+            console.log("oCon");
+        }, false);
+        oInner.addEventListener("click", function () {
+            console.log("oInner");
+        }, true);
+        oOuter.addEventListener("click", function () {
+            console.log("oOuter");
+        }, false);
+        document.addEventListener("click", function () {
+            console.log("document");
+        }, true);
+    </script>
+</body>
+
+</html>

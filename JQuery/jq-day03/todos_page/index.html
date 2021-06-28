@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>React App</title>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div id="root">
+    <div class="todo-container">
+      <div class="todo-wrap">
+        <div class="todo-header">
+          <input type="text" placeholder="请输入你的任务名称，按回车键确认" />
+        </div>
+        <ul class="todo-main">
+          <li>
+            <label>
+              <input type="checkbox" />
+              <span>xxxxx</span>
+            </label>
+            <button class="btn btn-danger">删除</button>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" />
+              <span>yyyy</span>
+            </label>
+            <button class="btn btn-danger">删除</button>
+          </li>
+        </ul>
+        <div class="todo-footer">
+          <label>
+            <input type="checkbox" />
+          </label>
+          <span>
+            已完成<span id="done">0</span>
+            /
+            全部<span id="allDo">2</span>
+          </span>
+          <button class="btn btn-danger">清除已完成任务</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="jquery-1.12.4.js"></script>
+  <!-- jquery的写法 -->
+  <!-- <script src="index.js"></script> -->
+  <script>
+    /* 原生js */
+    addData();
+    checkData();
+    delData();
+    allCheckData();
+    delDoneData();
+    //输入框回车添加数据
+    function addData() {
+      var oInput = document.querySelector(".todo-header input");
+      var oMain = document.querySelector(".todo-main");
+      oInput.onkeydown = function (e) {
+        if (e.keyCode === 13) {
+          var value = this.value.trim();
+          if (!value) {
+            return;
+          }
+          var oLi = document.createElement("li");
+          var strLiHtml = '<label>\
+                    <input type="checkbox" />\
+                    <span>' + value + '</span>\
+                    </label>\
+                    <button class="btn btn-danger">删除</button>';
+          oLi.innerHTML = strLiHtml;
+          oMain.appendChild(oLi);
+          oInput.value = "";
+        }
+        isAllCheck();
+        isDoneText();
+        checkData();
+      }
+    }
+
+    //单选
+    function checkData() {
+      var oCheckInput = document.querySelectorAll(".todo-main li label input");
+      oCheckInput.forEach(function (item, index) {
+        item.onclick = function () {
+          item.checked ? item.nextElementSibling.classList.add("isDel") : item.nextElementSibling.classList
+            .remove("isDel");
+          isAllCheck();
+          isDoneText();
+        }
+      });
+    }
+
+    //全选
+    function allCheckData() {
+      var oAllCheck = document.querySelector(".todo-footer label input");
+      oAllCheck.onclick = function () {
+        var oCheckInput = document.querySelectorAll(".todo-main li label input");
+        if (this.checked) {
+          oCheckInput.forEach(function (item, index) {
+            item.nextElementSibling.classList.add("isDel");
+            item.checked = true;
+          });
+        } else {
+          oCheckInput.forEach(function (item, index) {
+            item.nextElementSibling.classList.remove("isDel");
+            item.checked = false;
+          });
+        }
+        isDoneText();
+      }
+    }
+
+
+    //单行删除
+    function delData() {
+      var oMain = document.querySelector(".todo-main");
+      oMain.onclick = function (e) {
+        if (e.target.nodeName === "BUTTON") {
+          e.target.parentNode.remove();
+        }
+        isAllCheck();
+        isDoneText();
+      };
+    }
+
+    function delDoneData() {
+      var delDoneButton = document.querySelector(".todo-footer button");
+      delDoneButton.onclick = function () {
+        var isCheckInput = document.querySelectorAll(".todo-main li label input:checked");
+        isCheckInput.forEach(function (item, index) {
+          item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode);
+        });
+        isAllCheck();
+        isDoneText();
+      }
+    }
+
+
+
+    //是否全选
+    function isAllCheck() {
+      var checkInput = document.querySelectorAll(".todo-main li label input");
+      var isCheckInput = document.querySelectorAll(".todo-main li label input:checked");
+      var allCheckInput = document.querySelector(".todo-footer label input");
+      if (isCheckInput.length === 0 && checkInput.length === 0) {
+        allCheckInput.checked = false;
+        return;
+      }
+      checkInput.length === isCheckInput.length ? allCheckInput.checked = true : allCheckInput.checked = false;
+    }
+
+    //已完成/全部
+    function isDoneText() {
+      var done = document.querySelector("#done");
+      var allDo = document.querySelector("#allDo");
+      var checkInput = document.querySelectorAll(".todo-main li label input");
+      var isCheckInput = document.querySelectorAll(".todo-main li label input:checked");
+      done.textContent = isCheckInput.length;
+      allDo.textContent = checkInput.length;
+    }
+  </script>
+</body>
+
+</html>

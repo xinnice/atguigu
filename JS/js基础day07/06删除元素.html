@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            删除数组的值方法总结:
+                1、shift和pop方法:删除数组的第一个和最后一个的值
+                2、delete删除:只能删除对应的value值，但下标仍然存在，数组长度不变
+                3、length删除:当设置的length值小于数组的长度时，会发生数组的截取，
+                把后面的值全部删除
+                4、splice删除:
+                    参数1：删除开始的数组下标位置
+                    参数2:从删除位置开始数，删除数组的长度
+                    返回值：删除的值组成的数组
+        */
+
+        var arr = ["a", "b", "c", "d", "e", "f", "g"];
+
+        //delete删除
+        // var res=delete arr[1];
+        // console.log(arr);
+        // console.log(res);
+
+        //length 删除
+        // arr.length=2;
+        // console.log(arr);
+
+        //splice删除
+        var res = arr.splice(3, 3);
+        console.log(res);
+        console.log(arr);
+
+
+        //数组删除练习
+        var persons = [{
+            name: "zhangsan",
+            age: 18,
+            gender: "男"
+        }, {
+            name: "lisi",
+            age: 19,
+            gender: "女"
+        }, {
+            name: "liyi",
+            age: 16,
+            gender: "男"
+        }, {
+            name: "huanger",
+            age: 17,
+            gender: "男"
+        }, {
+            name: "wangwu",
+            age: 20,
+            gender: "男"
+        }, {
+            name: "zhaoliu",
+            age: 21,
+            gender: "女"
+        }];
+        //查找年龄小于20
+        for (var i = 0; i < persons.length; i++) {
+            if (persons[i].age < 20) {
+                var res = persons.splice(i, 1);
+                console.log(res);
+                i--;
+            }
+        }
+    </script>
+</body>
+
+</html>

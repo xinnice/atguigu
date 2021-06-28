@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      div.first {
+        /* float: left; */
+        width: 200px;
+        height: 200px;
+        border: 1px solid green;
+      }
+      div.second {
+        /* float: left; */
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgb(121, 110, 110);
+      }
+      div.third {
+        width: 500px;
+        height: 300px;
+        border: 1px solid rgb(121, 110, 110);
+      }
+      div.third div {
+        float: left;
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        /* box-sizing: border-box; */
+      }
+
+      #f {
+        width: 300px;
+
+        border: 3px solid pink;
+      }
+
+      #f .z {
+        width: 120px;
+        height: 120px;
+        border: 1px solid red;
+        float: left;
+        margin: 10px;
+      }
+
+      .clear {
+        width: 0px;
+        height: 0px;
+        clear: both;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="f">
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="clear"></div>
+    </div>
+  </body>
+</html>

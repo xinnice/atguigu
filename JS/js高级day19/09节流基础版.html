@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con"></div>
+    <script>
+        var oCon = document.getElementById("con");
+        var lastTime = 0;
+        oCon.onmousemove = function () {
+            var nowTime = Date.now();
+            if (nowTime - lastTime < 1000) {
+                return;
+            }
+            lastTime = nowTime;
+            console.log(1);
+        };
+    </script>
+</body>
+
+</html>

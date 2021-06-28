@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body{
+            height:1500px;
+        }
+        #outer{
+            width: 300px;
+            height:300px;
+            border:1px solid #000;
+            background-color: yellowgreen;
+        }
+        #inner{
+            width: 100px;
+            height:100px;
+            background-color: aliceblue;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+    <script>
+        /* 
+            clientX: 获取事件发生的时候 鼠标 到 窗口边缘的 距离
+
+            offsetX: 获取事件发生的时候 鼠标 到 目标元素 的距离
+
+            pageX: 获取事件发生的时候 鼠标 到 文档边缘的 距离
+
+            screenX: 获取事件发生的时候，鼠标 到 屏幕边缘 的距离
+        */
+
+        var oOuter=document.getElementById("outer");
+        oOuter.onclick=function(e){
+            console.log(e.clientX,e.clientY);
+            console.log(e.offsetX,e.offsetY);
+            console.log(e.pageX,e.pageY);
+            console.log(e.screenX,e.screenY);
+        };
+
+    </script>
+</body>
+</html>

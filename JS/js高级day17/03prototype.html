@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            prototype:
+                - prototype是一个指针，指向原型对象，也被称作为显式原型
+                - 每一个函数都有一个prototype属性
+                - 原型对象默认是一个空对象(constructor属性除外)
+                - 当函数被实例化的时候，如果实例化对象调用某个方法或属性，实例化对象自己没有，就会找到这个构造函数的原型对象上去找
+                - 只有构造函数的prototype才有意义，其他函数的prototype没用
+        */
+
+        function func() {
+
+        };
+        console.log(func.prototype);
+
+        func.prototype.say = function () {
+            console.log("I'm fine!");
+        };
+
+        var p1=new func();
+        var p2=new func();
+        var p3=new func();
+        //构造函数实例化出来的对象中没有say()方法，就会找到构造函数的原型对象上去找
+        p1.say();
+        p2.say();
+        p3.say();
+    </script>
+</body>
+
+</html>

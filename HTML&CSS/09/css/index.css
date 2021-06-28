@@ -1,0 +1,288 @@
+body {
+    margin: 0px;
+  }
+  .header {
+    background-color: #eaeaea;
+    height: 30px;
+    line-height: 30px;
+  }
+  .header .container {
+    width: 1200px;
+    margin: 0px auto;
+    color: #333;
+    font-size: 0px;
+  }
+  .header .container .login {
+    float: left;
+    height: 30px;
+  }
+  .header .container .title,
+  .header .container .loingregister {
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  .header .container .register {
+    border-left: 1px solid #b3aeae;
+    padding: 0px 5px;
+    margin-left: 5px;
+  }
+  .header .container .category ul li {
+    float: right;
+    font-size: 12px;
+  }
+  .header .container .category ul li a {
+    padding: 0px 10px;
+    border-right: 1px solid #b3aeae;
+  }
+  .header .container .category ul li a.clear {
+    border-right: 0px;
+  }
+
+  .logosearch {
+    width: 1200px;
+    margin: 0px auto;
+    overflow: hidden;
+  }
+  .logosearch h1 {
+    float: left;
+  }
+  .logosearch h1 img {
+    width: 175px;
+    margin: 25px 45px;
+  }
+  .search {
+    float: right;
+    margin-top: 35px;
+  }
+
+  .search form .keyword {
+    float: left;
+    width: 490px;
+    height: 32px;
+    border: 2px solid #ea4a36;
+    box-sizing: border-box;
+    padding: 0px 4px;
+    outline: none;
+  }
+  .search form .searchbtn {
+    float: left;
+    width: 68px;
+    height: 32px;
+    background-color: #ea4a36;
+    border: none;
+    color: #fff;
+  }
+
+  .nav {
+    border-bottom: 2px solid #e1251b;
+  }
+  .nav::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .nav .navheader {
+    width: 1200px;
+    margin: 0px auto;
+  }
+  .nav .navheader h2 {
+    color: #fff;
+    background-color: #e1251b;
+    width: 210px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+  }
+  .nav .navheader ul li a {
+    float: left;
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    margin: auto 22px;
+    color: #333;
+  }
+
+  .brand {
+    width: 1200px;
+    height: 67px;
+    line-height: 67px;
+    margin: 10px auto;
+    background-color: #f7f7f7;
+    /* text-align: center; */
+    font-size: 0px;
+  }
+  .brand a {
+    display: inline-block;
+    width: 120px;
+    height: 37px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-right: 1px dotted #ccc;
+}
+.brand a img{
+    padding: 0px 10px;
+    border-left: 0px;
+  }
+  
+  .brand .clear {
+    border-right: 0px;
+  }
+
+  .footer {
+    background-color: #eaeaea;
+  }
+
+  .footer .footer-content {
+    width: 1200px;
+    margin: 0px auto;
+    padding: 0px 15px;
+  }
+  .footer .footer-content .footer-content-top{
+    padding: 20px;
+    padding-left: 40px;
+    overflow: hidden;
+  }
+  .footer .footer-content .footer-content-top ul {
+    width: 190px;
+    vertical-align: top;
+    float: left;
+  }
+  .footer .footer-content .footer-content-top ul li {
+    line-height: 18px;
+  }
+  .footer .footer-content .footer-content-top ul li.last img{
+    vertical-align: bottom;
+  }
+  .footer .footer-content .footer-content-top ul li.first {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .footer .foot-link{
+    box-sizing: border-box;
+    width: 1200px;
+    margin: 0px auto;
+    border-top: 1px solid #E5E1E1;
+    padding: 20px;
+    text-align: center;
+    font-size: 0px;
+  }
+  .footer .foot-link ul li{
+    display: inline;
+    border-right: 1px solid #666;
+    padding: 0px 10px;
+    font-size: 12px;
+  }
+  .footer .foot-link p{
+    margin: 10px auto;
+    font-size: 12px;
+  }
+  .footer .foot-link .clear{
+    border-right: 0px;
+    font-size: 12ox;
+  }
+
+  .banner{
+    width:1200px;
+    height: 464px;
+    margin: 0px auto;
+  }
+  .banner .right{
+    width: 250px;
+    float: right;
+  }
+  .banner .right .news{
+    border: 1px solid #e4e4e4;
+    margin-top: 5px;
+  }
+  .banner .right .news h4{
+    border-bottom: 1px solid #e4e4e4;
+    padding: 5px 10px;
+    margin:5px 5px 0px;
+    line-height: 22px;
+    overflow: hidden;
+  }
+  .banner .right .news h4 strong{
+    float: left;
+    font-size: 14px;
+  }
+  .banner .right .news h4 span{
+    float: right;
+    font-size: 12px;
+  }
+  .banner .right .news ul{
+    line-height: 26px;
+    padding: 5px 15px;
+  }
+  strong{
+    font-weight: bold;
+  }
+
+  .banner .right .service{
+    border-right: 1px solid #e4e4e4;
+    overflow: hidden;
+  }
+  .banner .right .service li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    box-sizing: border-box;
+    border-left: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .banner .right .service  strong{
+    display: inline-block;
+    width: 61px;
+    height: 40px;
+    background-image: url(../img/icons.png);
+  }
+  .banner .right .service span{
+    display: inline-block;
+    width: 60px;
+    line-height: 22px;
+  }
+  .banner .right .service .huafei strong{
+    background-position:0px -5px ;
+  }
+  .banner .right .service .jipiao strong{
+    background-position:-62px -5px ;
+  }
+  .banner .right .service .dypiao strong{
+    background-position:-126px -5px;
+  }
+  .banner .right .service .youxi strong{
+    background-position:-190px -5px ;
+  }
+
+  .banner .right .service .caipiao strong{
+    background-position:0px -76px ;
+  }
+  .banner .right .service .jiayouzhan strong{
+    background-position:-62px -76px ;
+  }
+  .banner .right .service .jiudian strong{
+    background-position:-126px -76px ;
+  }
+  .banner .right .service .hcpiao strong{
+    background-position:-190px -76px ;
+  }
+
+  .banner .right .service .zhongchou strong{
+    background-position:0px -146px ;
+  }
+  .banner .right .service .licai strong{
+    background-position:-62px -146px ;
+  }
+  v.banner .right .service .lipingka strong{
+    background-position:-126px -146px ;
+  }
+  .banner .right .service .baitiao strong{
+    background-position:-190px -146px ;
+  }
+  
+  .banner .right .adv{
+    margin-top: 5px;
+  }

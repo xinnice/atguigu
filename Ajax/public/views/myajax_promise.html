@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script src="myajax_promise.js"></script>
+    <script>
+        let xhr = new XMLHttpRequest()
+        let btn = document.querySelector('#btn')
+        btn.onclick = async function () {
+            let res = await myAjax({
+                url: 'http://127.0.0.1:7500/test',
+                type: 'post',
+                data: {
+                    username: 'fwkt',
+                    age: 29
+                }
+            })
+            console.log(res);
+        }
+    </script>
+</body>
+
+</html>

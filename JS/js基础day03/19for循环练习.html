@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul id="container">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+    </ul>
+    <script>
+        //获取ul、li元素
+        var oCon=document.getElementById("container");
+        var oList=oCon.getElementsByTagName("li");
+        
+        
+        for(var i=0;i<oList.length;i++){
+            //遍历每个li，给每个li加点击事件
+            oList[i].onclick=function(){
+                alert("hello world!!!");
+            }
+        }
+    </script>
+</body>
+
+</html>

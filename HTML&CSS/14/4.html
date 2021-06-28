@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        position: relative;
+        height: 100%;
+        margin: 0px;
+      }
+      #con {
+        position: absolute;
+        width: 500px;
+        top: 50%;
+        left: 50%;
+        border: 1px solid blue;
+        transform: translate(-50%, -50%);
+      }
+      #con::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+      #con > div {
+        float: left;
+        width: 50px;
+        height: 50px;
+        border: 10px solid gray;
+        border-radius: 50%;
+        animation-name: zhuan;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        margin: 10px;
+      }
+      #con div.d1 {
+        border-style: dotted;
+      }
+      #con div.d2 {
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+      #con div.d3 {
+        border-top-color: transparent;
+      }
+      #con div.d4 {
+        position: relative;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+      }
+      div.d4 div.d4-1 {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        left: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+        border: 10px solid gray;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation-name: zhuan;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction:reverse ;
+      }
+      #con div.d5 {
+        border-bottom-style: none;
+        border-left-color: transparent;
+      }
+      @keyframes zhuan {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="con">
+      <div class="d1"></div>
+      <div class="d2"></div>
+      <div class="d3"></div>
+      <div class="d4">
+        <div class="d4-1"></div>
+      </div>
+      <div class="d5"></div>
+    </div>
+  </body>
+</html>

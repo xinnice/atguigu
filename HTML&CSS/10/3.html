@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      #banner{
+        position: relative;
+        width: 1130px;
+        margin: 0px auto;
+        overflow: hidden;
+        font-size: 0px;
+      }
+      
+      #banner ul{
+        margin: 0px;
+        padding: 0px;
+        width: 5650px;
+        list-style-type: none;
+      }
+      #banner ul li{
+        float: left;
+      }
+      #banner ul li a img{
+        width: 1130px;
+        height: 286px;
+      }
+      #banner .arrow-pre,#banner .arrow-next{
+        position: absolute;
+        top:50%;
+        margin-top: -35px;
+        width: 42px;
+        height: 70px;
+        background-image: url(./icon-slides.png);
+        background-repeat: no-repeat;
+      }
+      #banner .arrow-pre{
+        left: 0px;
+        background-position:-84px 0px;
+      }
+      #banner .arrow-next{
+        right: 0px;
+        background-position:-123px 0px;
+      }
+      #banner:hover .arrow-pre{
+        background-position:0px 0px;
+      }
+      #banner:hover .arrow-next{
+        background-position:-42px 0px;
+      }
+
+      #banner .footer{
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+        bottom: 10px;
+      }
+
+      #banner .footer ul{
+        margin:0px;
+        padding:0px;
+        list-style-type: none;
+      }
+
+      #banner .footer ul li{
+        float: left;
+        width: 10px;
+        height: 10px;
+        margin: 0px 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      #banner .footer ul li.active{
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+        
+
+    </style>
+  </head>
+  <body>
+      <div id="banner">
+        <ul>
+          <li>
+            <a href="#"><img src="./0121365f23ed70a80120a82197289b.png" alt=""></a>
+          </li>
+          <li>
+            <a href="#"><img src="./012f595f23ab03a80120a8218c8e64.png" alt=""></a>
+          </li>
+          <li>
+            <a href="#"><img src="./0148a25f23aaf6a801215aa038b8a3.png" alt=""></a>
+          </li>
+          <li>
+            <a href="#"><img src="./0149115f23ab31a80120a8212535f0.png" alt=""></a>
+          </li>
+          <li>
+            <a href="#"><img src="./015e9c5f23ab15a801215aa0795d4e.png" alt=""></a>
+          </li>
+        </ul>
+        <div class="arrow-pre"></div>
+        <div class="arrow-next"></div>
+        <div class="footer">
+          <ul>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+  </body>
+</html>

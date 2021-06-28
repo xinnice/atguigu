@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            filter方法:
+                1、筛选过滤
+                2、和forEach写法一致
+                3、返回一个数组,原数组的值会依次进入到回调函数中，当回调函数返回true时，
+                把这个值放入返回的新数组中
+        */
+
+        var persons = [{
+            name: "zhangsan",
+            age: 18,
+            gender: "男"
+        }, {
+            name: "lisi",
+            age: 19,
+            gender: "女"
+        }, {
+            name: "liyi",
+            age: 16,
+            gender: "男"
+        }, {
+            name: "huanger",
+            age: 17,
+            gender: "男"
+        }, {
+            name: "wangwu",
+            age: 20,
+            gender: "男"
+        }, {
+            name: "zhaoliu",
+            age: 21,
+            gender: "女"
+        }];
+
+
+        //返回数组中所有的男性
+        var res=persons.filter(function(item,index){
+            return item.gender==="男";
+        });
+        console.log(res);
+    </script>
+</body>
+
+</html>

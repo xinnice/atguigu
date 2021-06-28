@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: #222;
+        }
+
+        button {
+            width: 300px;
+            height: 100px;
+            display: block;
+            margin: 100px auto;
+            line-height: 100px;
+            font-size: 50px;
+            background-color: limegreen;
+            color: #bd3051;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+        }
+
+        h2 {
+            font-size: 100px;
+            color: honeydew;
+            text-align: center;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="start">START</button>
+    <h2 id="stuname">点击START开始点名</h2>
+    <script>
+        var oBtn = document.getElementById("start");
+        var oH2 = document.getElementById("stuname");
+        var flag = true; //默认是Start状态
+        var timer = null;
+        var allStudentName = ["杨欢", "曾攀辉", "曾阳平", "陈锦超", "陈权豪", "陈勇凯", "陈祖杰", "戴平", "邓伟", "丁天翔", "丁奕豪", "董会", "董玲丽",
+            "何新月", "胡文燕", "黄佳鑫", "黄嘉文", "黄朋飞", "黄怡", "黄泽峰", "黄震", "赖道满", "赖雨杭", "雷浩翔", "黎永锐", "李寒", "李汉鑫", "李志",
+            "廖雅琴", "林谋勇", "林志达", "林志瀚", "刘乃鑫", "刘蓉", "刘旺", "刘威", "刘文辉", "龙腾", "米凡", "欧阳文豪", "潘长风", "彭婧", "全思成",
+            "施鹏程", "苏明康", "孙一凡", "唐云", "田伟", "王佳", "王凯", "王堂丹", "文佳豪", "吴巧欣", "吴少宾", "吴思成", "吴鑫", "谢赛孝", "徐成",
+            "徐昊东", "徐康", "许开镇", "杨代灿", "杨剑兴", "杨可", "杨义", "杨忠权", "于越", "余佳豪", "喻增海", "张健锋", "张伟", "赵冰鸽", "钟长林",
+            "周俐君", "邹晓"
+        ];
+        oBtn.onclick = function () {
+            if (flag) {
+                oBtn.textContent = "END";
+                oBtn.style.color = "#ff9800";
+                timer = setInterval(function () {
+                    oH2.textContent = allStudentName[random(0, allStudentName.length)];
+                }, 50);
+            } else {
+                clearInterval(timer);
+                oBtn.textContent = "START";
+                oBtn.style.color = "#bd3051";
+            }
+            flag = !flag;
+        }
+
+        function random(a, b) {
+            return Math.floor(Math.random() * (b - a) + a);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+    /* js中有5种数据类型、1种复杂类型 
+    5种数据类型：number
+                string
+                boolean
+                null
+                undefined
+    1种复杂类型: object(数组、对象、函数)
+
+    使用typeof可以检测出数据类型,但有些类型并不准确
+    方式1：typeof(数据)
+    方式2：typeof  数据
+    typeof可以检测出的数据类型:number string boolean undefined object function
+    typeof可以准确检测出的数据类型:number string boolean undefined 
+    */
+
+        var a=123;//number
+        var b="hello world";//string
+        var c=true;//boolean
+        var d;//undefined
+        var e=null;//oejct
+        var f=[];//object
+        var g={};//object
+        var h=function(){};//function
+
+        //打印typeof的返回值,即变量的数据类型
+        console.log(typeof(a));
+        console.log(typeof(b));
+        console.log(typeof(c));
+        console.log(typeof(d));
+        console.log(typeof(e));
+        console.log(typeof(f));
+        console.log(typeof(g));
+        console.log(typeof(h));
+    </script>
+</body>
+</html>

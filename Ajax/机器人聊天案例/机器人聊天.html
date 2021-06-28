@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ajax</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .chatbox {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .messages {
+            height: 350px;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ccc;
+            overflow: scroll;
+        }
+
+        .messages h5 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .messages p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .self {
+            text-align: right;
+        }
+
+        .other {
+            text-align: left;
+        }
+
+        .form {
+            height: 150px;
+        }
+
+        .form .input {
+            height: 110px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .form .btn {
+            height: 40px;
+            box-sizing: border-box;
+            border-top: 1px solid #ccc;
+        }
+
+        .form textarea {
+            display: block;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: none;
+            resize: none;
+            outline: none;
+            font-size: 20px;
+        }
+
+        .form input {
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin-top: 5px;
+            margin-right: 20px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>高级智能机器人</h3>
+    <div class="chatbox">
+        <!-- 聊天内容 -->
+        <div class="messages">
+            <!-- <div class="self">
+        <h5>我说</h5>
+        <p>你好</p>
+      </div>
+      <div class="other">
+        <h5>对方说</h5>
+        <p>你好</p>
+      </div> -->
+        </div>
+        <div class="form">
+            <div class="input">
+                <textarea></textarea>
+            </div>
+            <div class="btn">
+                <input type="button" value="发送" id="btn" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn')
+        let messages = document.getElementsByClassName('messages')[0]
+        let content = document.getElementsByTagName('textarea')[0]
+        const key = '51f1d94f18c54c3c8b2555119f59a937'
+        let count = 0;
+        btn.onclick = function () {
+            let value = content.value
+            if (!value) {
+                return
+            }
+            content.value = ''
+
+            count++
+            let meStrHtml = `<div class="self" id="self${count}">
+                            <h5>鑫哥说:</h5>
+                            <p>${value}</p>
+                            </div>`
+            messages.innerHTML += meStrHtml
+            document.getElementById(`self${count}`).scrollIntoView()
+
+            let xhr = new XMLHttpRequest()
+            xhr.open('post', 'http://www.tuling123.com/openapi/api')
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+            xhr.send(`key=${key}&info=${value}&userid=335220`)
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let res = JSON.parse(xhr.responseText)
+                    //文本
+                    if (res.code === 100000) {
+                        let robotStrHtml = `<div class="other" id="other${count}">
+                                        <h5>机器人说:</h5>
+                                        <p>${res.text}</p>
+                                    </div> `
+                        messages.innerHTML += robotStrHtml
+                        document.getElementById(`other${count}`).scrollIntoView()
+                    }
+                    //图片
+                    else if (res.code === 200000) {
+                        let robotStrHtml = `<div class="other" id="other${count}">
+                                        <h5>机器人说:</h5>
+                                        <p>${res.text}</p>
+                                        <a target="_blank" href=${res.url}>点击打开</a>
+                                    </div> `
+                        messages.innerHTML += robotStrHtml
+                        document.getElementById(`other${count}`).scrollIntoView()
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

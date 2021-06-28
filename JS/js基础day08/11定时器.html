@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">停哦</button>
+    <script>
+        /* 
+            定时器:
+                能控制让一段代码每隔一定时间执行1次
+                创建定时器：
+                    var timer=setInterval(fn,time);
+                    返回值是当前计时器
+
+                clearInterval(timer)方法清除当前计时器
+         */
+
+        var oBtn = document.getElementById("btn");
+        var str = "lipeihuazhenbang";
+
+        var timer = setInterval(function () {
+            //每隔一秒打印1次
+            console.log(str);
+        }, 1000);
+
+        //给按钮绑定点击事件
+        oBtn.onclick = function () {
+            clearInterval(timer);
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: fixed;
+        }
+
+        div:nth-child(1) {
+            background-color: blanchedalmond;
+        }
+
+        div:nth-child(2) {
+            background-color: lightcoral;
+        }
+
+        div:nth-child(3) {
+            background-color: darkblue;
+        }
+
+        div:nth-child(4) {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con1"></div>
+    <div id="con2"></div>
+    <div id="con3"></div>
+    <div id="con4"></div>
+    <script>
+        function Drag(id) {
+            this.oCon = document.getElementById(id);
+            var _this = this;
+            this.oCon.onmousedown = function (e) {
+                _this.down(e);
+            }
+        }
+
+        Drag.prototype.down = function (e) {
+            this.mouseToCon = {
+                x: e.offsetX,
+                y: e.offsetY
+            };
+            var _this = this;
+            document.onmousemove = function (e) {
+                _this.move(e);
+            }
+            document.onmouseup = function () {
+                _this.up();
+            }
+        }
+
+        Drag.prototype.move = function (e) {
+            e.preventDefault();
+            var oConNow = {
+                x: e.clientX - this.mouseToCon.x,
+                y: e.clientY - this.mouseToCon.y
+            }
+            if (oConNow.x <= 0) {
+                oConNow.x = 0;
+            }
+            if (oConNow.x >= document.documentElement.clientWidth - this.oCon.offsetWidth) {
+                oConNow.x = document.documentElement.clientWidth - this.oCon.offsetWidth;
+            }
+            if (oConNow.y <= 0) {
+                oConNow.y = 0;
+            }
+            if (oConNow.y >= document.documentElement.clientHeight - this.oCon.offsetHeight) {
+                oConNow.y = document.documentElement.clientHeight - this.oCon.offsetHeight;
+            }
+            this.oCon.style.left = oConNow.x + "px";
+            this.oCon.style.top = oConNow.y + "px";
+        }
+
+        Drag.prototype.up = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+        new Drag("con1");
+        new Drag("con2");
+        new Drag("con3");
+        new Drag("con4");
+    </script>
+</body>
+
+</html>

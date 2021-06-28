@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        /* 
+            只有一个操作数的运算：一元运算 ++a a--
+                + a:可以把a转为number类型
+
+            类型转换转number总结：
+                - Number方法
+                - parseInt、parseFloat
+                - 一元运算的 +
+                - 减0  乘1 除1
+        */
+        console.log(+100);//100
+        console.log(+"100");//100
+        console.log(+null);//0
+        console.log(+undefined);//NaN
+        console.log(+"");//0
+        console.log(+" ");//0
+        console.log(+true);//1
+        console.log(+false);//0
+        console.log(+NaN);//NaN
+        console.log(+{});//NaN
+        console.log(+[]);//0
+
+        console.log(Number("100"));//100
+        console.log(parseInt("100.2345"));//100
+        console.log(parseFloat("-100.23aa45"));//-100.23
+        console.log("100"-0);//100
+        console.log("100"*1);//100
+        console.log("100"/1);//100
+        console.log(+"100");//100
+
+    </script>
+</body>
+
+</html>

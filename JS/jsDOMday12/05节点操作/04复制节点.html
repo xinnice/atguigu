@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn">点哦</button>
+    <ul id="con">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oCon = document.querySelector("#con");
+        var oLis = document.querySelectorAll("#con li");
+        oBtn.onclick = function () {
+            /* 
+                复制节点
+                    cloneNode()方法
+                    - 参数是一个布尔值，代表深复制和浅复制
+                    - 深复制true 是复制当前元素及内部所有后代元素
+                    - 浅复制false 是赋值当前元素 不会复制内部元素
+            */
+
+            var newCon=oCon.cloneNode(true);
+            console.log(newCon);
+
+            document.body.appendChild(newCon);
+        };
+    </script>
+</body>
+
+</html>

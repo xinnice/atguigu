@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #con {
+            display: flex;
+            border: 1px solid #000;
+            margin: 20px auto;
+            width: 600px;
+        }
+
+        #con div {
+            width: 200px;
+            height: 500px;
+            text-align: center;
+        }
+
+        #con .left,
+        #con .right {
+            background-color: lightgreen;
+        }
+
+        #con .change {
+            background-color: lightsalmon;
+        }
+
+        #con .change button {
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">
+        <div class="left">
+            <p>
+                <label>
+                    <input type="checkbox">left1
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left2
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left3
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left4
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox">left5
+                </label>
+            </p>
+        </div>
+        <div class="change">
+            <button class="btnRight">&gt;&gt;&gt;</button>
+            <button class="btnLeft">&lt;&lt;&lt;</button>
+        </div>
+        <div class="right">
+            <p><label><input type="checkbox">right1</label></p>
+            <p><label><input type="checkbox">right2</label></p>
+            <p><label><input type="checkbox">right3</label></p>
+            <p><label><input type="checkbox">right4</label></p>
+            <p><label><input type="checkbox">right5</label></p>
+        </div>
+    </div>
+    <script>
+        //获取元素
+        var oLeft = document.querySelector(".left");
+        var oChange = document.querySelector(".change");
+        var oRightBtn = oChange.querySelector(".btnRight");
+        var oLeftBtn = oChange.querySelector(".btnLeft");
+        var oRight = document.querySelector(".right");
+
+
+        //将左边选中的元素移动到右边
+        oRightBtn.onclick = function () {
+            //重新获取左边的所有input元素
+            var oLeftIps = oLeft.querySelectorAll("input");
+            //声明一个虚拟的节点类型
+            var frag = document.createDocumentFragment();
+            oLeftIps.forEach(function (item, index) {
+                if (item.checked) {
+                    //把左边所有选中的元素添加到虚拟节点中
+                    frag.appendChild(item.parentNode.parentNode);
+                    //更改元素状态为未选中
+                    item.checked = false;
+                }
+            })
+            //向右边添加左边选中的元素
+            oRight.appendChild(frag);
+        };
+
+        //将右边选中的元素移动到左边
+        oLeftBtn.onclick = function () {
+            //重新获取右边的所有input元素
+            var oRightIps = oRight.querySelectorAll("input");
+            var frag = document.createDocumentFragment();
+            oRightIps.forEach(function (item, index) {
+                if (item.checked) {
+                    //把右边所有选中的元素添加到虚拟节点中
+                    frag.appendChild(item.parentNode.parentNode);
+                    //更改元素状态为未选中
+                    item.checked = false;
+                }
+            })
+            //向左边添加右边选中的元素
+            oLeft.appendChild(frag);
+        };
+    </script>
+</body>
+
+</html>

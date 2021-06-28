@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        var str = "1166472980727316734";
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+            if (obj[str[i]]) {
+                obj[str[i]]++;
+            } else {
+                obj[str[i]] = 1;
+            }
+        }
+        console.log(obj);
+        for (var i = 0; i < str.length; i++) {
+            if (obj[str[i]] === 1) {
+                console.log(str[i]);
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

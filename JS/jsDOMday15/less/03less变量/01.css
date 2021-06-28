@@ -1,0 +1,11 @@
+#con {
+  width: 300px;
+  height: 200px;
+  background-color: #e8a7c8;
+}
+#con #box {
+  width: 100px;
+  height: 100px;
+  color: #e807c8;
+  background: url("https://tva1.sinaimg.cn/large/00831rSTgy1gdnerxegkhj30j008d3yj.jpg");
+}

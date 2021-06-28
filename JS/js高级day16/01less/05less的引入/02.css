@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#con {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #000;
+}

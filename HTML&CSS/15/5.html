@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="iconfont.css">
+  <style>
+    body{
+      margin:0;
+    }
+    #menu{
+      width: 100%;
+      background-color: #224473;
+      overflow: hidden;
+    }
+    #menu h1{
+      height: 80px;
+      line-height: 80px;
+      margin: 0px;
+      text-align: center;
+      color: #fff;
+      background-color:#2C5A98 ;
+    }
+    #menu ul{
+      margin: 0;
+      padding:0;
+      list-style-type: none;
+    }
+    #menu ul li{
+      height:38px;
+      line-height: 38px;
+      text-align: center;
+      margin: 6px 8px 0px;
+      background-color:#2C5A98 ;
+      border-radius: 3px;
+    } 
+    #menu ul li a{
+      text-decoration: none;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    #menu form{
+      position: relative;
+      height: 48px;
+      margin: 8px;
+    }
+    #menu form input{
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      background-color: #C6DAF5;
+      border:0;
+      text-align: center;
+      font-size: 14px;
+      border-radius: 3px;
+    }
+    #menu form button{
+      position:absolute;
+      width: 72px;   
+      height: 48px;   
+      font-size: 24px;
+      top: 0;
+      right: 0;
+      background-color: transparent;
+      outline: none;
+      color: #A0B3D9;
+      border:0;
+    }
+
+    @media (min-width:768px){
+      #menu h1{
+        display: inline-block;
+        width: 40%;
+        height: 44px;
+        line-height: 44px;
+        font-size: 20px;
+      }
+      #menu ul{
+        float: right;
+        width: 60%;
+        height: 44px;
+      }
+      #menu ul li{
+        float: left;
+        margin: 0px;
+        width: 33.3333333%;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 0;
+      }
+      #menu form input{
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width:992px){
+      #menu h1,#menu ul,#menu form{
+        float: left;
+        width: 33.33%;
+      }
+      #menu ul{
+        float: le;
+      }
+      #menu form{
+        height: 44px;
+        margin: 0px;
+        padding: 8px;
+        background-color: #2C5A98;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="menu">
+    <h1>
+      IBiji.tech
+    </h1>
+    <ul>
+      <li><a href="#">系列教程</a></li>
+      <li><a href="#">实例教程</a></li>
+      <li><a href="#">工具推荐</a></li>
+    </ul>
+    <form action="">
+      <input type="text" placeholder="分享技术成就你我!">
+      <button type="button" class="iconfont icon-search"></button>
+    </form>
+  </div>
+</body>
+</html>

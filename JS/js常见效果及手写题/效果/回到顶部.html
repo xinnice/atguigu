@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            height: 4000px;
+        }
+
+        #con {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(147, 147, 147);
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="con">回到顶部</div>
+    <script>
+        var oCon = document.getElementById("con");
+        var timer = null;
+
+        window.onscroll = function () {
+            var scTop = window.pageYOffset;
+            if (scTop > 800) {
+                oCon.style.display = "block";
+            } else {
+                oCon.style.display = "none";
+            }
+        };
+
+        oCon.onclick = function () {
+            clearInterval(timer);
+            var startLocation = window.pageYOffset;
+            var endLocation = 0;
+            var startStep = 0;
+            var endStep = 40;
+            var averageStep = (endLocation - startLocation) / endStep;
+            timer = setInterval(function () {
+                startStep++;
+                if (startStep >= endStep) {
+                    clearInterval(timer);
+                }
+                startLocation += averageStep;
+                window.scrollTo(0, startLocation);
+            }, 10);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        #outer{
+            width: 200px;
+            height:200px;
+            background-color: aqua;
+        }
+        #inner{
+            width: 100px;
+            height:100px;
+            background-color: bisque;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+    <script>
+        /* 
+            阻止传播：
+                主流：e.stopPropagation();
+                IE低：e.cancelBubble = true;
+
+                阻止传播只能阻止当前事件的传播
+        
+        */
+
+        var oOuter=document.getElementById("outer");
+        var oInner=document.getElementById("inner");
+
+        oInner.onmousedown=function(e){
+            e.stopPropagation();
+            console.log("鼠标按下");
+        }
+        oInner.onmouseup=function(e){
+            e.stopPropagation();
+            console.log("鼠标抬起");
+        }
+
+        oInner.onclick=function(e){
+            e.stopPropagation();
+        };
+        oOuter.onclick=function(e){
+            console.log("outer");
+        };
+
+    </script>
+</body>
+
+</html>

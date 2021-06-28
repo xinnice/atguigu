@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      #con {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        border: 1px solid black;
+        overflow: hidden;
+      }
+      #con::before,
+      #con::after {
+        float: left;
+        content: "";
+        width: 250px;
+        height: 500px;
+        background-color: black;
+        box-sizing: border-box;
+      }
+      #con::before {
+        background-color: black;
+      }
+      #con::after {
+        background-color: white;
+      }
+      #con #c1,
+      #con #c2 {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        left: 125px;
+        border-radius: 50%;
+      }
+      #con #c1 {
+        top: 0px;
+        background-color: black;
+      }
+      #con #c2 {
+        bottom: 0px;
+        background-color: white;
+      }
+      #con #c1::before,
+      #con #c2::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+        content: "";
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      #con #c1::before {
+        background-color: white;
+      }
+      #con #c2::before {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="con">
+      <div id="c1"></div>
+      <div id="c2"></div>
+    </div>
+  </body>
+</html>

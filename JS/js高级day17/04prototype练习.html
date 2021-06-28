@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        console.log(Array.prototype);
+
+        //需求:自定义数组去重的方法
+        //设计:给Array扩展一个去重的方法
+        Array.prototype.noRepeat = function () {
+            var arr = this,
+                newArr = [];
+            arr.forEach(function (item, index) {
+                if (newArr.indexOf(item) === -1) {
+                    newArr.push(item);
+                }
+            });
+            console.log(newArr);
+        }
+
+        var arr = [1, 2, 2, 1, 2, 2, 3, 1322, 22, 2, 1];
+        arr.noRepeat();
+
+        //需求:自定义字符串去除空格的方法
+        //设计:给String扩展一个去除空格的方法
+        String.prototype.delSpace = function () {
+            var str = this;
+            console.log(str.replace(/\s/g, ""));;
+        }
+        var str = " 9 fd89 8  8 9 9 22   ";
+        str.delSpace();
+    </script>
+</body>
+
+</html>

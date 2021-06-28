@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul id="con">
+        <li class="show">1</li>
+        <li>2</li>
+        <li class="show">3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        /* 
+            通过ID
+                document.getElementById("id");
+
+            通过标签名
+                document.getElementsByTagName("tagname");
+                得到的是：HTMLCollection对象 类数组
+                因为获取的是一个集合而不是某一个DOM节点，所以我们需要通过下标获取到某一个节点才能操作
+
+            通过类名获取(IE678不兼容)
+                document.getElementsByClassName("class")
+                得到的是：HTMLCollection对象 类数组
+                因为获取的是一个集合而不是某一个DOM节点，所以我们需要通过下标获取到某一个节点才能操作
+        */
+
+        //通过ID获取元素
+        var oBox = document.getElementById("con");
+        console.log(oBox);
+
+        //通过标签名获取元素
+        var oBoxLis = document.getElementsByTagName("li");
+        console.log(oBoxLis);
+
+        //通过类名获取元素
+        var oLisShow = document.getElementsByClassName("show");
+        console.log(oLisShow);
+    </script>
+</body>
+
+</html>

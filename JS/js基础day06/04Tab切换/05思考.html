@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <script>
+        var oCon=document.getElementById("container");
+        var oList=oCon.getElementsByTagName("li");
+        /* 
+            代码的同步和异步：
+                1、代码分为同步代码和异步代码
+                2、目前来说 事件函数的执行是异步的
+                3、其他都是同步的（切记：绑定事件是同步的）
+                4、异步代码是等同步代码全部执行完成以后才会执行
+        
+        
+        */
+        for(var i=0;i<oList.length;i++){
+            oList[i].onclick=function(){
+                console.log(i);//3
+                //下面的代码不会生效，此时外层的for循环已经结束，i已经是3
+                // oList[i].style.backgroundColor="blue";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="con">Con</div>
+    <script>
+        /* 
+            IE事件模型
+                - 使用 attachEvent 方法绑定事件
+                - 参数1：on+事件名 
+                - 参数2: 事件函数
+                - IE事件模型只能支持冒泡
+        */
+
+        var oCon = document.getElementById("con");
+        oCon.attachEvent("onclick", function () {
+            console.log("oCon1");
+        });
+        oCon.attachEvent("onclick", function () {
+            console.log("oCon2");
+        });
+        oCon.attachEvent("onclick", function () {
+            console.log("oCon3");
+        });
+    </script>
+</body>
+
+</html>

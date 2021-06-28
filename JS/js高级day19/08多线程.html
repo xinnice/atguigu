@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="btn1">主线程计算</button>
+    <button id="btn2">分线程计算</button>
+    <button id="btn3">假死测试</button>
+    <script>
+        var oBtn1 = document.getElementById("btn1");
+        var oBtn2 = document.getElementById("btn2");
+        var oBtn3 = document.getElementById("btn3");
+
+        oBtn1.onclick = function () {
+            var sum = 0;
+            for (var i = 0; i < 1000000000; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        };
+
+        oBtn2.onclick = function () {
+            /* 
+                多线程缺点：
+                    - 不能操作DOM
+                    - 不能跨域请求js
+            */
+            //开启一个分线程，（分线程其实是外部的一个js文件）
+            //实例化一个Worker对象即可开启一个分线程
+            //返回值代表当前创建的分线程
+
+            var wk=new Worker("worker.js");
+
+            //向分线程传递信息
+            wk.postMessage(1000000);
+
+            //监听分线程返回信息
+            wk.onmessage=function(e){
+                console.log(e.data);
+
+                //数据接收完毕,分线程关闭
+                wk.terminate();
+            }
+        }
+    </script>
+</body>
+
+</html>

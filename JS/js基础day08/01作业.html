@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        // 1.将数组的0去掉
+        var arr = [12, 0, 3, 2, 0, 0, 3, 0];
+        var arr1 = [];
+
+        //方法1:
+        arr.forEach(function (item, index) {
+            if (item !== 0) {
+                arr1.push(item);
+            }
+        });
+        console.log(arr1);
+        //方法2:
+        var newArr1 = arr.filter(function (item, index) {
+            return item !== 0;
+        });
+        console.log(newArr1);
+
+
+        // 2.数组排序去重
+        var arr2 = [12, 3, 12, 43, 4, 6, 78, 9, 9, 0, 100];
+        var newArr2 = [];
+        arr2.sort(function (a, b) {
+            return a - b;
+        });
+        for (var i = 0; i < arr2.length - 1; i++) {
+            if (arr2[i] !== arr2[i + 1]) {
+                newArr2.push(arr2[i]);
+            }
+        }
+        console.log(newArr2);
+
+
+        // 3.返回数组的最大最小值及其所在位置
+        var arr3 = [12, 3, 12, 43, 4, 100, 6, 78, 9, 9, 0];
+        var min = arr[0];
+        var max = arr[0];
+        //方法1:
+        arr3.forEach(function (item, index) {
+            if (item > max) {
+                max = item;
+            } else {
+                min = item;
+            }
+        });
+        console.log(max, arr3.indexOf(max), min, arr3.indexOf(min));
+        //方法2:
+        for (var i = 0; i < arr3.length; i++) {
+            if (arr3[i] > arr3[i + 1]) {
+                var temp = arr3[i];
+                arr3[i] = arr3[i + 1];
+                arr3[i + 1] = temp;
+            }
+        }
+        console.log(arr3[arr3.length - 1]);
+
+        // 4.求一组数中的所有数的和和平均值
+        var arr4 = [12, 3, 12, 43, 4, 100, 6, 78, 9, 9, 0];
+        var sum = 0;
+        arr4.forEach(function (item, index) {
+            sum += item;
+        });
+        console.log(sum, sum / arr4.length);
+
+        // 5.翻转数组
+        var arr5 = [12, 3, 12, 43, 4, 100, 6, 78, 9, 9, 0];
+        var newArr5 = [];
+        while (arr5.length > 0) {
+            //方法1
+            // newArr5.push(arr5.pop());
+            //方法2
+            newArr5.unshift(arr5.shift());
+        }
+        console.log(newArr5);
+    </script>
+</body>
+
+</html>

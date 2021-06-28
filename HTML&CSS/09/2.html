@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            .category{
+                position: relative;
+                width: 300px;
+                margin: 0px;
+                padding: 0px;
+                border: 1px solid black;
+                list-style-type: none;
+            }
+            .category li{
+                padding-left: 10px;
+                height: 30px;
+                line-height: 30px;
+                cursor: pointer;
+            }
+            .category li a{
+                color: black;
+                text-decoration: none;
+            }
+            .category  li div{
+                display: none;
+                position: absolute;
+                left: 300px;
+                width: 500px;
+                border:1px solid olive;
+                top: -1px;
+                bottom: -1px
+            }
+            .category li:hover div{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="category">
+            <li>
+                <a href="#">服装/户外</a>
+                <div>
+                    短袖/羽绒服/休闲服
+                </div>
+            </li>
+            <li>
+                <a href="#">零食/生鲜茶酒</a>
+                <div>
+                    方便面/熟食/酸奶
+                </div>
+            </li>
+            <li>
+                <a href="#">厨具/清洁</a>
+                <div>
+                    沐浴露/洗发露/清洁工具
+                </div>
+            </li>
+            <li>
+                <a href="#">图书音像/文具</a>
+                <div>
+                    笔记本/教材辅导书
+                </div>
+            </li>
+            <li>
+                <a href="#">手表/眼睛</a>
+                <div>
+                    太阳镜/老花镜/儿童手表/电子手表
+                </div>
+            </li>
+        </ul>
+    </body>
+</html>
