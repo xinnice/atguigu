@@ -1,21 +1,42 @@
-import axios from 'axios'
-import { GETDATA } from './constants'
+import {
+  ADDTODO,
+  UPDATETODO,
+  DELETETODO,
+  UPDATEALLTODO,
+  DELETECHECKTODO,
+} from './constants'
 
-function getDataAction(data) {
+function addTodo(data) {
   return {
-    type: GETDATA,
+    type: ADDTODO,
     data,
   }
 }
 
-function asyncGetData() {
-  return async (dispatch) => {
-    let result = await axios({
-      method: 'get',
-      url: 'http://127.0.0.1:7500/getData',
-    })
-    dispatch(getDataAction(result.data))
+function updateTodo(id) {
+  return {
+    type: UPDATETODO,
+    id,
   }
 }
 
-export { asyncGetData }
+function deleteTodo(id) {
+  return {
+    type: DELETETODO,
+    id,
+  }
+}
+
+function updateAllTodo() {
+  return {
+    type: UPDATEALLTODO,
+  }
+}
+
+function deleteCheckTodo() {
+  return {
+    type: DELETECHECKTODO,
+  }
+}
+
+export { addTodo, updateTodo, deleteTodo, updateAllTodo, deleteCheckTodo }
