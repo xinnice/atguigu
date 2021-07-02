@@ -1,5 +1,5 @@
 let script = document.createElement('script')
-script.src = 'http://127.0.0.1:7000/search?callback=getData'
+script.src = 'http://127.0.0.1:7500/search?callback=getData'
 document.body.appendChild(script)
 
 //初始化加载数据
@@ -16,7 +16,7 @@ input.onkeydown = async function (e) {
             return
         }
         let data = await Util.myAjax({
-            url: 'http://127.0.0.1:7000/add',
+            url: 'http://127.0.0.1:7500/add',
             type: 'post',
             data: {
                 name: value
@@ -34,7 +34,7 @@ todo_main.addEventListener('click', async (e) => {
         case 'INPUT': {
             let check = e.target.checked
             let res = await Util.myAjax({
-                url: 'http://127.0.0.1:7000/update',
+                url: 'http://127.0.0.1:7500/update',
                 type: 'post',
                 data: {
                     id: e.target.parentNode.parentNode.id,
@@ -46,7 +46,7 @@ todo_main.addEventListener('click', async (e) => {
         break;
     case 'BUTTON': {
         let res = await Util.myAjax({
-            url: 'http://127.0.0.1:7000/delete',
+            url: 'http://127.0.0.1:7500/delete',
             type: 'post',
             data: {
                 id: e.target.parentNode.id,
@@ -78,7 +78,7 @@ checkall.addEventListener('click', async function (e) {
         return prev
     }, [])
     let res = await Util.myAjax({
-        url: 'http://127.0.0.1:7000/updateCheck',
+        url: 'http://127.0.0.1:7500/updateCheck',
         type: 'post',
         data: {
             // ids: JSON.stringify(arr),
@@ -107,7 +107,7 @@ delCheck.addEventListener('click', async function (e) {
         return prev
     }, [])
     let res = await Util.myAjax({
-        url: 'http://127.0.0.1:7000/deleteCheck',
+        url: 'http://127.0.0.1:7500/deleteCheck',
         type: 'post',
         data: {
             // ids: JSON.stringify(arr),
