@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .con {
+        width: 3.45rem;
+        height: 1.75rem;
+        margin: 0.15rem;
+        background-color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="con"></div>
+    <script>
+      function fn() {
+        document.documentElement.style.fontSize =
+          (document.documentElement.clientWidth * 100) / 375 + 'px'
+      }
+      fn()
+      window.onresize = fn
+    </script>
+  </body>
+</html>
