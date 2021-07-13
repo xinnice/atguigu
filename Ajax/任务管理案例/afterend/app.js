@@ -26,10 +26,8 @@
     app.use(upRouter)
     app.use(deRouter)
 
-    app.get('/test',(req,res)=>{
-	res.send('ok')
-    })
-
+    
+ 
     //开启服务器
     app.listen('7500', (err) => {
         if (err) {

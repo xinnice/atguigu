@@ -65,12 +65,11 @@ function render(data) {
     //渲染数据
     let count = 0;
     let arr = data.map((item, index) => {
-        let flag = item.isDone === 'true';
-        flag ? count++ : null;
+        item.isDone ? count++ : null;
         return `<li id=${item._id}>
                     <label>
-                    <input type="checkbox" ${flag?"checked":""}/>
-                    <span class=${flag?"active":""}>${item.name}</span>
+                    <input type="checkbox" ${item.isDone?"checked":""}/>
+                    <span class=${item.isDone?"active":""}>${item.name}</span>
                     </label>
                     <button class="btn btn-danger">删除</button>
                 </li>`

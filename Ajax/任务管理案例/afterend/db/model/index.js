@@ -6,8 +6,8 @@ const schema = new mongo.Schema({
         unique: true
     },
     isDone: {
-        type: String,
-        default: 'false'
+        type: Boolean,
+        default: false
     },
     createTime: {
         type: Date,
